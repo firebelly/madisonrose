@@ -1,0 +1,16 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% set title = '503: Page Not Found' %}
+{% set bodyClass = 'error-page page-503' %}
+
+{% block content %}
+
+  <div class="sitewrapper">
+    <div class="page-content grid">
+      <div class="col-md-1-2">
+        <h2>Sorry, we're undergoing some maintenance right now</h2>>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

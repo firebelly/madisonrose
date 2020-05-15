@@ -1,0 +1,18 @@
+{% set socialLinks = craft.entries.section('socialLinks').all() %}
+
+<footer class="site-footer">
+  <div class="sitewrapper">
+    <ul class="social">
+      {% for link in socialLinks %}
+        <li><a href="{{ link.socialUrl }}" rel="noopener" target="_blank">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <div id="contact">
+      <p><a href="mailto:info@madisonrosellc.com">info@madisonrosellc.com</a></p>
+      <p class="copyright">©{{ "now"|date("Y") }} {{ siteName }}</p>
+    </div>
+    <div class="smiley">
+      <svg aria-hidden="true" role="presentation"><use xlink:href="#smiley"/></svg>
+    </div>
+  </div>
+</footer>

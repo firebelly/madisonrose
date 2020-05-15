@@ -1,0 +1,12 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% set bodyClass = 'home' %}
+{% set bodyId = 'home' %}
+
+{% block content %}
+
+  <div class="sitewrapper">
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+/.env
+/.idea
+/.todo
+/.notes
+/vendor
+.DS_Store
+
+# Build
+node_modules
+
+# Letsencrypt
+.well-known
+
+# Fabfile
+*.pyc
+
+# Bower
+bower_components
+
+# Compiled Assets
+dist
+web/assets/dist/css/main.css
+web/assets/dist/js/main.js
+
+# Licensed fonts
+web/assets/fonts
+
+# Uploads
+web/imager
+web/uploads
+
+# php settings
+.user.ini

@@ -1,0 +1,73 @@
+// Typography
+
+// @font-face
+@font-face {
+  font-family: 'Riviera Nights';
+  src: url('../fonts/RivieraNights-Regular-WebS.eot');
+  src: url('../fonts/RivieraNights-Regular-WebS.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/RivieraNights-Regular-WebS.woff2') format('woff2'),
+       url('../fonts/RivieraNights-Regular-WebS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Riviera Nights';
+  src: url('../fonts/RivieraNights-Light-WebS.eot');
+  src: url('../fonts/RivieraNights-Light-WebS.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/RivieraNights-Light-WebS.woff2') format('woff2'),
+       url('../fonts/RivieraNights-Light-WebS.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neutra 2';
+  src: url('../fonts/Neutra2TextTT-Demi.woff2') format('woff2'),
+       url('../fonts/Neutra2TextTT-Demi.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Font-family mixins
+/// example:
+/// @mixin font-display {
+///   font-style: normal;
+///   font-weight: normal;
+///   font-family: 'Custom Font Family';
+/// }
+
+
+/// Mixin to allow us to concisely define all aspects of a paragraph style (except for family.)
+/// @param {number} $size - Font size specified in pixels (without 'px')
+/// @param {number} $lh - Line height specified in pixels (without 'px')
+/// @param {number} $ls [0em] - Letter spacing
+/// @param {number or string} $w [normal] - Font weight
+/// @param {string} $tt [none] - Text transform
+/// @example scss - Used as a shortcut in defining a paragraph style...
+///   @mixin h1 {
+///     @include font-display; // The font face
+///     @include paragraph-style (12, 16, $ls: .075em, $tt: uppercase); // Other properties
+///   }
+@mixin paragraph-style ($size, $lh, $ls: 0em, $w: normal, $tt: none) {
+  font-size: #{$size}px;
+  line-height: ($lh / $size);
+  letter-spacing: $ls;
+  text-transform: $tt;
+  font-weight: $w;
+}
+
+// Type Style Mixins + Classes
+/// example:
+/// @mixin h1 {
+///   @include font-display;
+///   @include paragraph-style(31, 40, -.010322581em);
+///   @include media-md {
+///     @include paragraph-style(96, 96, -.005208333em);
+///   }
+/// }
+/// .h1 {
+///   @include h1;
+/// }
