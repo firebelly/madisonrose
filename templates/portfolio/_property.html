@@ -1,0 +1,31 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% set bodyClass = 'single-property' %}
+{% set bodyID = 'single-property' %}
+
+{% block content %}
+<div class="page-header">
+  <div class="banner-top">
+    <div class="sitewrapper grid">
+      <h2 class="page-headline col-md-1-2">{{ entry.title }}</h2>
+      {% if entry.floorplan|length or entry.brochure|length %}
+        <div class="downloads col-md-1-2">
+          <h3>Download:</h3>
+          <ul>
+          {% if entry.floorplan|length %}
+            <li><a href="{{ entry.floorplan.one().getUrl() }}">Floor Plan <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+          {% endif %}
+          {% if entry.brochure|length %}
+            <li><a href="{{ entry.brochure.one().getUrl() }}">Brochure <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+          {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if entry.propertyBannerImage|length %}
+    <div class="banner-bottom" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div>
+  {% endif %}
+</div>
+{% endblock %}

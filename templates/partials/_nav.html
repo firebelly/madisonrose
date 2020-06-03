@@ -1,10 +1,12 @@
-{% set navItems = craft.entries.section('navigation').all() %}
+{% set navItems = craft.entries.section('primaryNavigation').all() %}
 
 <nav class="site-nav">
   <ul>
     {% for navItem in navItems %}
-      {% set navItem = navItem.mappedEntry.one() %}
-      <li id="nav-{{navItem.title|lower|replace({' ':'-'})}}" {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(2) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}">{{ navItem.title|lower }}</a></li>
+      {% set navItem = navItem.navEntry.one() %}
+      <li id="nav-{{navItem.title|lower|replace({' ':'-'})}}" {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(2) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}">{{ navItem.title }}</a></li>
     {% endfor %}
+    <li class="contact-link"><a href="#contact">Contact</a></li>
   </ul>
+  <button id="nav-close" class="nav-close"><span class="visuallyhidden">close menu</span><svg aria-hidden="true" role="presentation"><use xlink:href="#nav-close"/></svg></button>
 </nav>

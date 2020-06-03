@@ -1,0 +1,12 @@
+<div class="property{{ class is defined ? ' ' ~ class : '' }}">
+  <a href="{{ property.url }}">
+    <div class="overlay">
+      <div class="-inner">
+        <p>View</p>
+        <p>Magna Fringilla Malesuada Parturient</p>
+      </div>
+    </div>
+    <img src="{{ property.listingImage.one().getUrl(orientation) }}" alt="{{ property.title }}">
+    <h3 class="property-title"><a href="{{ property.url }}">{{ property.title }} <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></h3>
+  </a>
+</div>

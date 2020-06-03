@@ -1,0 +1,50 @@
+{% set podcastFeed = craft.rss.loadRss(siteSettings.podcastRssUrl) %}
+{% set podcastImage = siteSettings.podcastImage.one() %}
+
+{# Macro for episode markup #}
+{% macro episodeMarkup(episode, episodeCount, loopIndex) %}
+  <li class="episode col-md-1-2">
+    <div class="-inner">
+      <p class="episode-meta"><span class="episode-number">Episode {{ episodeCount - loopIndex - 1 }}</span> <span class="episode-date">{{ episode.pubDate|date('n/j') }} <span class="dash"></span> {{ episode.pubDate|date('Y') }}</span></p>
+      <h4 class="episode-title"><a href="{{ episode.link }}" target="_blank" rel="noopener">{{ episode.title }}</a></h4>
+      <p class="episode-description">{{ episode.description }}</p>
+    </div>
+  </li>
+{% endmacro %}
+
+{% if podcastFeed %}
+  {% set episodes = podcastFeed.item|reverse %}
+  {% set episodeCount = episodes|length %}
+
+  <div class="podcast-section">
+    <div class="sitewrapper">
+      <h3 class="section-title">Podcast Updates</h3>
+
+      <div class="podcast-container grid spaced spaced-lg">
+        <div class="podcast-art col-md-1-3">
+          {% if podcastImage|length %}
+            <img src="{{ podcastImage.getUrl() }}" alt="{{ podcastFeed.title }} cover image">
+          {% else %}
+            <img src="{{ podcastFeed.image.url }}" alt="{{ podcastFeed.title }} cover image">
+          {% endif %}
+        </div>
+
+        {% if episodes|length %}
+        <ul class="podcast-episodes col-md-2-3 grid spaced spaced-lg">
+          {% if episodes.timestamp is defined %}
+            {{ _self.episodeMarkup(episodes, 2, 0) }}
+          {% else %}
+            {% for episode in episodes|slice(episodeCount - 2,2) %}
+              {{ _self.episodeMarkup(episode, episodeCount, loop.index) }}
+            {% endfor %}
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if siteSettings.podcastItunesUrl %}
+      <p class="cta"><a href="{{ siteSettings.podcastItunesUrl }}" class="button -hollow">Listen On iTunes <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+    {% endif %}
+  </div>
+{% endif %}

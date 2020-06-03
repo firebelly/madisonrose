@@ -1,0 +1,123 @@
+// Nav Styles
+
+.site-nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: z(nav);
+  position: fixed;
+  background-color: color('cream');
+  transform: translate3d(0,-100%,0);
+  padding: 68px $padding-sm $padding-sm;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1);
+  &.-active {
+    transform: translate3d(0,0,0);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  a {
+    @include p2;
+    display: block;
+    color: color('rose');
+    text-decoration: none;
+    padding: 17px $padding-sm 15px;
+
+    &:hover,
+    &:focus {
+      background-color: color('white');
+    }
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      text-align: center;
+      border-bottom: 1px solid color('tan');
+
+      &.-current {
+        a {
+          background-color: color('white');
+          border-bottom: 2px solid color('tan');
+        }
+      }
+    }
+  }
+
+  @include media-md {
+    padding: 0;
+    width: auto;
+    float: right;
+    transform: none;
+    position: relative;
+    margin-right: -40px;
+    background-color: transparent;
+
+    a {
+      @include h4;
+      padding: 6px 20px;
+      color: color('black');
+
+      &:hover,
+      &:focus {
+        color: color('rose');
+        text-decoration: underline;
+        background-color: transparent;
+      }
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        border: none;
+        padding: 0 20px;
+
+        + li {
+          border-left: 1px solid color('teak');
+        }
+
+        &.-current {
+          a {
+            border-bottom: none;
+            color: color('rose');
+            text-decoration: underline;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Nav Toggle Buttons
+.nav-toggle,
+.nav-close {
+  @extend .button-reset;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  right: $padding-sm;
+
+  @include media-md {
+    display: none;
+  }
+}
+// Open
+.nav-toggle {
+  svg {
+    width: 36px;
+    height: 16px;
+  }
+}
+// Close
+.nav-close {
+  top: $padding-sm;
+
+  svg {
+    width: 37px;
+    height: 31px;
+    fill: color('rose');
+  }
+}

@@ -1,5 +1,272 @@
 // Footer
 
 .site-footer {
+  overflow: hidden;
+  padding-top: 47px;
+  position: relative;
+  color: color('cream');
+  margin-top: $padding-sm;
 
+  @include media-md {
+    padding-top: 71px;
+  }
+
+  > .-inner {
+    background-color: color('hemlock');
+
+    // Weird offset background pattern
+    // https://codepen.io/poopsplat/pen/XWmoOLX?editors=1100
+    > .grid {
+      padding: 0;
+      position: relative;
+      &::before {
+        left: 0;
+        bottom: 0;
+        top: -47px;
+        width: 100%;
+        content: '';
+        position: absolute;
+        background-size: cover;
+        background-position: center center;
+
+        background-image: url('../images/map-texture-1.jpg');
+        @include media-md {
+          top: -71px;
+        }
+      }
+      // Set the contents to sit ontop of it
+      > * {
+        z-index: 1;
+      }
+
+      @include media-md {
+        padding: 0 $padding-lg;
+
+        &::before {
+          left: calc(25% + #{$padding-lg / 2});
+          width: calc(100vw - (25% + #{$padding-lg / 2}));
+        }
+      }
+    }
+  }
+
+  h5 {
+    @include h4;
+    margin: 0 0 16px;
+    color: color('lichen');
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      color: color('lichen');
+    }
+  }
+
+  // Footer Logo
+  .footer-logo {
+    width: 28px;
+    display: none;
+
+    svg {
+      width: 28px;
+      height: 50px;
+      display: block;
+      fill: color('rose');
+    }
+
+    @include media-lg {
+      top: 64px;
+      left: 26px;
+      display: block;
+      position: absolute;
+    }
+  }
+
+  // Footer Content Containers
+  .footer-content {
+    padding: 22px $padding-sm 30px;
+
+    @include media-md {
+      padding-top: 64px;
+    }
+  }
+
+  // Connect Section
+  .connect {
+    position: relative;
+    padding: $padding-sm;
+    margin-right: $padding-sm;
+    background-color: color('deep-pine');
+
+    @include media-md {
+      margin-right: 0;
+      padding: 64px 72px 120px;
+    }
+
+    @include media-lg {
+      order: 1;
+      padding-bottom: 150px;
+    }
+  }
+  // Newsletter Signup
+  .email-signup {
+    margin-bottom: 65px;
+
+    p {
+      margin: 0 0 26px;
+    }
+
+    @include media-md {
+      margin-bottom: 38px;
+
+      p {
+        max-width: 503px;
+        margin-bottom: 48px;
+      }
+    }
+
+    @include media-lg {
+      margin-bottom: 80px;
+
+      p {
+        margin-bottom: 58px;
+      }
+    }
+  }
+
+  // Contact Section
+  .contact {
+    position: relative;
+    background-color: color('hemlock');
+
+    @include media-md {
+      padding-left: 0;
+      padding-bottom: 60px;
+      padding-right: $padding-md;
+    }
+
+    @include media-lg {
+      order: 0;
+    }
+  }
+  // Footer Nav
+  .footer-nav {
+    margin-bottom: 40px;
+
+    ul {
+      margin: 0;
+
+      li {
+        @include p2;
+
+        + li {
+          margin-top: 20px;
+        }
+
+        a {
+          text-decoration: none;
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  // Address
+  .address-section {
+    .address {
+      @include p3;
+      margin: 0;
+    }
+  }
+  // Pone Number
+  .phone-number {
+    margin: 0;
+    a {
+      @include p3;
+      vertical-align: top;
+      text-decoration: none;
+    }
+  }
+  .email a,
+  .copyright {
+    @include p3;
+    margin: 0;
+  }
+  .copyright {
+    color: color('lichen');
+
+    @include media-md {
+      bottom: 28px;
+      position: absolute;
+    }
+    @include media-lg {
+      bottom: 60px;
+    }
+  }
+  // Social/Connect
+  .social {
+    ul {
+      margin: 0;
+      li {
+        display: inline-block;
+
+        a {
+          @include p3;
+        }
+
+        + li {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .secondary-nav {
+    width: 100%;
+    padding: $padding-sm;
+    background-color: color('hemlock');
+
+    ul {
+      margin: 0;
+
+      li {
+        display: inline-block;
+
+        + li {
+          margin-left: 16px;
+        }
+      }
+    }
+
+    a {
+      @include p3;
+    }
+
+    @include media-md {
+      padding: 0;
+      width: auto;
+      bottom: 28px;
+      position: absolute;
+      display: inline-block;
+      right: $padding-lg * 1.5;
+      background-color: transparent;
+
+      ul {
+        &,
+        li {
+          display: inline-block;
+        }
+
+        li + li {
+          margin-left: 80px;
+        }
+      }
+    }
+    @include media-lg {
+      bottom: 60px;
+    }
+  }
 }

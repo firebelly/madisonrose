@@ -1,0 +1,120 @@
+// Common Page Styles
+
+// Page Header
+.page-header {
+  .page-headline {
+    @include h1;
+    margin: 0;
+
+    @include media-lg {
+      max-width: 60%;
+    }
+  }
+
+  .banner-top {
+    padding: 146px 0 16px;
+    background-size: cover;
+    background-position: center center;
+
+    @include media-md {
+      padding: 221px 0 146px;
+    }
+  }
+
+  .banner-bottom {
+    background-size: cover;
+    background-position: center center;
+
+    .banner-text {
+      p {
+        @include p1;
+        position: relative;
+        &::before {
+          left: 0;
+          top: -32px;
+          height: 1px;
+          width: 72px;
+          content: '';
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+// Section Title
+.section-title {
+  @include h4;
+  padding-top: 16px;
+  margin: 16px 0 28px;
+  color: color('teak');
+  border-top: 1px solid color('tan');
+}
+
+// Intro Section
+.intro-section {
+  @include line(before, 80px);
+  @include line(after, 120px);
+  text-align: center;
+  padding: 64px 0 80px;
+
+  p:not(.cta) {
+    margin: 0 auto;
+    max-width: 576px;
+  }
+
+  .cta {
+    margin: 32px 0 0;
+  }
+
+  .tagline {
+    color: color('teak');
+
+    p {
+      @include h3-caps;
+
+      &.label {
+        @include h4;
+        margin-bottom: 30px;
+      }
+    }
+
+  }
+
+  @include media-md {
+    padding: 104px 0 168px;
+  }
+
+  @include media-lg {
+    .cta {
+      margin-top: 80px;
+    }
+  }
+}
+
+// Page Break Sections
+.page-break {
+  @include line(before);
+  @include line(after);
+
+  .image-break {
+    height: 192px;
+    display: flex;
+
+    > div {
+      background-size: cover;
+    }
+
+    .texture {
+      flex-basis: 30%;
+    }
+
+    .image-background {
+      flex-grow: 1;
+    }
+
+    @include media-md {
+      height: 480px;
+    }
+  }
+}

@@ -1,5 +1,82 @@
 // Portfolio Page
 
-body.portfolio {
+body.portfolio-page {
+  .page-header {
+    padding-bottom: 120px;
+    background-image: url('../images/texture-tan.jpg');
+    background-size: 195px 195px;
 
+    .banner-text {
+      @include media-sm {
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  .property-listing {
+    @include media-sm {
+      &::after {
+        bottom: -56px;
+        top: $padding-sm;
+      }
+    }
+
+    .property-grid {
+      .property {
+        &.portrait {
+          margin-top: -72px;
+        }
+      }
+
+      @include media-sm {
+        display: grid;
+        direction: rtl;
+        grid-row-gap: 64px;
+        margin-bottom: 72px;
+        align-items: stretch;
+        grid-column-gap: 36px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        > * {
+          direction: ltr;
+        }
+
+        .property {
+          position: relative;
+          padding-bottom: 35px;
+
+          &:nth-child(-n+2) {
+            align-self: end;
+            margin-top: 72px;
+          }
+
+          &.portrait {
+            margin-top: -248px;
+            grid-column: span 2;
+          }
+          &.landscape {
+            grid-column: span 2;
+          }
+
+          .property-title {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 8px 0;
+            position: absolute;
+            background-color: color('cream');
+          }
+        }
+
+        .portfolio-statement {
+          grid-column: 5 / 3;
+
+          .cta {
+            margin: 80px 0 0;
+          }
+        }
+      }
+    }
+  }
 }

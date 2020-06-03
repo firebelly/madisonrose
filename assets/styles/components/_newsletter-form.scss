@@ -1,0 +1,20 @@
+// Newsletter Form
+
+form.newsletter {
+  width: 100%;
+  display: flex;
+
+  .input-wrap {
+    flex: 1;
+  }
+
+  label {
+    @include h4;
+    color: color('lichen');
+  }
+
+  .submit {
+    padding-left: 68px;
+    padding-right: 68px;
+  }
+}

@@ -3,14 +3,15 @@
 // Colors
 $colors: (
   'white': #ffffff,
+  'cream': #EFEAE5,
   'black': #191615,
   'rose': #9A3323,
-  'primary-green': #2C4233,
-  'secondary-green': #1E311C,
-  'green-light': #9BA592,
-  'secondary-tan': #CEC0B2,
-  'tan': #EFEAE5,
-  'brown': #7A5D49
+  'hemlock': #2C4233,
+  'deep-pine': #1E311C,
+  'lichen': #9BA592,
+  'tan': #CEC0B2,
+  'tan-alt': #cdbfb2,
+  'teak': #7A5D49
 );
 
 @function color($color-name) {
@@ -20,15 +21,24 @@ $colors: (
 // Breakpoints
 $breakpoint-sm: 520px;
 $breakpoint-md: 768px;
-$breakpoint-lg: 1000px;
 $breakpoint-nav: 1100px;
-$breakpoint-xl: 1200px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
 
 // Site Wrapper
-$sitewrapper: 1400px;
+$sitewrapper: 1440px;
 
 // Padding/spacing
 $beat: 10px;
-$padding-sm: $beat * 2;
-$padding-md: $beat * 3;
-$padding-lg: $beat * 6;
+$padding-sm: 18px;
+$padding-md: 24px;
+$padding-lg: 144px;
+
+// Z-index maps
+$z-layers: (
+  header: 70,
+  nav: 100
+);
+@function z($key) {
+  @return map-get($z-layers, $key);
+}

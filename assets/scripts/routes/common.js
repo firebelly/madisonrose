@@ -11,7 +11,8 @@ let $window = $(window),
     $body = $('body'),
     $document = $(document),
     $siteNav = $('.site-nav'),
-    $navToggle = $('#nav-toggle'),
+    $navOpen = $('#nav-toggle'),
+    $navClose = $('#nav-close'),
     transitionElements = [],
     resizeTimer;
 
@@ -40,11 +41,13 @@ export default {
     }
 
     function _initMobileNav() {
-      $navToggle.on('click', function() {
-        if ($(this).is('.-active')) {
+      $navOpen.on('click', _openNav);
+      $navClose.on('click', _closeNav);
+
+      $document.on('click', 'body.nav-open', function(e) {
+        var $target = $(e.target);
+        if (!$target.is('#nav-toggle') && !$target.parents('#nav-toggle').length && !$target.is('.site-nav') && !$target.parents('.site-nav').length) {
           _closeNav();
-        } else {
-          _openNav();
         }
       });
     }
@@ -52,13 +55,11 @@ export default {
     function _openNav() {
       $body.addClass('nav-open');
       $siteNav.addClass('-active');
-      $navToggle.addClass('-active').html('close');
     }
 
     function _closeNav() {
       $body.removeClass('nav-open');
       $siteNav.removeClass('-active');
-      $navToggle.removeClass('-active').html('menu');
     }
 
     // Disabling transitions on certain elements on resize

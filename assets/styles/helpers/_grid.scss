@@ -55,32 +55,21 @@ $column-width: 100% / $columns;
     }
 
     @include media-md {
-      margin-left: -#{$padding-md / 2};
-      width: calc(100% + #{$padding-md});
+      margin-left: -$padding-sm;
+      width: calc(100% + #{$padding-sm * 2});
 
       > [class*='col-'] {
-        padding: 0 #{$padding-md / 2};
+        padding: 0 $padding-sm;
       }
     }
 
     @include media-lg {
       &.spaced-lg {
-        margin-left: -#{$padding-lg / 2};
-        width: calc(100% + #{$padding-lg});
+        margin-left: -36px;
+        width: calc(100% + 72px);
 
         > [class*='col-'] {
-          padding: 0 #{$padding-lg / 2};
-        }
-      }
-    }
-
-    @include media-xl {
-      &.spaced-lg {
-        margin-left: -#{$padding-lg};
-        width: calc(100% + #{$padding-lg * 2});
-
-        > [class*='col-'] {
-          padding: 0 $padding-lg;
+          padding: 0 36px;
         }
       }
     }
@@ -357,11 +346,11 @@ $column-width: 100% / $columns;
     @include media-md {
       content: 'md';
     }
-    @include media-lg {
-      content: 'lg';
-    }
     @include media-nav {
       content: 'nav';
+    }
+    @include media-lg {
+      content: 'lg';
     }
     @include media-xl {
       content: 'xl';

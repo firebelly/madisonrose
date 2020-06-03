@@ -1,0 +1,49 @@
+// Forms
+
+form {
+  .input-wrap {
+    label {
+      margin: 0;
+      display: block;
+    }
+    input {
+      @include p2;
+      width: 100%;
+      border: none;
+      background: none;
+      padding: 12px 0 15px;
+      border-bottom: 2px solid color('white');
+    }
+  }
+}
+
+// Newsletter Form
+form.newsletter {
+  width: 100%;
+
+  label {
+    @include h4;
+    color: color('lichen');
+  }
+
+  .submit {
+    width: 100%;
+    padding-left: 68px;
+    padding-right: 68px;
+    margin-top: $padding-sm;
+  }
+
+  @include media-lg {
+    display: flex;
+
+    .input-wrap {
+      flex: 1;
+      padding-right: $padding-sm;
+    }
+
+    .submit {
+      width: auto;
+      margin-top: 0;
+    }
+  }
+}

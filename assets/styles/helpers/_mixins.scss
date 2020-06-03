@@ -1,5 +1,11 @@
 // Mixins
 
+// Underline
+@mixin underline($color) {
+  padding-bottom: 2px;
+  background-image: linear-gradient(to top, rgba(color($color),1) 1px, rgba(0,0,0,0) 2px);
+}
+
 // Ye olde clearfix
 @mixin clearfix {
   &:after {
@@ -61,5 +67,38 @@
 @mixin min-screen($res) {
   @media screen and (min-width: $res) {
     @content;
+  }
+}
+
+// Decorative Lines
+@mixin line($position, $height: 80px, $color: 'tan') {
+  @include media-md {
+    position: relative;
+
+    @if $position == 'before' {
+      &::before {
+        top: 0;
+        left: 50%;
+        width: 1px;
+        content: '';
+        height: $height;
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: color($color);
+      }
+    }
+
+    @if $position == 'after' {
+      &::after {
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        content: '';
+        height: $height;
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: color($color);
+      }
+    }
   }
 }

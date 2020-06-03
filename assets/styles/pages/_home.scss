@@ -1,5 +1,95 @@
 // Home page
 
 body.home {
+  .page-header {
+    .banner-bottom {
+      @include line(after, 80px);
+      background-color: color('hemlock');
 
+      .banner-text {
+        padding: 64px 0 36px;
+        color: color('cream');
+        p::before {
+          background-color: color('white');
+        }
+      }
+
+      .-background {
+        height: 152px;
+        background-size: cover;
+        background-position: center center;
+        background-image: url('../images/homepage-banner-bottom.jpg');
+      }
+
+      @include media-md {
+        position: relative;
+
+        .banner-text {
+          padding: 104px 18px 131px 0;
+        }
+
+        .-background {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 50%;
+          width: auto;
+          height: 100%;
+          position: absolute;
+        }
+      }
+
+      @include media-lg {
+        .banner-text {
+          padding: 92px 72px 87px 0;
+        }
+      }
+    }
+  }
+
+  .portfolio-section {
+    .property-listing {
+      @include media-md {
+        &::after {
+          top: -$padding-sm;
+        }
+      }
+    }
+
+    .stat-item {
+      @include media-md {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    .portfolio-stat {
+      color: color('teak');
+
+      dl {
+        margin: 0 0 $padding-sm;
+      }
+
+      .figure {
+        @include h1;
+        margin: 0;
+      }
+
+      dt {
+        @include p2;
+        margin-top: 80px;
+        position: relative;
+        &::before {
+          left: 0;
+          top: -24px;
+          width: 72px;
+          height: 1px;
+          content: '';
+          position: absolute;
+          background-color: color('teak');
+        }
+      }
+    }
+  }
 }

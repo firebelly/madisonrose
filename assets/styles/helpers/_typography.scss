@@ -7,8 +7,8 @@
   src: url('../fonts/RivieraNights-Regular-WebS.eot?#iefix') format('embedded-opentype'),
        url('../fonts/RivieraNights-Regular-WebS.woff2') format('woff2'),
        url('../fonts/RivieraNights-Regular-WebS.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 500;
+  font-style: bold;
   font-display: swap;
 }
 @font-face {
@@ -17,7 +17,7 @@
   src: url('../fonts/RivieraNights-Light-WebS.eot?#iefix') format('embedded-opentype'),
        url('../fonts/RivieraNights-Light-WebS.woff2') format('woff2'),
        url('../fonts/RivieraNights-Light-WebS.woff') format('woff');
-  font-weight: 400;
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -38,7 +38,14 @@
 ///   font-weight: normal;
 ///   font-family: 'Custom Font Family';
 /// }
-
+@mixin font-primary {
+  font-weight: normal;
+  font-family: 'Riviera Nights', serif;
+}
+@mixin font-secondary {
+  font-weight: normal;
+  font-family: 'Neutra 2', sans-serif;
+}
 
 /// Mixin to allow us to concisely define all aspects of a paragraph style (except for family.)
 /// @param {number} $size - Font size specified in pixels (without 'px')
@@ -71,3 +78,53 @@
 /// .h1 {
 ///   @include h1;
 /// }
+
+@mixin h2 {
+  @include paragraph-style(60, 64, -0.025em)
+}
+
+@mixin h1 {
+  @include h2;
+
+  @include media-md {
+    @include paragraph-style(96, 96, -0.025em);
+  }
+}
+
+@mixin h3 {
+  @include paragraph-style(40, 48, -0.025em);
+}
+
+@mixin h3-caps {
+  @include paragraph-style(33, 40, 0.115em, 400, uppercase);
+
+  @include media-md {
+    @include paragraph-style(40, 48, 0.115em, 400, uppercase);
+  }
+}
+
+@mixin h4 {
+  @include font-secondary;
+  @include paragraph-style(15, 20, 0.115em, normal, uppercase);
+}
+
+@mixin p1 {
+  @include paragraph-style(20, 24);
+
+  @include media-md {
+    @include paragraph-style(28, 32, -0.005em);
+  }
+}
+
+@mixin p2 {
+  @include paragraph-style(18, 24, 0.015em, 500);
+}
+
+@mixin p3 {
+  @include paragraph-style(15, 20, 0.02em, 500);
+}
+
+@mixin caption {
+  @include font-secondary;
+  @include paragraph-style(12, 16, 0.115em);
+}

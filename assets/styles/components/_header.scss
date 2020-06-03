@@ -1,5 +1,35 @@
 // Header
 
 .site-header {
+  @include clearfix;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 16px;
+  position: absolute;
 
+  @include media-md {
+    padding-top: 32px;
+  }
+
+  .site-title {
+    margin: 0;
+    left: $padding-sm;
+    position: absolute;
+    display: inline-block;
+
+    a {
+      display: block;
+
+      .logo {
+        width: 172px;
+        height: 50px;
+        display: block;
+      }
+    }
+
+    @include media-md {
+      left: 26px;
+    }
+  }
 }

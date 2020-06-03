@@ -1,18 +1,82 @@
-{% set socialLinks = craft.entries.section('socialLinks').all() %}
+{% set primaryNav = craft.entries.section('primaryNavigation').all() %}
+{% set address = siteSettings.physicalAddress %}
+{% set socialLinks = siteSettings.socialMediaLinks.all() %}
+{% set secondaryNav = craft.entries.section('secondaryPages').all() %}
 
 <footer class="site-footer">
-  <div class="sitewrapper">
-    <ul class="social">
-      {% for link in socialLinks %}
-        <li><a href="{{ link.socialUrl }}" rel="noopener" target="_blank">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-    <div id="contact">
-      <p><a href="mailto:info@madisonrosellc.com">info@madisonrosellc.com</a></p>
-      <p class="copyright">©{{ "now"|date("Y") }} {{ siteName }}</p>
-    </div>
-    <div class="smiley">
-      <svg aria-hidden="true" role="presentation"><use xlink:href="#smiley"/></svg>
+  <div class="-inner">
+    <div class="sitewrapper grid">
+
+      <a href="{{ siteUrl }}" class="footer-logo"><svg class="madison-rose-mark" aria-hidden="true" role="presentation"><use xlink:href="#madison-rose-mark"/></svg></a>
+
+      <div id="connect" class="connect footer-content col-lg-3-4">
+        <div class="email-signup">
+          <p>Sign up for our email list to receive property information and resources about Chicago real estate.</p>
+
+          {% include "partials/_newsletter-form.html" %}
+        </div>
+
+        {% if socialLinks|length %}
+          <div class="social">
+            <h5>Connect</h5>
+
+            <ul>
+              {% for link in socialLinks %}
+                <li><a href="{{ link.linkUrl }}" rel="noopener" target="_blank">{{ link.linkLabel }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      <div id="contact" class="contact footer-content col-lg-1-4">
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="{{ siteUrl }}">Home</a></li>
+            {% if primaryNav|length %}
+              {% for navItem in primaryNav %}
+                <li><a href="{{ navItem.navEntry.one().url }}">{{ navItem.navEntry.one().title }}</a></li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </nav>
+
+        <div>
+          {% if address %}
+            <div class="address-section">
+              <h5>Address</h5>
+              <p class="address">
+                <span class="street-address">{{ address.address1 }}</span><br>
+                {% if address.address2 %}
+                  <span class="street-address-2">{{ address.address2 }}</span><br>
+                {% endif %}
+                <span class="city">{{ address.locality }}</span>
+                <span class="region">{{ address.administrativeAreaCode }}</span>
+                <span class="postal-code">{{ address.postalCode }}</span>
+              </p>
+            </div>
+          {% endif %}
+          {% if siteSettings.contactPhoneNumber %}
+            <p class="phone-number"><a href="tel:{{ siteSettings.contactPhoneNumber }}">{{ siteSettings.contactPhoneNumber|replace({'+1 ': '', '-': '.'}) }}</a></p>
+          {% endif %}
+          {% if siteSettings.siteContactEmailAddress %}
+            <h5>Email us at</h5>
+            <p class="email"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}">{{ siteSettings.siteContactEmailAddress }}</a></p>
+          {% endif %}
+        </div>
+
+        <p class="copyright">©{{ "now"|date("Y") }} {{ siteName }}</p>
+      </div>
+
+      {% if secondaryNav|length %}
+        <nav class="secondary-nav">
+          <ul>
+            {% for navEntry in secondaryNav %}
+              <li><a href="{{ navEntry.url }}">{{ navEntry.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
     </div>
   </div>
 </footer>
