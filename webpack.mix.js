@@ -26,7 +26,7 @@ mix.copyDirectory(src`images`, publicPath`images`)
 
 // Autoload
 mix.autoload({
-  jquery: ['$', 'window.jQuery']
+  jquery: ['$', 'window.jQuery', 'jQuery']
 });
 
 let SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');

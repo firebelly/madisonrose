@@ -118,6 +118,24 @@ body.single-property {
     background-image: url('../images/texture-tan.jpg');
     background-size: 195px 195px;
 
+    .page-headline {
+      margin-bottom: 80px;
+
+      @media screen and (min-width: 1420px) {
+        margin-bottom: 0;
+      }
+    }
+
+    .banner-top {
+      > .grid {
+        align-items: flex-end;
+      }
+
+      @include media-md {
+        padding-bottom: 108px;
+      }
+    }
+
     .banner-bottom {
       height: 304px;
       background-size: cover;
@@ -130,17 +148,320 @@ body.single-property {
 
     .downloads {
       display: flex;
+      position: relative;
+      margin-bottom: 56px;
+      vertical-align: baseline;
+
+      h3 {
+        @include h4;
+        top: 5px;
+        margin: 0;
+        height: 96px;
+        display: none;
+        line-height: 96px;
+        position: relative;
+        padding-right: 36px;
+      }
 
       ul {
-        @extend .semantic-list;
+        margin: 0;
         display: flex;
+
+        li {
+          + li {
+            margin-left: 30px;
+          }
+        }
+
+        a {
+          @include h4;
+          color: color('rose');
+          display: inline-block;
+          text-decoration: none;
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
       }
 
       svg {
         width: 24px;
         height: 24px;
+        margin-left: 14px;
         fill: color('rose');
+        display: inline-block;
+        vertical-align: text-bottom;
       }
+
+      @include media-md {
+        margin-bottom: 0;
+
+        h3 {
+          display: block;
+        }
+
+        ul {
+          li {
+            height: 96px;
+            padding: 0 36px;
+            line-height: 96px;
+            position: relative;
+            &::before {
+              top: 0;
+              left: 0;
+              width: 1px;
+              content: '';
+              height: 96px;
+              position: absolute;
+              background-color: color('teak');
+            }
+            &:last-of-type {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 1420px) {
+        bottom: 13px;
+        max-width: 50%;
+        flex-basis: 50%;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  // Intro Section
+  .section.intro {
+    padding-top: 128px;
+    padding-bottom: 128px;
+    @include line(before, 100%);
+
+    @include media-md {
+      padding-top: 128px;
+      padding-bottom: 128px;
+    }
+
+    h3 {
+      @include h2;
+      margin: 0 0 26px;
+      position: relative;
+      padding-bottom: 32px;
+      &::after {
+        left: 0;
+        bottom: 0;
+        width: 72px;
+        height: 1px;
+        content: '';
+        position: absolute;
+        background-color: color('tan');
+      }
+
+      @include media-md {
+        margin-right: 50%;
+        padding-right: 36px;
+      }
+    }
+
+    .intro-text {
+      p {
+        margin: 0;
+      }
+    }
+
+    .property-info {
+      margin-top: 26px;
+      position: relative;
+
+      @include media-md {
+        margin-top: 0;
+        &::before {
+          top: -25px;
+          height: 1px;
+          content: '';
+          left: $padding-sm;
+          right: $padding-sm;
+          position: absolute;
+          border-top: 1px solid color('tan');
+        }
+        &::after {
+          top: 0;
+          left: 50%;
+          bottom: 0;
+          width: 1px;
+          content: '';
+          position: absolute;
+          background-color: color('tan');
+        }
+      }
+
+      @include media-lg {
+        &::before {
+          left: $padding-md * 1.5;
+          right: $padding-md * 1.5;
+        }
+      }
+    }
+
+    ul {
+      margin: 0 0 26px;
+      padding: 26px 0 0;
+      position: relative;
+      border-top: 1px solid color('tan');
+
+      li {
+        span {
+          display: block;
+        }
+
+        + li {
+          margin-top: 18px;
+        }
+      }
+
+      @include media-md {
+        padding: 0;
+        border-top: 0;
+        margin-bottom: 0;
+
+        + ul {
+          padding-left: 36px;
+        }
+      }
+
+      @include media-lg {
+        + ul::before {
+          left: -$padding-sm * 1.5;
+        }
+      }
+    }
+
+    .label {
+      @include h4;
+      color: color('teak');
+    }
+    .info {
+      @include p2;
+    }
+  }
+
+  // Property Media
+  .property-media {
+    @include line(before, 100%);
+    padding-bottom: 65px;
+
+    @include media-md {
+      padding-bottom: $padding-lg;
+    }
+  }
+  .media-item {
+    margin: 0 0 60px;
+
+    > .-inner {
+      padding-bottom: 8px;
+      border-bottom: 1px solid color('tan');
+    }
+
+    // Title/Caption
+    figcaption {
+      padding-top: 8px;
+
+      p {
+        margin: 0;
+
+        &.fig-title {
+          @include h4;
+          color: color('teak');
+        }
+        &.fig-caption {
+          @include p2;
+          margin-top: $padding-md;
+        }
+      }
+    }
+
+    // Images
+    img {
+      display: block;
+    }
+
+    // Video
+    &.video {
+      padding: 0 #{$padding-sm / 2};
+
+      @include media-md {
+        padding: 0 $padding-sm;
+      }
+
+      > .-inner {
+        border-bottom: none;
+      }
+
+      figcaption {
+        padding-bottom: 8px;
+        border-bottom: 1px solid color('tan');
+
+        @include media-md {
+          width: calc(50% - #{$padding-sm});
+        }
+      }
+    }
+    .property-video-container {
+      height: 0;
+      position: relative;
+      &.playing {
+        .video-thumb {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+    .video-thumb {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 1;
+      width: 100%;
+      position: absolute;
+      background-size: cover;
+      transition: opacity 0.5s ease-out;
+
+      button {
+        @extend .button-reset;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        cursor: pointer;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        svg {
+          width: 96px;
+          height: 96px;
+          display: block;
+          fill: color('rose');
+        }
+        &:hover,
+        &:focus {
+          background-color: color('cream');
+        }
+      }
+    }
+    .property-video {
+      top: 0;
+      left: 0;
+      width: 100%;
+      position: absolute;
+    }
+  }
+
+  .property-cta {
+    p {
+      margin: 0;
+    }
+    .cta {
+      margin-top: 64px;
     }
   }
 }

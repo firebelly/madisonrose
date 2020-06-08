@@ -8,11 +8,13 @@ import appState from './util/appState';
 // Routes
 import common from './routes/common';
 import home from './routes/home';
+import singleProperty from './routes/singleProperty';
 
 // Populate Router instance with DOM routes
 const routes = new Router({
   common,
-  home
+  singleProperty,
+  home,
 });
 
 // Inits

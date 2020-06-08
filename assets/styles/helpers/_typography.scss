@@ -112,12 +112,12 @@
   @include paragraph-style(20, 24);
 
   @include media-md {
-    @include paragraph-style(28, 32, -0.005em);
+    @include paragraph-style(28, 36, -0.005em);
   }
 }
 
 @mixin p2 {
-  @include paragraph-style(18, 24, 0.015em, 500);
+  @include paragraph-style(18, 28, 0.015em, 500);
 }
 
 @mixin p3 {

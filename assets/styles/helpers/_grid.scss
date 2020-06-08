@@ -50,6 +50,11 @@ $column-width: 100% / $columns;
     margin-left: -#{$padding-sm / 2};
     width: calc(100% + #{$padding-sm});
 
+    .spaced {
+      width: 100%;
+      margin-left: 0;
+    }
+
     > [class*='col-'] {
       padding: 0 #{$padding-sm / 2};
     }
