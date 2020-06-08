@@ -35,4 +35,4 @@ def update():
 
 def composer_install():
   with cd(env.remotepath):
-    run('~/bin/composer.phar install')
+    run('~/bin/composer install')
