@@ -1,0 +1,121 @@
+// Property Nav
+
+.property-nav {
+
+  > .-inner {
+    display: block;
+    position: relative;
+    border-top: 1px solid color('tan');
+  }
+
+  a {
+    color: color('rose');
+    text-decoration: none;
+
+    @include media-md {
+      display: flex;
+      &:hover,
+      &:focus {
+        svg {
+          transform: translateX(48px);
+        }
+        .property-image {
+          opacity: 0.6;
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  svg {
+    width: 92px;
+    height: 76px;
+    fill: color('rose');
+    transition: transform 0.35s ease-out;
+
+    @include media-md {
+      bottom: 0;
+      right: -24px;
+      position: absolute;
+    }
+  }
+
+  .text {
+    display: flex;
+    padding-top: 66px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .label {
+      @include h4;
+      left: 0;
+      top: 16px;
+      width: 100%;
+      display: block;
+      position: absolute;
+    }
+    .property-title {
+      @include h3;
+    }
+
+    @include media-md {
+      z-index: 1;
+      display: block;
+      position: relative;
+      padding-right: 100px;
+      align-self: flex-start;
+      max-width: calc(25% + 65px);
+      flex-basis: calc(25% + 65px);
+    }
+
+    @include media-lg {
+      max-width: 25%;
+      flex-basis: 25%;
+    }
+  }
+
+  .property-image {
+    height: 0;
+    opacity: 1;
+    width: 100%;
+    display: block;
+    position: relative;
+    padding-bottom: 37.5%;
+    background-size: cover;
+    margin-top: $padding-sm;
+    background-position: center center;
+    transition: opacity 0.35s ease-out;
+    &::before,
+    &::after {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      width: 100%;
+      content: '';
+      position: absolute;
+      transition: opacity 0.35s ease-out;
+    }
+    &::before {
+      mix-blend-mode: multiply;
+      background-color: color('cream');
+    }
+    &::after {
+      mix-blend-mode: screen;
+      background-color: rgba(color('teak'), 0.4);
+    }
+
+    @include media-md {
+      max-width: calc(75% - 42px);
+      flex-basis: calc(75% - 42px);
+    }
+
+    @include media-lg {
+      max-width: 75%;
+      flex-basis: 75%;
+    }
+  }
+}

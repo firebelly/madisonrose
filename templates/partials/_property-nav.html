@@ -1,16 +1,18 @@
 {% set params = craft.entries.section('properties') %}
 {% set nextProperty = entry.getNext(params) %}
-{% if nextProperty|length %}
+{% if not nextProperty|length %}
   {% set nextProperty = craft.entries.section('properties').one() %}
 {% endif %}
 
-<p class="property-nav">
-  <a href="{{ nextProperty.url }}">
-    <span class="text">
-      <span class="label">Next Property</span>
-      <span class="property-title">{{ nextProperty.title }}</span>
-      <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
-    </span>
-    <img src="{{ nextProperty.propertyBannerImage.one().getUrl() }}" alt="Photo of {{ nextProperty.title }}">
-  </a>
-</p>
+<div class="property-nav sitewrapper">
+  <div class="-inner">
+    <a href="{{ nextProperty.url }}">
+      <span class="text">
+        <span class="label">Next Property</span>
+        <span class="property-title">{{ nextProperty.title }}</span>
+        <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
+      </span>
+      <span class="property-image" style="background-image:url('{{ nextProperty.propertyBannerImage.one().getUrl() }}');"></span>
+    </a>
+  </div>
+</div>
