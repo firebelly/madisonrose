@@ -2,7 +2,7 @@
 
 body.home {
   .page-header {
-    .banner-bottom {
+    .bottom-banner {
       @include line(after, 80px);
       background-color: color('hemlock');
 
@@ -18,7 +18,7 @@ body.home {
         height: 152px;
         background-size: cover;
         background-position: center center;
-        background-image: url('../images/homepage-banner-bottom.jpg');
+        background-image: url('../images/homepage-bottom-banner.jpg');
       }
 
       @include media-md {
