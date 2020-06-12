@@ -1,6 +1,8 @@
 // Property Nav
 
 .entry-nav {
+  margin-top: 16px;
+  margin-bottom: 64px;
 
   > .-inner {
     display: block;
@@ -45,7 +47,7 @@
 
   .text {
     display: flex;
-    padding-top: 66px;
+    padding-top: 90px;
     align-items: flex-end;
     justify-content: space-between;
 
@@ -109,6 +111,8 @@
     }
 
     @include media-md {
+      height: 324px;
+      padding-bottom: 0;
       max-width: calc(75% - 42px);
       flex-basis: calc(75% - 42px);
     }

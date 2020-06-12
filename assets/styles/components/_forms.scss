@@ -14,11 +14,15 @@ form {
       appearance: none;
       background: none;
       padding: 12px 0 15px;
-      color: color('black');
+      color: color('cream');
       border-bottom: 2px solid color('white');
       &:focus {
         outline: none;
-        border-color: color('black');
+        background-color: rgba(color('cream'), 0.2);
+
+        &::placeholder {
+          color: rgba(color('cream'), 0.5);
+        }
       }
     }
   }

@@ -107,6 +107,10 @@ body.single-property {
             &:last-of-type {
               padding-right: 0;
             }
+
+            + li {
+              margin-left: 0;
+            }
           }
         }
       }

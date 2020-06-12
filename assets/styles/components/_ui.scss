@@ -13,15 +13,30 @@
   text-decoration: none;
   color: color('hemlock');
   background-color: color('white');
+  transition: color 0.25s ease-out, background-color 0.25s ease-out;
+  @include media-md {
+    padding: 0 32px;
+  }
+
+  svg {
+    top: 50%;
+    width: 17px;
+    right: 22px;
+    height: 12px;
+    position: absolute;
+    fill: color('rose');
+    transform: translateY(-50%);
+    transition: fill 0.25s ease-out;
+  }
 
   &:hover,
   &:focus {
     color: color('cream');
     background-color: color('rose');
-  }
 
-  @include media-md {
-    padding: 0 32px;
+    svg {
+      fill: color('cream');
+    }
   }
 
   &.-hollow {
@@ -31,25 +46,10 @@
     color: color('rose');
     background-color: transparent;
     border: 1px solid color('rose');
-
-    svg {
-      top: 50%;
-      width: 17px;
-      right: 22px;
-      height: 12px;
-      position: absolute;
-      fill: color('rose');
-      transform: translateY(-50%);
-    }
-
     &:hover,
     &:focus {
-      color: color('white');
+      color: color('cream');
       background-color: color('rose');
-
-      svg {
-        fill: color('white');
-      }
     }
   }
 }
