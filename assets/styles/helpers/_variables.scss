@@ -33,12 +33,3 @@ $beat: 10px;
 $padding-sm: 18px;
 $padding-md: 24px;
 $padding-lg: 144px;
-
-// Z-index maps
-$z-layers: (
-  header: 70,
-  nav: 100
-);
-@function z($key) {
-  @return map-get($z-layers, $key);
-}

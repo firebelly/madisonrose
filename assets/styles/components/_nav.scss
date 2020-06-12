@@ -3,17 +3,13 @@
 .site-nav {
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
-  z-index: z(nav);
+  display: none;
   position: fixed;
   background-color: color('cream');
-  transform: translate3d(0,-100%,0);
   padding: 68px $padding-sm $padding-sm;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1);
-  &.-active {
-    transform: translate3d(0,0,0);
-    transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-  }
+  box-shadow: 0px 4px 12px 0px rgba(25,22,21, 0.25);
 
   a {
     @include p2;
@@ -48,7 +44,9 @@
     padding: 0;
     width: auto;
     float: right;
+    display: block!important;
     transform: none;
+    box-shadow: none;
     position: relative;
     margin-right: -40px;
     background-color: transparent;
@@ -88,9 +86,15 @@
       li {
         border: none;
         padding: 0 20px;
+        border-right: 1px solid color('teak');
 
-        + li {
-          border-left: 1px solid color('teak');
+        &.home-link {
+          display: none;
+          border-right: none;
+        }
+
+        &:last-of-type {
+          border-right: none;
         }
 
         &.-current {
