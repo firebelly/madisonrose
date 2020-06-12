@@ -14,7 +14,7 @@ body.portfolio-page {
     }
   }
 
-  .property-listing {
+  .card-grid {
     @include media-sm {
       &::after {
         bottom: -56px;
@@ -43,8 +43,8 @@ body.portfolio-page {
         }
 
         .property {
+          margin-bottom: 0;
           position: relative;
-          padding-bottom: 35px;
 
           &:nth-child(-n+2) {
             align-self: end;

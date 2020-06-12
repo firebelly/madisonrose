@@ -1,7 +1,118 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
-  <div class="sitewrapper">
+  <div class="page-header">
+    <div class="banner-top">
+      <div class="sitewrapper grid">
+        <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline : entry.title }}</h2>
+      </div>
+    </div>
 
+  {% if entry.bannerImage|length %}
+    {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
+      {
+        width: 1440,
+        ratio: 8/3,
+        jpegQuality: 80,
+      }
+    ) %}
+    <div class="banner-bottom" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+  {% endif %}
   </div>
+
+  <div class="intro-section sitewrapper">
+    <div class="tagline">
+      <p>Work.<br> Life.<br> Balanced.</p>
+    </div>
+  </div>
+
+  {% if entry.whatWeDo|length or entry.howWereDifferent|length %}
+    <div class="about-section section sitewrapper">
+      <div class="grid spaced spaced-xl">
+        {% if entry.whatWeDo|length %}
+          <div class="col-md-1-2">
+            <h3>What We Do</h3>
+            {{ entry.whatWeDo }}
+          </div>
+        {% endif %}
+        {% if entry.howWereDifferent|length %}
+          <div class="col-md-1-2">
+            <h3>How We're Different</h3>
+            {{ entry.howWereDifferent }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="team-section">
+    <div class="sitewrapper">
+      <h3>One Team.<br> One Goal.</h3>
+      <div class="card-grid">
+        <div class="grid spaced">
+          {% for teamMember in craft.entries.section('team').all() %}
+            <div class="col-md-1-2">
+              {% include "partials/_team-member-listing.html" %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% set methods = entry.madroseMethod.all() %}
+  {% if methods|length %}
+    <div class="method-section section">
+      <div class="sitewrapper">
+        <h3 class="section-title">The Madrose Method</h3>
+        <ol class="method-list">
+          {% for method in methods %}
+            <li class="method grid spaced spaced-lg">
+              <h4 class="label col-md-1-2"><span class="number">{{ loop.index }}</span> <span class="text">{{ method.methodLabel }}</span></h4>
+              <p class="col-md-1-2">{{ method.methodDescription }}</p>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="page-break">
+    <div class="image-break">
+      <div class="texture" style="background-image:url('{{ url('/assets/dist/images/map-1_square.jpg') }}');"></div>
+      <div class="image-background" style="background-image:url('{{ url('/assets/dist/images/about-page-break.jpg') }}');"></div>
+    </div>
+  </div>
+
+  {% if entry.philanthropyParagraph|length %}
+    <div class="philanthropy-section section">
+      <div class="sitewrapper">
+        <h3>Driven to Give.</h3>
+        <div class="grid spaced">
+          <div class="philanthropy-text col-md-1-2">
+            <p>{{ entry.philanthropyParagraph }}</p>
+          </div>
+          {% if entry.philanthropyImage|length %}
+            {% set transformedImage = craft.imager.transformImage(entry.philanthropyImage.one(),
+              {
+                width: 1116,
+                jpegQuality: 80,
+              }
+            ) %}
+            <div class="col-md-1-2">
+              <figure class="philanthropy-image">
+                <img src="{{ transformedImage.getUrl() }}" alt="{{ entry.philanthropyImage.one().title }}">
+                {% if entry.philanthropyImage.one().caption|length %}
+                  <figcaption>
+                    <p>{{ entry.philanthropyImage.one().caption }}</p>
+                  </figcaption>
+                {% endif %}
+              </figure>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

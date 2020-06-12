@@ -9,3 +9,53 @@
     background-color: $value;
   }
 }
+
+// Light/Dark Theme
+@mixin darkTheme() {
+  .site-header {
+    .site-title {
+      a {
+        #logo {
+          .text {
+            fill: color('cream');
+          }
+        }
+      }
+    }
+  }
+
+  .nav-toggle {
+    svg {
+      fill: color('cream');
+    }
+  }
+
+  .site-nav {
+    @include media-md {
+      li.-current {
+        a {
+          color: color('lichen');
+        }
+      }
+      a {
+        color: color('cream');
+        &::after {
+          background-color: color('lichen');
+        }
+        &:hover,
+        &:focus {
+          color: color('lichen');
+          &::after {
+            background-color: color('lichen');
+          }
+        }
+      }
+    }
+  }
+
+  .page-header {
+    color: color('cream');
+    background-image: url('../images/texture-green.jpg');
+    background-size: 195px 195px;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="team-member card">
+  <a href="{{ teamMember.url }}">
+    <div class="overlay">
+      <div class="-inner">
+        <p>View</p>
+        <p>{{ teamMember.title }}<br> {{ teamMember.position }}</p>
+      </div>
+    </div>
+    <img src="{{ teamMember.teamPhoto.one().getUrl('propertyListingLandscape') }}" alt="Portrait of {{ teamMember.title }}">
+    <h3 class="card-title"><a href="{{ teamMember.url }}">{{ teamMember.title }} <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></h3>
+  </a>
+</div>

@@ -110,9 +110,10 @@
 
 @mixin p1 {
   @include paragraph-style(20, 24);
+  -webkit-font-smoothing: antialiased;
 
   @include media-md {
-    @include paragraph-style(28, 36, -0.005em);
+    @include paragraph-style(28, 32, -0.005em);
   }
 }
 

@@ -1,5 +1,195 @@
 // About Page
 
 body.about-page {
+  @include darkTheme;
 
+  .page-header {
+    @include line(after, 120px);
+
+    .banner-top {
+      padding-bottom: $padding-lg;
+
+      @include media-md {
+        padding-bottom: 108px;
+      }
+    }
+
+    .banner-bottom {
+      height: 304px;
+      background-size: cover;
+      background-position: center center;
+
+      @include media-md {
+        height: 520px;
+      }
+    }
+  }
+
+  .about-section {
+    padding-bottom: 82px;
+
+    h3 {
+      @include h4;
+      color: color('teak');
+      margin: $padding-sm 0 32px;
+    }
+
+    @include media-md {
+      @include line(before, 100%);
+      padding-bottom: 128px;
+      margin-top: $padding-sm;
+      &::before {
+        top: 38px;
+      }
+
+      > .grid {
+        position: relative;
+        &::after {
+          top: 0;
+          height: 1px;
+          content: '';
+          position: absolute;
+          left: $padding-lg / 2;
+          right: $padding-lg / 2;
+          border-top: 1px solid color('tan');
+        }
+      }
+    }
+  }
+
+  .team-section {
+    @include line(before, 100%);
+    padding-bottom: 152px;
+
+    @include media-md {
+      padding-bottom: 160px;
+    }
+
+    > .sitewrapper > h3 {
+      @include h2;
+      @include headline;
+      margin: 0;
+      position: relative;
+      &::after {
+        margin-bottom: 23px;
+        @include media-md {
+          margin-bottom: 52px;
+        }
+      }
+    }
+  }
+
+  .method-section {
+    @include line(before, 100%);
+    padding-bottom: 128px;
+    &::before {
+      top: 36px;
+    }
+
+    ol {
+      padding: 0;
+    }
+
+    li {
+      margin-top: 64px;
+
+      h4 {
+        text-align: center;
+        margin: 0 0 $padding-sm;
+
+        span {
+          display: block;
+        }
+        .number {
+          @include h1;
+          margin-bottom: 16px;
+          color: color('tan');
+        }
+        .text {
+          @include h3;
+          color: color('teak');
+        }
+      }
+
+      p {
+        @include p2;
+        margin: 0;
+      }
+    }
+
+    @include media-md {
+      padding-bottom: 160px;
+
+      li {
+        h4 {
+          display: flex;
+          align-items: center;
+        }
+        .number {
+          width: 144px;
+          text-align: center;
+        }
+      }
+    }
+
+    @include media-lg {
+      .grid.spaced-lg {
+        margin-left: -$padding-lg / 2;
+        width: calc(100% + #{$padding-lg});
+
+        > .col-md-1-2 {
+          padding: 0 #{$padding-lg / 2};
+        }
+      }
+    }
+  }
+
+  // Philanthropy Section
+  .philanthropy-section {
+    @include line(before, 100%);
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    > .sitewrapper > h3 {
+      @include h2;
+      @include headline;
+      margin: 0;
+    }
+
+    .philanthropy-text {
+      p {
+        @include p2;
+        margin: 0;
+      }
+    }
+
+    .philanthropy-image {
+      margin: 36px 0 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid color('tan');
+
+      figcaption {
+        p {
+          @include h4;
+          margin: 0;
+          color: color('teak');
+        }
+      }
+    }
+
+    @include media-md {
+      padding-top: 72px;
+      padding-bottom: 200px;
+
+      .philanthropy-text {
+        padding-right: 72px;
+      }
+
+      .philanthropy-image {
+        margin-top: 0;
+        padding-top: 24px;
+        border-top: 1px solid color('tan');
+      }
+    }
+  }
 }

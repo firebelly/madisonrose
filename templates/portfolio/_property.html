@@ -13,7 +13,7 @@
           <h3>Download:</h3>
           <ul>
           {% if entry.floorplan|length %}
-            <li><a href="{{ entry.floorplan.one().getUrl() }}">Floor Plan <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+            <li><a href="{{ entry.floorplan.one().getUrl() }}">Floorplans <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
           {% endif %}
           {% if entry.brochure|length %}
             <li><a href="{{ entry.brochure.one().getUrl() }}">Brochure <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
@@ -143,7 +143,7 @@
       <div class="property-cta col-md-1-2">
         <p>{{ entry.propertyCta }}</p>
       {% if siteSettings.siteContactEmailAddress %}
-        <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in a Property" class="button -hollow">Interested in a Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+        <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
       {% endif %}
       </div>
     {% endif %}

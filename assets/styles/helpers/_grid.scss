@@ -77,6 +77,15 @@ $column-width: 100% / $columns;
           padding: 0 36px;
         }
       }
+
+      &.spaced-xl {
+        width: calc(100% + #{$padding-lg});
+        margin-left: -#{$padding-lg / 2};
+
+        > [class*='col-'] {
+          padding: 0 #{$padding-lg / 2};
+        }
+      }
     }
   }
   // If you need the grid to have a gutter,

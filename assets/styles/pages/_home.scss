@@ -48,7 +48,7 @@ body.home {
   }
 
   .portfolio-section {
-    .property-listing {
+    .card-grid {
       @include media-md {
         &::after {
           top: -$padding-sm;
@@ -89,6 +89,12 @@ body.home {
           position: absolute;
           background-color: color('teak');
         }
+      }
+    }
+
+    .portfolio-intro {
+      @include media-md {
+        padding-right: 72px;
       }
     }
   }

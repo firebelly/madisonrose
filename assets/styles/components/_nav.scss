@@ -56,13 +56,29 @@
     a {
       @include h4;
       padding: 6px 20px;
+      position: relative;
       color: color('black');
+      transition: color 0.35s ease-out;
+      &::after {
+        bottom: 2px;
+        opacity: 0;
+        left: 20px;
+        right: 20px;
+        content: '';
+        height: 1px;
+        position: absolute;
+        background-color: color('rose');
+        transition: opacity 0.2s ease-out, transform 0.35s ease-out;
+      }
 
       &:hover,
       &:focus {
         color: color('rose');
-        text-decoration: underline;
         background-color: transparent;
+        &::after {
+          opacity: 1;
+          transform: translateY(8px);
+        }
       }
     }
 
@@ -81,8 +97,11 @@
           a {
             border-bottom: none;
             color: color('rose');
-            text-decoration: underline;
             background-color: transparent;
+            &::after {
+              opacity: 1;
+              transform: translateY(8px);
+            }
           }
         }
       }

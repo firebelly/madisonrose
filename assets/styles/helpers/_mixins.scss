@@ -102,3 +102,20 @@
     }
   }
 }
+
+// Headline
+@mixin headline() {
+  &::after {
+    width: 72px;
+    height: 1px;
+    content: '';
+    display: block;
+    position: relative;
+    margin: 32px 0 32px;
+    background-color: color('tan');
+
+    @include media-md {
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -26,6 +26,9 @@ return [
         // Whether to save the project config out to config/project.yaml
         // (see https://docs.craftcms.com/v3/project-config.html)
         'useProjectConfigFile' => false,
+
+        // Additional allowed file types
+        'extraAllowedFileExtensions' => 'vcf',
     ],
 
     // Dev environment settings
