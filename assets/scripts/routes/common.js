@@ -46,7 +46,7 @@ export default {
 
       $document.on('click', 'body.nav-open', function(e) {
         var $target = $(e.target);
-        if (!$target.is('#nav-toggle') && !$target.parents('#nav-toggle').length && !$target.is('.site-nav') && !$target.parents('.site-nav').length) {
+        if (!$target.is('#nav-toggle') && !$target.parents('#nav-toggle').length && !$target.is('.nav-list') && !$target.parents('.nav-list').length) {
           _closeNav();
         }
       });
