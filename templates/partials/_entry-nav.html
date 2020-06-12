@@ -1,0 +1,32 @@
+{% set params = craft.entries.section(section) %}
+{% set nextEntry = entry.getNext(params) %}
+{% if not nextEntry|length %}
+  {% set nextEntry = craft.entries.section(section).one() %}
+{% endif %}
+{% if section == 'properties' %}
+  {% set label = 'Property' %}
+  {% set entryImage = nextEntry.propertyBannerImage.one() %}
+{% elseif section == 'team' %}
+  {% set label = 'Profile' %}
+  {% set entryImage = nextEntry.teamPhoto.one() %}
+{% endif %}
+{% set transformedImage = craft.imager.transformImage(entryImage,
+  {
+    width: 1440,
+    ratio: 8/3,
+    jpegQuality: 80,
+  }
+) %}
+
+<div class="entry-nav sitewrapper">
+  <div class="-inner">
+    <a href="{{ nextEntry.url }}">
+      <span class="text">
+        <span class="label">Next {{ label }}</span>
+        <span class="entry-title">{{ nextEntry.title }}</span>
+        <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
+      </span>
+      <span class="entry-image" style="background-image:url('{{ transformedImage.getUrl() }}');"></span>
+    </a>
+  </div>
+</div>

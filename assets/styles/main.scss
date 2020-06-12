@@ -23,13 +23,14 @@
 @import "components/common";
 @import "components/page-blocks";
 @import "components/cards";
-@import "components/property-nav";
+@import "components/entry-nav";
 @import "components/podcast";
 
 // Pages
 @import "pages/home";
 @import "pages/page";
 @import "pages/about";
+@import "pages/team-member";
 @import "pages/portfolio";
 @import "pages/properties";
 @import "pages/error-pages";

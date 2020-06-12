@@ -1,0 +1,71 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set bodyClass = 'single-team-member' %}
+
+{% block content %}
+  <div class="page-header">
+    <div class="banner-top">
+      <div class="sitewrapper">
+        <div class="grid spaced spaced-xl">
+          <h2 class="page-headline col-md-1-2">{{ entry.title|replace(' ', ' \n')|nl2br }}</h2>
+          <p class="position col-md-1-2">{{ entry.position }}</p>
+        </div>
+      </div>
+    </div>
+
+  {% if entry.teamPhoto|length %}
+    {% set transformedImage = craft.imager.transformImage(entry.teamPhoto.one(),
+      {
+        width: 1440,
+        ratio: 8/3,
+        jpegQuality: 80,
+      }
+    ) %}
+    <div class="banner-bottom" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+  {% endif %}
+  </div>
+
+  <div class="bio-section section">
+    <div class="sitewrapper">
+      {% if entry.bioHeadline|length %}
+        <h3>{{ entry.bioHeadline }}</h3>
+      {% endif %}
+      <div class="grid spaced spaced-xl">
+        <div class="bio col-md-1-2">
+          {{ entry.teamBio }}
+        </div>
+        <div class="bio-contact col-md-1-2">
+          {% if entry.teamEmail|length %}
+            <div>
+              <p class="label">Email</p>
+              <p><a href="mailto:{{ entry.teamEmail }}" target="_blank">{{ entry.teamEmail }}</a></p>
+            </div>
+          {% endif %}
+
+          {% if entry.teamPhoneNumber|length %}
+            <div>
+              <p class="label">Phone</p>
+              <p>{{ entry.teamPhoneNumber|replace({'+1 ': '', '-': '.'}) }}</p>
+            </div>
+          {% endif %}
+
+          {% if entry.teamSocialLinks|length %}
+            <div>
+              <p class="label">Social</p>
+              <ul>
+                {% for link in entry.teamSocialLinks.all() %}
+                  <li><a href="{{ link.linkUrl }}" target="_blank" rel="noopener">{{ link.linkLabel }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if entry.vcard|length %}
+            <p class="vcard"><a href="{{ entry.vcard.one().getUrl() }}" target="_blank" class="button -hollow">Download vCard <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "partials/_entry-nav.html"  with {'section': 'team'} %}
+{% endblock %}

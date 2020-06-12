@@ -10,9 +10,16 @@ form {
       @include p2;
       width: 100%;
       border: none;
+      border-radius: 0;
+      appearance: none;
       background: none;
       padding: 12px 0 15px;
+      color: color('black');
       border-bottom: 2px solid color('white');
+      &:focus {
+        outline: none;
+        border-color: color('black');
+      }
     }
   }
 }

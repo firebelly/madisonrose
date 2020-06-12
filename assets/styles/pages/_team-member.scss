@@ -1,0 +1,118 @@
+// Team Member Page
+
+body.single-team-member {
+  @include darkTheme;
+
+  .page-header {
+    .banner-top {
+      .position {
+        @include h4;
+        position: relative;
+        margin: $padding-md 0 0;
+        padding-bottom: $padding-md;
+        &::before {
+          width: 72px;
+          content: '';
+          height: 1px;
+          display: block;
+          margin-bottom: 30px;
+          background-color: color('cream');
+        }
+      }
+
+      @include media-md {
+        .grid {
+          align-items: flex-end;
+        }
+
+        .position {
+          margin: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .banner-bottom {
+      height: 304px;
+      background-size: cover;
+      background-position: center center;
+
+      @include media-md {
+        height: 520px;
+      }
+    }
+  }
+
+  .bio-section {
+    @include line(before, 100%);
+    margin-top: 16px;
+    padding-top: 56px;
+    padding-bottom: 150px;
+
+    h3 {
+      @include h2;
+      @include headline;
+
+      @include media-md {
+        max-width: 50%;
+        padding-right: $padding-lg / 2;
+      }
+    }
+
+    .bio {
+      @include p2;
+
+      p {
+        margin: 0;
+
+        + p {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .bio-contact {
+      > div {
+        + div {
+          margin-top: 30px;
+        }
+      }
+
+      p {
+        margin: 0;
+        @include p2;
+
+        &.label {
+          @include h4;
+          color: color('teak');
+        }
+      }
+
+      a:not(.button) {
+        &:hover,
+        &:focus {
+          color: color('rose');
+        }
+      }
+
+      ul {
+        margin: 0;
+
+        li {
+          @include p2;
+        }
+      }
+
+      .vcard {
+        margin-top: 40px;
+
+        a {
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
