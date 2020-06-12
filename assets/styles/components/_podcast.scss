@@ -74,8 +74,22 @@
         border-left: 1px solid color('tan');
       }
 
+      .episode-meta {
+        .dash {
+          width: 18px;
+        }
+      }
+
       .episode-title {
         margin-bottom: $padding-sm;
+      }
+    }
+
+    @include media-lg {
+      .episode-meta {
+        .dash {
+          width: 48px;
+        }
       }
     }
   }

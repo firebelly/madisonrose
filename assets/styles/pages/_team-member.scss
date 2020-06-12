@@ -50,7 +50,7 @@ body.single-team-member {
     padding-bottom: 150px;
 
     h3 {
-      @include h2;
+      @include h3;
       @include headline;
 
       @include media-md {

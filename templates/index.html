@@ -8,6 +8,13 @@
 
   <div class="page-header">
     <div class="banner-top"{% if bannerImage %} style="background-image:url('{{ bannerImage.getUrl() }}');"{% endif %}>
+      {% if entry.bannerBackgroundVideo | length %}
+        <div class="background-video">
+          <iframe src="https://player.vimeo.com/video/{{ entry.bannerBackgroundVideo }}?background=1&autoplay=1&loop=1&byline=0&title=0"
+                     frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      {% endif %}
+
       <div class="sitewrapper">
         {% if entry.pageHeadline %}
           <h2 class="page-headline">{{ entry.pageHeadline }}</h2>

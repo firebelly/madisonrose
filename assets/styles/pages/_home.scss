@@ -2,6 +2,44 @@
 
 body.home {
   .page-header {
+    .banner-top {
+      position: relative;
+      &::after {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        position: absolute;
+        background-color: rgba(color('cream'), 0.5);
+      }
+
+      .sitewrapper {
+        z-index: 1;
+        position: relative;
+      }
+    }
+
+    .background-video {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      iframe {
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw;
+        min-height: 100vh;
+        position: absolute;
+        min-width: 177.77vh;
+        transform: translate(-50%, -50%);
+      }
+    }
+
     .bottom-banner {
       @include line(after, 80px);
       background-color: color('hemlock');
