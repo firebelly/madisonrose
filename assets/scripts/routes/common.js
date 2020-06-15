@@ -59,6 +59,10 @@ export default {
           _closeNav();
         }
       });
+
+      $document.on('click', 'a.contact-link', function() {
+        _closeNav();
+      });
     }
 
     function _openNav() {

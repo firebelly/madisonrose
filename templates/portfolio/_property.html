@@ -77,76 +77,136 @@
       <div class="property-media section sitewrapper">
         <div class="grid spaced">
         {% for item in entry.propertyMedia.all() %}
-          <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
-            <div class="-inner">
-            {% if item.type == 'image' %}
-              {% set transformedImage = craft.imager.transformImage(item.image.one(),
-                {
-                  width: 1116,
-                  jpegQuality: 80,
-                  effects: {
-                    clut: 'gradient:rgba(44,66,51,0.3)-rgba(239,234,229,1)',
-                  }
-                }
-              ) %}
-              <img src="{{ transformedImage.getUrl() }}" alt="">
-              {% if item.image.one().title or item.image.one().caption %}
-              <figcaption>
-              {% if item.image.one().title %}
-                <p class="fig-title">{{ item.image.one().title }}</p>
-              {% endif %}
-              {% if item.image.one().caption %}
-                <p class="fig-caption">{{ item.image.one().caption }}</p>
-              {% endif %}
-              </figcaption>
-              {% endif %}
-            {% else %}
-              {% set embeddedAsset = craft.embeddedAssets.get(item.video.one()) %}
-              {% if embeddedAsset.url matches '/vimeo\.com/' %}
-                {% if 'https://i.vimeocdn.com/filter/overlay?src0=' in embeddedAsset.image %}
-                  {% set videoImageUrl = embeddedAsset.image|replace({'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F': 'https://i.vimeocdn.com/video/', '&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png': '' }) %}
-                {% else %}
-                  {% set videoImageUrl = embeddedAsset.image %}
-                {% endif %}
-                {% set transformedImage = craft.imager.transformImage(videoImageUrl,
+          {% if entry.propertyCta|length and loop.index == entry.propertyMedia.all()|length  %}
+            <div class="property-cta col-md-1-2">
+              <p>{{ entry.propertyCta }}</p>
+            {% if siteSettings.siteContactEmailAddress %}
+              <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+            {% endif %}
+            </div>
+            <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
+              <div class="-inner">
+              {% if item.type == 'image' %}
+                {% set transformedImage = craft.imager.transformImage(item.image.one(),
                   {
-                    width: 2304,
+                    width: 1116,
                     jpegQuality: 80,
                     effects: {
-                      clut: 'gradient:rgba(44,66,51,0.6)-rgba(239,234,229,1)',
+                      clut: 'gradient:rgba(44,66,51,0.3)-rgba(239,234,229,1)',
                     }
                   }
                 ) %}
-                <div class="property-video-container" style="padding-bottom:{{ embeddedAsset.aspectRatio  }}%;">
-                  <div class="video-thumb" style="background-image: url('{{ videoImageUrl }}');">
-                    <button class="property-video-play"><svg class="video-play" aria-hidden="true" role="presentation"><use xlink:href="#icon-play"/></svg></button>
-                  </div>
-                  <div id="video-{{ embeddedAsset.getVideoId() }}" class="property-video" data-url="{{ embeddedAsset.url }}"></div>
-                </div>
-                {% if item.video.one().title or item.video.one().caption %}
+                <img src="{{ transformedImage.getUrl() }}" alt="">
+                {% if item.image.one().title or item.image.one().caption %}
                 <figcaption>
-                {% if item.video.one().title %}
-                  <p class="fig-title">{{ item.video.one().title }}</p>
+                {% if item.image.one().title %}
+                  <p class="fig-title">{{ item.image.one().title }}</p>
                 {% endif %}
-                {% if item.video.one().caption %}
-                  <p class="fig-caption">{{ item.video.one().caption }}</p>
+                {% if item.image.one().caption %}
+                  <p class="fig-caption">{{ item.image.one().caption }}</p>
                 {% endif %}
                 </figcaption>
                 {% endif %}
+              {% else %}
+                {% set embeddedAsset = craft.embeddedAssets.get(item.video.one()) %}
+                {% if embeddedAsset.url matches '/vimeo\.com/' %}
+                  {% if 'https://i.vimeocdn.com/filter/overlay?src0=' in embeddedAsset.image %}
+                    {% set videoImageUrl = embeddedAsset.image|replace({'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F': 'https://i.vimeocdn.com/video/', '&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png': '' }) %}
+                  {% else %}
+                    {% set videoImageUrl = embeddedAsset.image %}
+                  {% endif %}
+                  {% set transformedImage = craft.imager.transformImage(videoImageUrl,
+                    {
+                      width: 2304,
+                      jpegQuality: 80,
+                      effects: {
+                        clut: 'gradient:rgba(44,66,51,0.6)-rgba(239,234,229,1)',
+                      }
+                    }
+                  ) %}
+                  <div class="property-video-container" style="padding-bottom:{{ embeddedAsset.aspectRatio  }}%;">
+                    <div class="video-thumb" style="background-image: url('{{ videoImageUrl }}');">
+                      <button class="property-video-play"><svg width="97" height="97" viewBox="0 0 97 97" xmlns="http://www.w3.org/2000/svg"><path class="play-triangle" fill-rule="evenodd" clip-rule="evenodd" d="M23.823 17.0486L82.2634 48.3002L23.823 79.5517V17.0486ZM25.323 19.5517V77.0486L79.0826 48.3002L25.323 19.5517Z"/><path class="play-background" d="M0.623047 0.183105V-1.31689H-0.876953V0.183105H0.623047ZM96.623 0.183105H98.123V-1.31689H96.623V0.183105ZM96.623 96.1831V97.6831H98.123V96.1831H96.623ZM0.623047 96.1831H-0.876953V97.6831H0.623047V96.1831ZM0.623047 1.68311H96.623V-1.31689H0.623047V1.68311ZM95.123 0.183105V96.1831H98.123V0.183105H95.123ZM96.623 94.6831H0.623047V97.6831H96.623V94.6831ZM2.12305 96.1831V0.183105H-0.876953V96.1831H2.12305Z"/></svg></button>
+                    </div>
+                    <div id="video-{{ embeddedAsset.getVideoId() }}" class="property-video" data-url="{{ embeddedAsset.url }}"></div>
+                  </div>
+                  {% if item.video.one().title or item.video.one().caption %}
+                  <figcaption>
+                  {% if item.video.one().title %}
+                    <p class="fig-title">{{ item.video.one().title }}</p>
+                  {% endif %}
+                  {% if item.video.one().caption %}
+                    <p class="fig-caption">{{ item.video.one().caption }}</p>
+                  {% endif %}
+                  </figcaption>
+                  {% endif %}
+                {% endif %}
               {% endif %}
-            {% endif %}
-            </div>
-          </figure>
-        {% endfor %}
-
-        {% if entry.propertyCta|length %}
-          <div class="property-cta col-md-1-2">
-            <p>{{ entry.propertyCta }}</p>
-          {% if siteSettings.siteContactEmailAddress %}
-            <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+              </div>
+            </figure>
+          {% else %}
+            <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
+              <div class="-inner">
+              {% if item.type == 'image' %}
+                {% set transformedImage = craft.imager.transformImage(item.image.one(),
+                  {
+                    width: 1116,
+                    jpegQuality: 80,
+                    effects: {
+                      clut: 'gradient:rgba(44,66,51,0.3)-rgba(239,234,229,1)',
+                    }
+                  }
+                ) %}
+                <img src="{{ transformedImage.getUrl() }}" alt="">
+                {% if item.image.one().title or item.image.one().caption %}
+                <figcaption>
+                {% if item.image.one().title %}
+                  <p class="fig-title">{{ item.image.one().title }}</p>
+                {% endif %}
+                {% if item.image.one().caption %}
+                  <p class="fig-caption">{{ item.image.one().caption }}</p>
+                {% endif %}
+                </figcaption>
+                {% endif %}
+              {% else %}
+                {% set embeddedAsset = craft.embeddedAssets.get(item.video.one()) %}
+                {% if embeddedAsset.url matches '/vimeo\.com/' %}
+                  {% if 'https://i.vimeocdn.com/filter/overlay?src0=' in embeddedAsset.image %}
+                    {% set videoImageUrl = embeddedAsset.image|replace({'https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F': 'https://i.vimeocdn.com/video/', '&src1=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fshare%2Fplay_icon_overlay.png': '' }) %}
+                  {% else %}
+                    {% set videoImageUrl = embeddedAsset.image %}
+                  {% endif %}
+                  {% set transformedImage = craft.imager.transformImage(videoImageUrl,
+                    {
+                      width: 2304,
+                      jpegQuality: 80,
+                      effects: {
+                        clut: 'gradient:rgba(44,66,51,0.6)-rgba(239,234,229,1)',
+                      }
+                    }
+                  ) %}
+                  <div class="property-video-container" style="padding-bottom:{{ embeddedAsset.aspectRatio  }}%;">
+                    <div class="video-thumb" style="background-image: url('{{ videoImageUrl }}');">
+                      <button class="property-video-play"><svg class="icon-play-hollow" aria-hidden="true" role="presentation"><use xlink:href="#icon-play-hollow"/></svg><svg class="icon-play-fill" aria-hidden="true" role="presentation"><use xlink:href="#icon-play-fill"/></svg></button>
+                    </div>
+                    <div id="video-{{ embeddedAsset.getVideoId() }}" class="property-video" data-url="{{ embeddedAsset.url }}"></div>
+                  </div>
+                  {% if item.video.one().title or item.video.one().caption %}
+                  <figcaption>
+                  {% if item.video.one().title %}
+                    <p class="fig-title">{{ item.video.one().title }}</p>
+                  {% endif %}
+                  {% if item.video.one().caption %}
+                    <p class="fig-caption">{{ item.video.one().caption }}</p>
+                  {% endif %}
+                  </figcaption>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+              </div>
+            </figure>
           {% endif %}
-          </div>
-        {% endif %}
+        {% endfor %}
 
         </div>
       </div>
