@@ -13,6 +13,15 @@
   }
 }
 
+.podcast-container.grid.spaced.spaced-lg {
+  @include media-md {
+    width: calc(100% + #{$padding-sm * 3});
+  }
+  @include media-lg {
+    width: calc(100% + #{$padding-lg});
+  }
+}
+
 .podcast-episodes {
   margin: 0;
 
