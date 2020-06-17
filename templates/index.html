@@ -65,16 +65,12 @@
           {% endif %}
         </div>
       </div>
-      <div class="-bottom grid">
+      <div class="-bottom grid spaced">
         {% if featuredProperties[2] is defined %}
-          <div class="col-md-1-2">
-            <div class="property">
-              <h3 class="property-title">{{ featuredProperties[2].title }}</h3>
-            </div>
+          <div class="properties col-md-1-2">
+            {% include 'partials/_property-listing.html' with {'property': featuredProperties[2], 'orientation': 'propertyListingLandscape'} %}
             {% if featuredProperties[3] is defined %}
-              <div class="property">
-                <h3 class="property-title">{{ featuredProperties[3].title }}</h3>
-              </div>
+              {% include 'partials/_property-listing.html' with {'property': featuredProperties[3], 'orientation': 'propertyListingLandscape'} %}
             {% endif %}
           </div>
         {% endif %}
