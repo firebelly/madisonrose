@@ -87,16 +87,7 @@
             <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
-                {% set transformedImage = craft.imager.transformImage(item.image.one(),
-                  {
-                    width: 1116,
-                    jpegQuality: 80,
-                    effects: {
-                      clut: 'gradient:rgba(44,66,51,0.3)-rgba(239,234,229,1)',
-                    }
-                  }
-                ) %}
-                <img src="{{ transformedImage.getUrl() }}" alt="">
+                <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMedia') }}" alt="{{ item.image.one().title }}"></span>
                 {% if item.image.one().title or item.image.one().caption %}
                 <figcaption>
                 {% if item.image.one().title %}
@@ -119,13 +110,10 @@
                     {
                       width: 2304,
                       jpegQuality: 80,
-                      effects: {
-                        clut: 'gradient:rgba(44,66,51,0.6)-rgba(239,234,229,1)',
-                      }
                     }
                   ) %}
                   <div class="property-video-container" style="padding-bottom:{{ embeddedAsset.aspectRatio  }}%;">
-                    <div class="video-thumb" style="background-image: url('{{ videoImageUrl }}');">
+                    <div class="video-thumb treated-image" style="background-image: url('{{ videoImageUrl }}');">
                       <button class="property-video-play"><svg width="97" height="97" viewBox="0 0 97 97" xmlns="http://www.w3.org/2000/svg"><path class="play-triangle" fill-rule="evenodd" clip-rule="evenodd" d="M23.823 17.0486L82.2634 48.3002L23.823 79.5517V17.0486ZM25.323 19.5517V77.0486L79.0826 48.3002L25.323 19.5517Z"/><path class="play-background" d="M0.623047 0.183105V-1.31689H-0.876953V0.183105H0.623047ZM96.623 0.183105H98.123V-1.31689H96.623V0.183105ZM96.623 96.1831V97.6831H98.123V96.1831H96.623ZM0.623047 96.1831H-0.876953V97.6831H0.623047V96.1831ZM0.623047 1.68311H96.623V-1.31689H0.623047V1.68311ZM95.123 0.183105V96.1831H98.123V0.183105H95.123ZM96.623 94.6831H0.623047V97.6831H96.623V94.6831ZM2.12305 96.1831V0.183105H-0.876953V96.1831H2.12305Z"/></svg></button>
                     </div>
                     <div id="video-{{ embeddedAsset.getVideoId() }}" class="property-video" data-url="{{ embeddedAsset.url }}"></div>
@@ -148,16 +136,7 @@
             <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
-                {% set transformedImage = craft.imager.transformImage(item.image.one(),
-                  {
-                    width: 1116,
-                    jpegQuality: 80,
-                    effects: {
-                      clut: 'gradient:rgba(44,66,51,0.3)-rgba(239,234,229,1)',
-                    }
-                  }
-                ) %}
-                <img src="{{ transformedImage.getUrl() }}" alt="">
+                <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMedia') }}" alt="{{ item.image.one().title }}"></span>
                 {% if item.image.one().title or item.image.one().caption %}
                 <figcaption>
                 {% if item.image.one().title %}
@@ -180,9 +159,6 @@
                     {
                       width: 2304,
                       jpegQuality: 80,
-                      effects: {
-                        clut: 'gradient:rgba(44,66,51,0.6)-rgba(239,234,229,1)',
-                      }
                     }
                   ) %}
                   <div class="property-video-container" style="padding-bottom:{{ embeddedAsset.aspectRatio  }}%;">

@@ -6,6 +6,29 @@
   background-image: linear-gradient(to top, rgba(color($color),1) 1px, rgba(0,0,0,0) 2px);
 }
 
+// Image Treatment
+@mixin imageTreatment() {
+  display: block;
+  position: relative;
+  &::before,
+  &::after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    position: absolute;
+  }
+  &::before {
+    mix-blend-mode: multiply;
+    background-color: color('cream');
+  }
+  &::after {
+    mix-blend-mode: screen;
+    background-color: rgba(color('hemlock'),0.3);
+  }
+}
+
 // Ye olde clearfix
 @mixin clearfix {
   &:after {

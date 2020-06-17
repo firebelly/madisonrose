@@ -1,2 +1,6 @@
 // Common
 // components/blocks
+
+.treated-image {
+  @include imageTreatment;
+}
