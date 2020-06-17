@@ -145,7 +145,7 @@ export default {
                   $status.removeClass('error').addClass('success').html(successIcon + 'Success! Check your email to confirm.');
                 }
               })
-              .fail(( => {
+              .fail(function() {
                 $form.addClass('error');
                 $status.addClass('error').html(errorIcon + 'There was an error subscribing. Please try again.');
               })
