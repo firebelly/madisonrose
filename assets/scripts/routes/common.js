@@ -30,6 +30,7 @@ export default {
     // Init Functions
     _initHoverPairs();
     _initMobileNav();
+    _initNewsletterForm();
 
     // Keyboard navigation and esc handlers
     $document.keyup(function(e) {
@@ -110,6 +111,48 @@ export default {
       });
 
       $siteNav.removeClass('-active');
+    }
+
+    // Ajaxify newsletter form
+    function _initNewsletterForm() {
+      let errorIcon = '<svg class="icon-error" aria-hidden="true" role="presentation"><use xlink:href="#icon-error"/></svg>';
+      let successIcon = '<svg class="icon-success" aria-hidden="true" role="presentation"><use xlink:href="#icon-success"/></svg>';
+
+      $('form.newsletter').each(function() {
+        let $form = $(this);
+        let $status = $form.find('.status');
+        $form.on('submit', e => {
+          e.preventDefault();
+          $status.removeClass('error success');
+          $form.addClass('working');
+          if ($form.find('input[name=EMAIL]').val()=='') {
+            $form.addClass('error');
+            $status.addClass('error').text('Please enter your email.');
+          } else {
+            $.getJSON($form.attr('action'), $form.serialize())
+              .done(function(data) {
+                console.log(data);
+                if (data.result != 'success') {
+                  if (data.msg.match(/already subscribed/)) {
+                    $form.addClass('error');
+                    $status.addClass('error').html(errorIcon + 'Oops! You’re already subscribed to our newsletter.');
+                  } else {
+                    $form.addClass('error');
+                    $status.addClass('error').html(errorIcon + 'Oops! ' + data.msg);
+                  }
+                } else {
+                  $form.removeClass('error');
+                  $status.removeClass('error').addClass('success').html(successIcon + 'Success! Check your email to confirm.');
+                }
+              })
+              .fail(( => {
+                $form.addClass('error');
+                $status.addClass('error').html(errorIcon + 'There was an error subscribing. Please try again.');
+              })
+              .always(() => $form.removeClass('working'));
+          }
+        });
+      });
     }
 
     // Disabling transitions on certain elements on resize

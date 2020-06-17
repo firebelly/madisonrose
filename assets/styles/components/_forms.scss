@@ -32,6 +32,20 @@ form {
 form.newsletter {
   width: 100%;
 
+  &.working {
+    opacity: 0.5;
+  }
+  &.error {
+    input {
+      border-color: color('rose');
+    }
+  }
+  &.success {
+    input {
+      border-color: color('lichen');
+    }
+  }
+
   label {
     @include h4;
     color: color('lichen');
@@ -44,8 +58,35 @@ form.newsletter {
     margin-top: $padding-sm;
   }
 
+  .status {
+    @include p2;
+    color: color('white');
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      display: inline-block;
+      vertical-align: text-top;
+    }
+
+    &.error {
+      .icon-error {
+        fill: color('rose');
+      }
+    }
+
+    &.success {
+      .icon-success {
+        fill: color('lichen');
+      }
+    }
+  }
+
   @include media-lg {
-    display: flex;
+    > .-inner {
+      display: flex;
+    }
 
     .input-wrap {
       flex: 1;
@@ -54,7 +95,9 @@ form.newsletter {
 
     .submit {
       width: auto;
+      bottom: -4px;
       margin-top: 0;
+      position: relative;
     }
   }
 }
