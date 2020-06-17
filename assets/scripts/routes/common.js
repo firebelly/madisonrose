@@ -62,7 +62,9 @@ export default {
       });
 
       $document.on('click', 'a.contact-link', function() {
-        _closeNav();
+        if (!appState.breakpoints.md) {
+          _closeNav();
+        }
       });
     }
 
