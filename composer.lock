@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b59dc564b91da94c5dc1605b857f6c34",
+    "content-hash": "b81f0e080d09ebab664a4cc5406be1cd",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -643,11 +643,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.23",
+            "version": "3.4.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9a16630114780c721a227a5d1f9a07956ee89f5e",
-                "reference": "9a16630114780c721a227a5d1f9a07956ee89f5e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a85014a2aa5ea538a9054b360ec257b9e663ac87",
+                "reference": "a85014a2aa5ea538a9054b360ec257b9e663ac87",
                 "shasum": ""
             },
             "require": {
@@ -728,7 +728,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-06-09T20:23:40+00:00"
+            "time": "2020-06-16T19:34:38+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1970,11 +1970,11 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.4",
+            "version": "6.5.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a4a1b6930528a8f7ee03518e6442ec7a44155d9d",
-                "reference": "a4a1b6930528a8f7ee03518e6442ec7a44155d9d",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
+                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
                 "shasum": ""
             },
             "require": {
@@ -1982,7 +1982,7 @@
                 "guzzlehttp/promises": "^1.0",
                 "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5",
-                "symfony/polyfill-intl-idn": "1.17.0"
+                "symfony/polyfill-intl-idn": "^1.17.0"
             },
             "suggest": {
                 "psr/log": "Required for using the Log middleware"
@@ -2022,7 +2022,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2020-05-25T19:35:05+00:00"
+            "time": "2020-06-16T21:01:06+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -5176,19 +5176,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.24",
+            "version": "4.1.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/4c032aa1aedbf4934418520c61c00b8fad6ca8d5",
-                "reference": "4c032aa1aedbf4934418520c61c00b8fad6ca8d5",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/2b7b0510b5ac5194c467aa5e80a94964896f0672",
+                "reference": "2b7b0510b5ac5194c467aa5e80a94964896f0672",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
                 "voku/portable-utf8": "~5.4.27"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "extra": {
@@ -5201,7 +5198,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5224,7 +5220,7 @@
                 "security",
                 "xss"
             ],
-            "time": "2020-03-08T00:12:04+00:00"
+            "time": "2020-06-12T00:59:34+00:00"
         },
         {
             "name": "voku/arrayy",
@@ -5328,11 +5324,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/e7f9bd5deff09a57318f9b900ab33a05acfcf4d3",
-                "reference": "e7f9bd5deff09a57318f9b900ab33a05acfcf4d3",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/618631dc601d8eb6ea0a9fbf654ec82f066c4e97",
+                "reference": "618631dc601d8eb6ea0a9fbf654ec82f066c4e97",
                 "shasum": ""
             },
             "require": {
@@ -5363,7 +5359,7 @@
                 "clean",
                 "php"
             ],
-            "time": "2020-05-26T06:40:44+00:00"
+            "time": "2020-06-15T23:49:30+00:00"
         },
         {
             "name": "voku/portable-utf8",
@@ -5586,11 +5582,11 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/ab2cb0b3b559010b75981b1bdce728da3ee90ad6",
-                "reference": "ab2cb0b3b559010b75981b1bdce728da3ee90ad6",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
+                "reference": "9dc4f203e36f2b486149058bade43c851dd97451",
                 "shasum": ""
             },
             "require": {
@@ -5598,10 +5594,8 @@
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
+                "phpstan/phpstan": "<0.12.20",
                 "vimeo/psalm": "<3.9.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
             },
             "type": "library",
             "autoload": {
@@ -5609,7 +5603,6 @@
                     "Webmozart\\Assert\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5625,7 +5618,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2020-04-18T12:12:48+00:00"
+            "time": "2020-06-16T10:16:42+00:00"
         },
         {
             "name": "webonyx/graphql-php",
