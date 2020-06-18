@@ -4,6 +4,7 @@ body.home {
   .page-header {
     .banner-top {
       position: relative;
+      padding-bottom: 24px;
       &::after {
         top: 0;
         left: 0;
@@ -17,6 +18,14 @@ body.home {
       .sitewrapper {
         z-index: 1;
         position: relative;
+      }
+
+      @include media-md {
+        display: flex;
+        min-height: 65vh;
+        padding-bottom: 146px;
+        flex-direction: column;
+        justify-content: center;
       }
     }
 
