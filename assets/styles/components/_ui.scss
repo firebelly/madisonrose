@@ -26,7 +26,7 @@
     position: absolute;
     fill: color('rose');
     transform: translateY(-50%);
-    transition: fill 0.25s ease-out;
+    transition: fill 0.25s ease-out, transform 0.25s ease-out;
   }
 
   &:hover,
@@ -36,6 +36,7 @@
 
     svg {
       fill: color('cream');
+      transform: translateX(7px) translateY(-50%);
     }
   }
 
