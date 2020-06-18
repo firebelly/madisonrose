@@ -1,12 +1,14 @@
 <div class="team-member card">
   <a href="{{ teamMember.url }}">
-    <div class="overlay">
-      <div class="-inner">
-        <p>View</p>
-        <p>{{ teamMember.title }}<br> {{ teamMember.position }}</p>
+    <div class="treated-image">
+      <div class="overlay">
+        <div class="-inner">
+          <p>View</p>
+          <p>{{ teamMember.title }}<br> {{ teamMember.position }}</p>
+        </div>
       </div>
+      <img src="{{ teamMember.teamPhoto.one().getUrl('propertyListingLandscape') }}" alt="Portrait of {{ teamMember.title }}">
     </div>
-    <span class="treated-image"><img src="{{ teamMember.teamPhoto.one().getUrl('propertyListingLandscape') }}" alt="Portrait of {{ teamMember.title }}"></span>
-    <h3 class="card-title"><a href="{{ teamMember.url }}">{{ teamMember.title }} <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></h3>
+    <h3 class="card-title"><span>{{ teamMember.title }}</span> <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></h3>
   </a>
 </div>

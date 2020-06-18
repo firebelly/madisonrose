@@ -13,10 +13,10 @@
             <h3>Download:</h3>
             <ul>
             {% if entry.floorplan|length %}
-              <li><a href="{{ entry.floorplan.one().getUrl() }}">Floorplans<svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+              <li><a href="{{ entry.floorplan.one().getUrl() }}"><span>Floorplans</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
             {% endif %}
             {% if entry.brochure|length %}
-              <li><a href="{{ entry.brochure.one().getUrl() }}">Brochure<svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+              <li><a href="{{ entry.brochure.one().getUrl() }}"><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
             {% endif %}
             </ul>
           </div>

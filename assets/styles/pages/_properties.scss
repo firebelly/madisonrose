@@ -64,11 +64,17 @@ body.single-property {
         a {
           @include h4;
           color: color('rose');
-          display: inline-block;
-          text-decoration: none;
+          transition: color 0.35s ease-out;
           &:hover,
           &:focus {
-            text-decoration: underline;
+            color: color('black');
+            span::after {
+              opacity: 1;
+            }
+          }
+
+          span {
+            @include underlineFade('black');
           }
         }
       }

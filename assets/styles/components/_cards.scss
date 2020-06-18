@@ -28,6 +28,7 @@
   > a {
     display: block;
     position: relative;
+    text-decoration: none;
 
     &:hover,
     &:focus {
@@ -38,6 +39,14 @@
         }
         p:first-of-type::after {
           transform: scaleX(1);
+        }
+      }
+      .card-title {
+        span::after {
+          opacity: 1;
+        }
+        svg {
+          transform: translateX(-7px);
         }
       }
     }
@@ -96,21 +105,23 @@
   }
 
   h3 {
+    @include h4;
+    display: flex;
     margin: 8px 0 0;
+    color: color('rose');
+    text-decoration: none;
+    align-items: baseline;
+    justify-content: space-between;
 
-    a {
-      @include h4;
-      display: flex;
-      color: color('rose');
-      text-decoration: none;
-      align-items: baseline;
-      justify-content: space-between;
+    span {
+      @include underlineFade(rose);
+    }
 
-      svg {
-        width: 17px;
-        height: 12px;
-        fill: color('rose');
-      }
+    svg {
+      width: 17px;
+      height: 12px;
+      fill: color('rose');
+      transition: transform 0.25s ease-out;
     }
   }
 }
