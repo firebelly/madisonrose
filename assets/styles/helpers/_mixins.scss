@@ -142,3 +142,14 @@
     }
   }
 }
+
+@mixin eyebrowLine() {
+  &::before {
+    content: '';
+    height: 1px;
+    width: 72px;
+    display: block;
+    margin-bottom: 32px;
+    background-color: color('teak');
+  }
+}

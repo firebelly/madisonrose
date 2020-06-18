@@ -5,11 +5,31 @@ body.portfolio-page {
     padding-bottom: 120px;
     background-image: url('../images/texture-tan.jpg');
     background-size: 195px 195px;
+    @include media-sm {
+      padding-bottom: 48px;
+    }
+    @include media-lg {
+      padding-bottom: 120px;
+    }
+
+    .banner-top {
+      padding-bottom: 88px;
+
+      @include media-lg {
+        padding-bottom: 107px;
+      }
+    }
 
     .banner-text {
+      @include eyebrowLine;
+
+      p {
+        margin: 0;
+      }
+
       @include media-sm {
-        max-width: 50%;
-        flex-basis: 50%;
+        max-width: columns(7,16);
+        flex-basis: columns(7,16);
       }
     }
   }
@@ -52,7 +72,7 @@ body.portfolio-page {
           }
 
           &.portrait {
-            margin-top: -248px;
+            margin-top: -178px;
             grid-column: span 2;
           }
           &.landscape {
@@ -74,6 +94,14 @@ body.portfolio-page {
 
           .cta {
             margin: 80px 0 0;
+          }
+        }
+      }
+
+      @include media-lg {
+        .property {
+          &.portrait {
+            margin-top: -248px;
           }
         }
       }

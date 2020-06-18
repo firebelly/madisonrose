@@ -6,7 +6,7 @@
     <div class="banner-top">
       <div class="sitewrapper">
         {% if entry.pageHeadline %}
-          <h2 class="page-headline">{{ entry.pageHeadline }}</h2>
+          <h2 class="page-headline">{{ entry.pageHeadline|nl2br }}</h2>
         {% endif %}
       </div>
     </div>
@@ -14,7 +14,7 @@
     {% if entry.pageSubHeadline %}
       <div class="bottom-banner">
         <div class="sitewrapper grid">
-          <div class="banner-text col-md-1-2">
+          <div class="banner-text">
             <p>{{ entry.pageSubHeadline }}</p>
           </div>
         </div>
