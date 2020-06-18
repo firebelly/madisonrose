@@ -13,17 +13,22 @@ form {
       border-radius: 0;
       appearance: none;
       background: none;
-      padding: 12px 0 15px;
+      padding: 9px 0 13px;
       color: color('cream');
       border-bottom: 2px solid color('white');
+      &::placeholder {
+        color: rgba(color('cream'), 0.3);
+      }
       &:focus {
         outline: none;
-        background-color: rgba(color('cream'), 0.2);
-
         &::placeholder {
           color: rgba(color('cream'), 0.5);
         }
       }
+    }
+
+    &.-focus {
+      background-color: rgba(color('cream'), 0.2);
     }
   }
 }
@@ -33,16 +38,21 @@ form.newsletter {
   width: 100%;
 
   &.working {
-    opacity: 0.5;
+    opacity: 0.2;
   }
   &.error {
     input {
-      border-color: color('rose');
+      border-bottom: 4px solid color('rose');
     }
   }
   &.success {
+    margin-top: 4px;
     input {
       border-color: color('lichen');
+    }
+    .submit {
+      opacity: 0.2;
+      pointer-events: none;
     }
   }
 
@@ -60,12 +70,13 @@ form.newsletter {
 
   .status {
     @include p2;
+    margin-top: 2px;
     color: color('white');
 
     svg {
       width: 24px;
       height: 24px;
-      margin-right: 10px;
+      margin-right: 5px;
       display: inline-block;
       vertical-align: text-top;
     }
@@ -88,14 +99,13 @@ form.newsletter {
       display: flex;
     }
 
-    .input-wrap {
+    .email-container {
       flex: 1;
       padding-right: $padding-sm;
     }
 
     .submit {
       width: auto;
-      bottom: -4px;
       margin-top: 0;
       position: relative;
     }

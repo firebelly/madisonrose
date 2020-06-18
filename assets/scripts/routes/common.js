@@ -31,6 +31,7 @@ export default {
     _initHoverPairs();
     _initMobileNav();
     _initNewsletterForm();
+    _initForms();
 
     // Keyboard navigation and esc handlers
     $document.keyup(function(e) {
@@ -125,6 +126,7 @@ export default {
         let $status = $form.find('.status');
         $form.on('submit', e => {
           e.preventDefault();
+          $form.removeClass('error success');
           $status.removeClass('error success');
           $form.addClass('working');
           if ($form.find('input[name=EMAIL]').val()=='') {
@@ -143,7 +145,7 @@ export default {
                     $status.addClass('error').html(errorIcon + 'Oops! ' + data.msg);
                   }
                 } else {
-                  $form.removeClass('error');
+                  $form.removeClass('error').addClass('success');
                   $status.removeClass('error').addClass('success').html(successIcon + 'Success! Check your email to confirm.');
                 }
               })
@@ -155,6 +157,39 @@ export default {
           }
         });
       });
+    }
+
+    // Forms handling: add has-input to input-wrap after typing for styling labels
+    function _initForms() {
+      // Add .has-input for styling when field is changed
+      $document.on('keyup.forms change.forms blur.forms', 'input,select,textarea', _checkFormInput);
+
+      // Check initial state of fields on load
+      $('form').find('input,select,textarea').each(function() {
+        let $this = $(this);
+        if ($this.val()!=='' && $this.attr('type')!=='hidden') {
+          $this.addClass('has-input').parents('.input-wrap:first').addClass('has-input');
+        }
+      });
+
+      // Add .focus to .input-wrap when focusing input
+      $('form').on('focus', 'input, select, textarea', function() {
+        $(this).closest('.input-wrap').addClass('-focus');
+      }).on('blur', 'input, select, textarea', function() {
+        $(this).closest('.input-wrap').removeClass('-focus');
+      });
+
+      // Check form fields on state change for has-input or invalid for required
+      function _checkFormInput(e) {
+        // Ignore tab keyup (would trigger error class when tabbing into field for the first time)
+        if (e.which === 9) {
+          return;
+        }
+
+        let has_input = $(e.target).val() !== '';
+        $(e.target).toggleClass('has-input', has_input).parents('.input-wrap:first').toggleClass('has-input', has_input);
+        $(e.target).parents('.input-wrap:first').toggleClass('invalid', ($(e.target).prop('required') && $(e.target).val() === ''));
+      }
     }
 
     // Disabling transitions on certain elements on resize
