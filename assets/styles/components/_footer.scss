@@ -40,8 +40,14 @@
       }
 
       @include media-md {
-        padding: 0 $padding-lg;
+        &::before {
+          left: 25%;
+          width: 75%;
+        }
+      }
 
+      @include media-lg {
+        padding: 0 $padding-lg;
         &::before {
           left: calc(25% + #{$padding-lg / 2});
           width: calc(100vw - (25% + #{$padding-lg / 2}));
@@ -104,7 +110,7 @@
       padding: 64px 72px 120px;
     }
 
-    @include media-lg {
+    @include media-md {
       order: 1;
       padding-bottom: 150px;
     }
@@ -141,13 +147,13 @@
     background-color: color('hemlock');
 
     @include media-md {
-      padding-left: 0;
       padding-bottom: 60px;
       padding-right: $padding-md;
     }
 
     @include media-lg {
       order: 0;
+      padding-left: 0;
     }
   }
   // Footer Nav
@@ -190,6 +196,21 @@
       text-decoration: none;
     }
   }
+  // Email
+  .contact-email {
+    margin-top: 37px;
+    p {
+      margin: 0;
+    }
+
+    @include media-md {
+      margin-top: 57px;
+    }
+    @include media-lg {
+      margin-top: 19px;
+    }
+  }
+  // Email/copyright
   .email a,
   .copyright {
     @include p3;
@@ -206,6 +227,7 @@
       bottom: 60px;
     }
   }
+
   // Social/Connect
   .social {
     ul {

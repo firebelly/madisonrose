@@ -9,7 +9,7 @@
 
       <a href="{{ siteUrl }}" class="footer-logo"><svg class="madison-rose-mark" aria-hidden="true" role="presentation"><use xlink:href="#madison-rose-mark"/></svg></a>
 
-      <div id="connect" class="connect footer-content col-lg-3-4">
+      <div id="connect" class="connect footer-content col-md-3-4">
         <div class="email-signup">
           <p>Sign up for our email list to receive property information and resources about Chicago real estate.</p>
 
@@ -29,7 +29,7 @@
         {% endif %}
       </div>
 
-      <div id="contact" class="contact footer-content col-lg-1-4">
+      <div id="contact" class="contact footer-content col-md-1-4">
         <nav class="footer-nav">
           <ul>
             <li><a href="{{ siteUrl }}">Home</a></li>
@@ -60,8 +60,10 @@
             <p class="phone-number"><a href="tel:{{ siteSettings.contactPhoneNumber }}">{{ siteSettings.contactPhoneNumber|replace({'+1 ': '', '-': '.'}) }}</a></p>
           {% endif %}
           {% if siteSettings.siteContactEmailAddress %}
-            <h5>Email us at</h5>
-            <p class="email"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}">{{ siteSettings.siteContactEmailAddress }}</a></p>
+            <div class="contact-email">
+              <h5>Email us at</h5>
+              <p class="email"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}">{{ siteSettings.siteContactEmailAddress }}</a></p>
+            </div>
           {% endif %}
         </div>
 
