@@ -3,6 +3,9 @@
 {% set bodyClass = 'single-property' %}
 {% set bodyID = 'single-property' %}
 {% set seoImage = craft.imager.transformImage(entry.propertyBannerImage.one(), { width: 1200, height: 627, mode: 'crop' }) %}
+{% if entry.propertyIntroHeadline|length %}
+  {% set seoDescription = entry.propertyIntroHeadline %}
+{% endif %}
 
 {% block content %}
   <div class="page-header">

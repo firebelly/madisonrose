@@ -10,7 +10,9 @@
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% if entry is defined and entry.seoDescription | length -%}
+{% if seoDescription is defined %}
+<meta name="description" content="{{ seoDescription }}">
+{% elseif entry is defined and entry.seoDescription | length -%}
 <meta name="description" content="{{ entry.seoDescription }}">
 {% elseif seo.seoDescription | length -%}
 <meta name="description" content="{{ seo.seoDescription }}">
@@ -34,7 +36,9 @@
 {# Twitter Card -#}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }} | {{ siteName }}{% else %}{{ siteName }} | {{ siteSettings.siteTagline }}{% endif %}{% endif %}">
-{% if entry.seoImage is defined and entry.seoImage | length -%}
+{% if seoImage is defined %}
+<meta property="twitter:image" content="{{ seoImage.getUrl() }}">
+{% elseif entry.seoImage is defined and entry.seoImage | length -%}
 {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
 <meta property="twitter:image" content="{{ transformedImage.getUrl() }}">
 {% elseif seo.seoImage | length -%}
