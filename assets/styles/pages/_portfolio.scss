@@ -5,6 +5,7 @@ body.portfolio-page {
     padding-bottom: 120px;
     background-image: url('../images/texture-tan.jpg');
     background-size: 195px 195px;
+    background-color: color('tan');
     @include media-sm {
       padding-bottom: 48px;
     }
