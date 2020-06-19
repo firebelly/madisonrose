@@ -1,16 +1,24 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
-{% set title = '503: Page Not Found' %}
+{% set title = 'Error 503' %}
 {% set bodyClass = 'error-page page-503' %}
 
 {% block content %}
-
-  <div class="sitewrapper">
-    <div class="page-content grid">
-      <div class="col-md-1-2">
-        <h2>Sorry, we're undergoing some maintenance right now</h2>>
+  <div class="page-header">
+    <div class="banner-top">
+      <div class="sitewrapper">
+        <div class="grid spaced spaced-xl">
+          <h2 class="page-headline col-md-1-2">{{ title }}</h2>
+          <p class="subhead col-md-1-2">We're performing some maintenance.<br> Try back later.<br> In the meantime, enjoy the view.</p>
+        </div>
       </div>
     </div>
+    <div class="bottom-banner" style="background-image:url('{{ rev('/images/404-banner.jpg') }}');"></div>
   </div>
 
+  <div class="intro-section sitewrapper">
+    <div class="tagline">
+      <p>Passion<br> Meets Purpose</p>
+    </div>
+  </div>
 {% endblock %}

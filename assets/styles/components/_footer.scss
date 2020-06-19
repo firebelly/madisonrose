@@ -281,10 +281,6 @@
         li {
           display: inline-block;
         }
-
-        li + li {
-          margin-left: 80px;
-        }
       }
     }
     @include media-lg {

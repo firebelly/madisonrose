@@ -1,0 +1,29 @@
+// Secondary Page Styles
+
+body.secondary-page {
+  @include darkTheme;
+
+  .page-body {
+    @include line(before, calc(100% - 16px));
+    padding-top: 72px;
+
+    > * :first-child {
+      margin-top: 0;
+    }
+
+    @include media-md {
+      padding-bottom: $padding-lg;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include media-lg {
+      &::before {
+        top: 16px;
+        display: block;
+      }
+    }
+  }
+}

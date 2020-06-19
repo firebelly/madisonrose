@@ -1,5 +1,34 @@
 // Error Page Styles
 
 body.error-page {
+  @include darkTheme;
 
+  .page-header {
+    .banner-top {
+      @include media-md {
+        padding-bottom: 80px;
+      }
+    }
+
+    .subhead {
+      @include h4;
+      @include eyebrowLine('cream');
+      margin: 72px 0 0;
+
+      @include media-md {
+        margin-top: 128px;
+      }
+    }
+
+    .bottom-banner {
+      @include line(after, 72px);
+      height: 304px;
+      background-size: cover;
+      background-position: center center;
+
+      @include media-md {
+        height: 520px;
+      }
+    }
+  }
 }

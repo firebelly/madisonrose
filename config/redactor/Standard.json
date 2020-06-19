@@ -1,6 +1,6 @@
 {
-  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
-  "plugins": ["fullscreen", "video"],
+  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image"],
   "linkNewTab": true,
-  "toolbarFixed": true
+  "toolbarFixed": true,
+  "formatting": ["h3", "p"]
 }

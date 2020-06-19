@@ -49,6 +49,11 @@ body.home {
       }
     }
 
+    .page-headline {
+      opacity: 0;
+      animation: fadeInUp 2s 1s forwards;
+    }
+
     .bottom-banner {
       @include line(after, 80px);
       background-color: color('hemlock');

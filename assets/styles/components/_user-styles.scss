@@ -1,0 +1,7 @@
+// User Content Styles
+
+.user-content {
+  p, ol, ul {
+    @include p2;
+  }
+}

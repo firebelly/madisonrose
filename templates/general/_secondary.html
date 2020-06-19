@@ -1,0 +1,21 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% set bodyClass = 'secondary-page' %}
+
+{% block content %}
+  <div class="page-header">
+    <div class="banner-top">
+      <div class="sitewrapper grid">
+        <h2 class="page-headline col-md-1-2">{{ entry.title }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body sitewrapper">
+    <div class="grid spaced spaced-lg">
+      <div class="body-content col-lg-1-2 user-content">
+        {{ entry.bodyCopy }}
+      </div>
+    </div>
+  </div>
+{% endblock %}
