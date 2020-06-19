@@ -22,16 +22,14 @@
 {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
 <meta property="og:image" content="{{ transformedImage.getUrl() }}">
 <meta property="og:image:type" content="image/jpeg">
-{% elseif seo.seoImage | length -%}
-{% set transformedImage = craft.imager.transformImage(seo.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
+{% elseif seo.globalSeoImage | length -%}
+{% set transformedImage = craft.imager.transformImage(seo.globalSeoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
 <meta property="og:image" content="{{ transformedImage.getUrl() }}">
 <meta property="og:image:type" content="image/jpeg">
 {% endif -%}
 
 {# Twitter Card -#}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@poopsplat">
-<meta name="twitter:creator" content="@poopsplat">
 <meta name="twitter:title" content="{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }} | {{ siteName }}{% else %}{{ siteName }} | {{ siteSettings.siteTagline }}{% endif %}{% endif %}">
 {% if entry.seoImage is defined and entry.seoImage | length -%}
 {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
