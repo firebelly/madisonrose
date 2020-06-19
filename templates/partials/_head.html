@@ -18,7 +18,10 @@
 <meta property="og:title" content="{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }} | {{ siteName }}{% else %}{{ siteName }} | {{ siteSettings.siteTagline }}{% endif %}{% endif %}">
 <meta property="og:url" content="{{ craft.app.request.absoluteUrl }}">
 
-{% if entry.seoImage is defined and entry.seoImage | length -%}
+{% if seoImage is defined %}
+<meta property="og:image" content="{{ seoImage.getUrl() }}">
+<meta property="og:image:type" content="image/jpeg">
+{% elseif entry.seoImage is defined and entry.seoImage | length -%}
 {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
 <meta property="og:image" content="{{ transformedImage.getUrl() }}">
 <meta property="og:image:type" content="image/jpeg">

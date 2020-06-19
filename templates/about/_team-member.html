@@ -1,5 +1,7 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
 {% set bodyClass = 'single-team-member' %}
+{% set seoImage = craft.imager.transformImage(entry.teamPhoto.one(), { width: 1200, height: 627, mode: 'crop' }) %}
 
 {% block content %}
   <div class="page-header">
