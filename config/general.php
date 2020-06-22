@@ -29,6 +29,8 @@ return [
 
         // Additional allowed file types
         'extraAllowedFileExtensions' => 'vcf',
+
+        'enableGql' => false,
     ],
 
     // Dev environment settings
