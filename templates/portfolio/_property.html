@@ -1,7 +1,6 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
-{% set bodyClass = 'single-property' %}
-{% set bodyID = 'single-property' %}
+{% set bodyClass = 'page-single-property' %}
 {% set seoImage = craft.imager.transformImage(entry.propertyBannerImage.one(), { width: 1200, height: 627, mode: 'crop' }) %}
 {% if entry.propertyIntroHeadline|length %}
   {% set seoDescription = entry.propertyIntroHeadline %}
@@ -17,10 +16,10 @@
             <h3>Download:</h3>
             <ul>
             {% if entry.floorplan|length %}
-              <li><a href="{{ entry.floorplan.one().getUrl() }}"><span>Floorplans</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+              <li><a href="{{ entry.floorplan.one().getUrl() }}" data-no-swup><span>Floorplans</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
             {% endif %}
             {% if entry.brochure|length %}
-              <li><a href="{{ entry.brochure.one().getUrl() }}"><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+              <li><a href="{{ entry.brochure.one().getUrl() }}" data-no-swup><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
             {% endif %}
             </ul>
           </div>

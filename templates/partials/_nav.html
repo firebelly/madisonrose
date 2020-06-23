@@ -1,6 +1,6 @@
 {% set navItems = craft.entries.section('primaryNavigation').all() %}
 
-<nav class="site-nav">
+<nav id="site-nav" class="site-nav">
   <ul class="nav-list">
     <li class="home-link{{ craft.app.request.url == '/' ? ' -current' : '' }}"><a href="{{ siteUrl }}">Home</a></li>
     {% for navItem in navItems %}

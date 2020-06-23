@@ -33,6 +33,8 @@ export default {
     _initNewsletterForm();
     _initForms();
 
+    // $body.addClass('loaded');
+
     // Keyboard navigation and esc handlers
     $document.keyup(function(e) {
       // esc

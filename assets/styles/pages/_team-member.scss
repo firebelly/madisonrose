@@ -72,6 +72,12 @@ body.single-team-member {
     }
 
     .bio-contact {
+      margin-top: $padding-lg;
+
+      @include media-md {
+        margin-top: 0;
+      }
+
       > div {
         + div {
           margin-top: 30px;

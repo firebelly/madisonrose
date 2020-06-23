@@ -1,8 +1,7 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 {% set bannerImage = entry.bannerImage.one() %}
 
-{% set bodyClass = 'home' %}
-{% set bodyId = 'home' %}
+{% set bodyClass = 'page-home' %}
 
 {% block content %}
 

@@ -1,6 +1,22 @@
 // Home page
 
-body.home {
+// Transition for inital load
+html:not(.is-changing) body.page-home {
+  .transition-fade {
+    opacity: 0;
+    transition-delay: 1s;
+  }
+  .page-headline {
+    animation-delay: 1.5s;
+  }
+  &.loaded {
+    .transition-fade {
+      opacity: 1;
+    }
+  }
+}
+
+body.page-home {
   .page-header {
     .banner-top {
       position: relative;
@@ -51,7 +67,7 @@ body.home {
 
     .page-headline {
       opacity: 0;
-      animation: fadeInUp 2s 1s forwards;
+      animation: fadeInUp 2.5s 0.5s forwards;
     }
 
     .bottom-banner {

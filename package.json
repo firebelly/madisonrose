@@ -35,6 +35,10 @@
     "vue-template-compiler": "^2.6"
   },
   "dependencies": {
+    "@swup/body-class-plugin": "^1.0.2",
+    "@swup/debug-plugin": "^1.0.3",
+    "@swup/ga-plugin": "^1.0.1",
+    "@swup/scroll-plugin": "^1.0.6",
     "@vimeo/player": "^2.12.0",
     "imagesloaded": "^4.1.4",
     "jquery": "^3.4",
@@ -42,6 +46,7 @@
     "js-dom-router": "^1.0",
     "lazysizes": "^5.2.0-beta1",
     "masonry-layout": "^4.2.2",
+    "swup": "^2.0.10",
     "velocity-animate": "^1.5.2"
   }
 }
