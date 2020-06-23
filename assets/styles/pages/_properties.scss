@@ -317,6 +317,7 @@ body.single-property {
       }
     }
     .video-thumb {
+      @include imageTreatment;
       top: 0;
       left: 0;
       bottom: 0;
@@ -326,24 +327,6 @@ body.single-property {
       position: absolute;
       background-size: cover;
       transition: opacity 0.5s ease-out;
-      &::before,
-      &::after {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-        content: '';
-        position: absolute;
-      }
-      &::before {
-        mix-blend-mode: multiply;
-        background-color: color('cream');
-      }
-      &::after {
-        mix-blend-mode: screen;
-        background-color: rgba(color('hemlock'), 0.6);
-      }
 
       button {
         @extend .button-reset;
