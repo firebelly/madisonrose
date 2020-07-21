@@ -11,10 +11,8 @@ import appState from '../util/appState';
 let $window = $(window),
     $body = $('body'),
     $document = $(document),
-    $siteNav = $('.site-nav'),
-    $navOpen = $('#nav-toggle'),
-    $navClose = $('#nav-close'),
     transitionElements = [],
+    $siteNav,
     resizeTimer;
 
 export default {
@@ -23,6 +21,9 @@ export default {
     // Set up libraries to be used with jQuery
     jQueryBridget( 'masonry', Masonry, $ );
     ImagesLoaded.makeJQueryPlugin( $ );
+
+    // Init $siteNav since it's swapped out by swup on transitions
+    $siteNav = $('.site-nav');
 
     // Transition elements to enable/disable on resize
     transitionElements = [$siteNav];
@@ -72,7 +73,6 @@ export default {
     }
 
     function _openNav() {
-      console.log('nav open');
       $body.addClass('nav-open');
       if (!$('.page-overlay').length) {
         $body.append('<div class="page-overlay"></div>');
@@ -86,7 +86,7 @@ export default {
         duration: 350
       });
 
-      $('.site-nav').velocity({
+      $siteNav.velocity({
         opacity: 1
       }, {
         display: 'block',
@@ -96,7 +96,6 @@ export default {
     }
 
     function _closeNav() {
-      console.log('nav close');
       $body.removeClass('nav-open');
 
       $('.page-overlay').velocity({
@@ -107,7 +106,7 @@ export default {
         duration: 350
       });
 
-      $('.site-nav').velocity({
+      $siteNav.velocity({
         opacity: 0
       }, {
         display: 'none',
@@ -216,7 +215,7 @@ export default {
         _enableTransitions();
       }, 250);
     }
-    $(window).resize(_resize);
+    $window.on('resize.fb', _resize);
 
   },
   finalize() {
@@ -234,7 +233,7 @@ export default {
       duration: 350
     });
 
-    $('.site-nav').velocity({
+    $siteNav.velocity({
       opacity: 0
     }, {
       display: 'none',
@@ -243,6 +242,7 @@ export default {
     }).removeClass('-active');
 
     // Remove custom event watchers
-    $document.off('click.navOpen, click.navClose, click.bodyNavOpen, click.contactLink');
+    $document.off('click.navOpen click.navClose click.bodyNavOpen click.contactLink keyup.forms change.forms blur.forms');
+    $window.off('resize.fb');
   }
 };
