@@ -54,17 +54,17 @@ export default {
     }
 
     function _initMobileNav() {
-      $navOpen.on('click', _openNav);
-      $navClose.on('click', _closeNav);
+      $document.on('click.navOpen', '#nav-toggle', _openNav);
+      $document.on('click.navClose', '#nav-close', _closeNav);
 
-      $document.on('click', 'body.nav-open', function(e) {
+      $document.on('click.bodyNavOpen', 'body.nav-open', function(e) {
         var $target = $(e.target);
         if (!$target.is('#nav-toggle') && !$target.parents('#nav-toggle').length && !$target.is('.nav-list') && !$target.parents('.nav-list').length) {
           _closeNav();
         }
       });
 
-      $document.on('click', 'a.contact-link', function() {
+      $document.on('click.contactLink', 'a.contact-link', function() {
         if (!appState.breakpoints.md) {
           _closeNav();
         }
@@ -72,6 +72,7 @@ export default {
     }
 
     function _openNav() {
+      console.log('nav open');
       $body.addClass('nav-open');
       if (!$('.page-overlay').length) {
         $body.append('<div class="page-overlay"></div>');
@@ -85,27 +86,18 @@ export default {
         duration: 350
       });
 
-      $siteNav.velocity({
+      $('.site-nav').velocity({
         opacity: 1
       }, {
         display: 'block',
         easing: 'ease-out',
         duration: 350
-      });
-
-      $siteNav.addClass('-active');
+      }).addClass('-active');
     }
 
     function _closeNav() {
+      console.log('nav close');
       $body.removeClass('nav-open');
-
-      $siteNav.velocity({
-        opacity: 0
-      }, {
-        display: 'none',
-        easing: 'ease-out',
-        duration: 350
-      });
 
       $('.page-overlay').velocity({
         opacity: 0
@@ -115,7 +107,13 @@ export default {
         duration: 350
       });
 
-      $siteNav.removeClass('-active');
+      $('.site-nav').velocity({
+        opacity: 0
+      }, {
+        display: 'none',
+        easing: 'ease-out',
+        duration: 350
+      }).removeClass('-active');
     }
 
     // Ajaxify newsletter form
@@ -224,4 +222,27 @@ export default {
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
   },
+  unload() {
+    // Close Nav
+    $body.removeClass('nav-open');
+
+    $('.page-overlay').velocity({
+      opacity: 0
+    }, {
+      display: 'none',
+      easing: 'ease-out',
+      duration: 350
+    });
+
+    $('.site-nav').velocity({
+      opacity: 0
+    }, {
+      display: 'none',
+      easing: 'ease-out',
+      duration: 350
+    }).removeClass('-active');
+
+    // Remove custom event watchers
+    $document.off('click.navOpen, click.navClose, click.bodyNavOpen, click.contactLink');
+  }
 };

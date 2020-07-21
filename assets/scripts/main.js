@@ -52,6 +52,8 @@ swup.on('contentReplaced', () => {
 });
 
 swup.on('transitionStart', () => {
+  // Remove any focused elements before transition
+  document.activeElement.blur()
   // Cleanup calls for js
   routes.unload();
 });

@@ -32,7 +32,7 @@
         {% if episodes|length %}
         <ul class="podcast-episodes col-md-2-3 grid spaced spaced-lg">
           {% if episodes.timestamp is defined %}
-            {{ _self.episodeMarkup(episodes, 2, 0) }}
+            {{ _self.episodeMarkup(episodes, 2, 1) }}
           {% else %}
             {% for episode in episodes|slice(episodeCount - 2,2) %}
               {{ _self.episodeMarkup(episode, episodeCount, loop.index) }}
