@@ -7,7 +7,7 @@
 
   <div class="page-header">
     {% if entry.bannerBackgroundVideo|length %}
-      {% set backgroundVideo = craft.embeddedAssets.get(entry.bannerBackgroundVideo.one()) %}
+      {% set backgroundVideo = craft.embeddedAssets.get(entry.bannerBackgroundVideo.order('RAND()').one()) %}
     {% endif %}
     {% if backgroundVideo is defined and backgroundVideo.url matches '/vimeo\.com/' %}
       {% if 'https://i.vimeocdn.com/filter/overlay?src0=' in backgroundVideo.image %}
@@ -78,13 +78,10 @@
             {% include 'partials/_property-listing.html' with {'property': featuredProperties[0], 'orientation': 'propertyListingPortrait'} %}
           </div>
         {% endif %}
-        <div class="stat-item col-md-1-2">
-          {% if entry.homePortfolioStat|length %}
-            <div class="portfolio-stat">
-              <dl class="stat">
-                <dd class="figure">{{ entry.homePortfolioStat[0].statFigure }}</dd>
-                <dt>{{ entry.homePortfolioStat[0].statDescription }}</dt>
-              </dl>
+        <div class="headline-item col-md-1-2">
+          {% if entry.homePortfolioHeadline|length %}
+            <div class="portfolio-headline">
+              <h4>{{ entry.homePortfolioHeadline }}</h4>
             </div>
           {% endif %}
           {% if featuredProperties[1] is defined %}

@@ -10,13 +10,13 @@
   <div class="page-header">
     <div class="banner-top">
       <div class="sitewrapper grid">
-        <h2 class="page-headline col-md-1-2">{{ entry.title }}</h2>
+        <h2 class="page-headline col-lg-1-2">{{ entry.title }}</h2>
         {% if entry.floorplan|length or entry.brochure|length %}
           <div class="downloads">
             <h3>Download:</h3>
             <ul>
             {% if entry.floorplan|length %}
-              <li><a href="{{ entry.floorplan.one().getUrl() }}" data-no-swup><span>Floorplans</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+              <li><a href="{{ entry.floorplan.one().getUrl() }}" data-no-swup><span>Building<br> Floorplan</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
             {% endif %}
             {% if entry.brochure|length %}
               <li><a href="{{ entry.brochure.one().getUrl() }}" data-no-swup><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
@@ -90,7 +90,7 @@
             <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
-                <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMedia') }}" alt="{{ item.image.one().title }}"></span>
+                <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMediaHalf') }}" alt="{{ item.image.one().title }}"></span>
                 {% if item.image.one().title or item.image.one().caption %}
                 <figcaption>
                 {% if item.image.one().title %}
@@ -136,10 +136,14 @@
               </div>
             </figure>
           {% else %}
-            <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
+            <figure class="media-item {{ item.type }}{{ item.type == 'image' and item.size == 'halfWidth' ? ' col-md-1-2' : ' col-full' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
-                <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMedia') }}" alt="{{ item.image.one().title }}"></span>
+                {% if item.size == 'halfWidth' %}
+                  <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMediaHalf') }}" alt="{{ item.image.one().title }}"></span>
+                {% else %}
+                  <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMediaFull') }}" alt="{{ item.image.one().title }}"></span>
+                {% endif %}
                 {% if item.image.one().title or item.image.one().caption %}
                 <figcaption>
                 {% if item.image.one().title %}
@@ -191,6 +195,5 @@
       </div>
     {% endif %}
 
-    {% include "partials/_entry-nav.html"  with {'section': 'properties'} %}
   </div>
 {% endblock %}

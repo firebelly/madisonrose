@@ -1,6 +1,6 @@
-// About Page
+// Approach Page
 
-body.page-about {
+body.page-approach {
   @include darkTheme;
 
   .page-header {
@@ -25,7 +25,7 @@ body.page-about {
     }
   }
 
-  .about-section {
+  .approach-section {
     padding-bottom: 82px;
 
     h3 {

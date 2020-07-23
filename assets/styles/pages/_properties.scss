@@ -8,7 +8,7 @@ body.page-single-property {
     background-color: color('tan');
 
     .page-headline {
-      margin-bottom: 80px;
+      margin-bottom: 24px;
 
       @media screen and (min-width: 1420px) {
         margin-bottom: 0;
@@ -21,7 +21,7 @@ body.page-single-property {
       }
 
       @include media-md {
-        padding-bottom: 108px;
+        padding-bottom: 64px;
       }
     }
 
@@ -31,14 +31,14 @@ body.page-single-property {
       background-position: center center;
 
       @include media-md {
-        height: 520px;
+        height: 428px;
       }
     }
 
     .downloads {
       display: flex;
       position: relative;
-      margin-bottom: 56px;
+      margin-bottom: 24px;
       vertical-align: baseline;
 
       h3 {
@@ -49,7 +49,7 @@ body.page-single-property {
         display: none;
         line-height: 96px;
         position: relative;
-        padding-right: 36px;
+        padding-right: 16px;
       }
 
       ul {
@@ -57,14 +57,36 @@ body.page-single-property {
         display: flex;
 
         li {
+          position: relative;
+          &::before {
+            top: 0;
+            left: 0;
+            width: 1px;
+            content: '';
+            height: 100%;
+            position: absolute;
+            background-color: color('teak');
+          }
+          &:first-of-type {
+            padding-right: 15px;
+            &::before {
+              display: none;
+            }
+          }
+          &:last-of-type {
+            padding-right: 0;
+            padding-left: 15px;
+          }
+
           + li {
-            margin-left: 30px;
+            margin-left: 0;
           }
         }
 
         a {
           @include h4;
           color: color('rose');
+          vertical-align: middle;
           transition: color 0.35s ease-out;
           &:hover,
           &:focus {
@@ -99,24 +121,19 @@ body.page-single-property {
         ul {
           li {
             height: 96px;
-            padding: 0 36px;
+            padding: 0 24px;
             line-height: 96px;
-            position: relative;
             &::before {
-              top: 0;
-              left: 0;
-              width: 1px;
-              content: '';
               height: 96px;
-              position: absolute;
-              background-color: color('teak');
+            }
+            &:first-of-type {
+              padding-right: 24px;
+              &::before {
+                display: block;
+              }
             }
             &:last-of-type {
-              padding-right: 0;
-            }
-
-            + li {
-              margin-left: 0;
+              padding-left: 24px;
             }
           }
         }
@@ -134,7 +151,7 @@ body.page-single-property {
   // Intro Section
   .section.intro {
     padding-top: 128px;
-    padding-bottom: 128px;
+    padding-bottom: 60px;
     @include line(before, 100%);
 
     @include media-md {
@@ -276,6 +293,21 @@ body.page-single-property {
         &.fig-caption {
           @include p2;
           margin-top: $padding-md;
+        }
+      }
+    }
+
+    // Full-width Image
+    &.col-full {
+      @include media-md {
+        > .-inner {
+          border-bottom: none;
+        }
+
+        figcaption {
+          padding-bottom: 10px;
+          max-width: calc(50% - 18px);
+          border-bottom: 1px solid color('tan');
         }
       }
     }

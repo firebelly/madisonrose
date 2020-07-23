@@ -137,7 +137,7 @@ body.page-home {
       }
     }
 
-    .stat-item {
+    .headline-item {
       @include media-md {
         display: flex;
         flex-direction: column;
@@ -145,31 +145,18 @@ body.page-home {
       }
     }
 
-    .portfolio-stat {
+    .portfolio-headline {
+      margin: 30px 0 94px;
       color: color('teak');
 
-      dl {
-        margin: 0 0 $padding-sm;
-      }
-
-      .figure {
-        @include h1;
+      h4 {
+        @include h3;
         margin: 0;
       }
 
-      dt {
-        @include p2;
-        margin-top: 80px;
-        position: relative;
-        &::before {
-          left: 0;
-          top: -24px;
-          width: 72px;
-          height: 1px;
-          content: '';
-          position: absolute;
-          background-color: color('teak');
-        }
+      @include media-lg {
+        margin-top: 94px;
+        padding-left: 54px;
       }
     }
 
