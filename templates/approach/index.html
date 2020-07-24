@@ -4,7 +4,7 @@
   <div class="page-header">
     <div class="banner-top">
       <div class="sitewrapper grid">
-        <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline : entry.title }}</h2>
+        <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
       </div>
     </div>
 
@@ -115,4 +115,6 @@
       </div>
     </div>
   {% endif %}
+
+  {% include "partials/_page-nav.html" %}
 {% endblock %}

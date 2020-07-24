@@ -19,8 +19,9 @@ html:not(.is-changing) body.page-home {
 body.page-home {
   .page-header {
     .banner-top {
+      padding-top: 128px;
       position: relative;
-      padding-bottom: 24px;
+      padding-bottom: 48px;
       &::after {
         top: 0;
         left: 0;
@@ -38,11 +39,16 @@ body.page-home {
 
       @include media-md {
         display: flex;
-        min-height: 65vh;
-        padding-bottom: 146px;
+        padding-top: 172px;
+        padding-bottom: 64px;
         flex-direction: column;
         justify-content: center;
       }
+    }
+
+    .bottom-banner {
+      height: auto;
+      padding-bottom: 0;
     }
 
     .background-video {

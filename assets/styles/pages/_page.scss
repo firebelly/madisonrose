@@ -5,25 +5,23 @@
   .page-headline {
     @include h1;
     margin: 0;
-
-    @include media-lg {
-      max-width: 60%;
-    }
   }
 
   .banner-top {
-    padding: 146px 0 16px;
+    padding: 105px 0 24px;
     background-size: cover;
     background-position: center center;
 
     @include media-md {
-      padding: 172px 0 146px;
+      padding: 172px 0 64px;
     }
   }
 
   .bottom-banner {
     @include imageTreatment;
+    height: 0;
     background-size: cover;
+    padding-bottom: 34.5503472%;
     background-position: center center;
 
     .banner-text {
@@ -39,6 +37,11 @@
           position: absolute;
         }
       }
+    }
+
+    @include media-lg {
+      height: 428px;
+      padding-bottom: 0;
     }
   }
 }

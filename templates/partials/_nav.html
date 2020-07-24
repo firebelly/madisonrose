@@ -5,7 +5,7 @@
     <li class="home-link{{ craft.app.request.url == '/' ? ' -current' : '' }}"><a href="{{ siteUrl }}">Home</a></li>
     {% for navItem in navItems %}
       {% set navItem = navItem.navEntry.one() %}
-      <li id="nav-{{navItem.title|lower|replace({' ':'-'})}}" {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(2) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}">{{ navItem.title }}</a></li>
+      <li id="nav-{{navItem.title|lower|replace({' ':'-'})}}" {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(1) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}">{{ navItem.title }}</a></li>
     {% endfor %}
     <li><a href="#contact" class="contact-link">Contact</a></li>
   </ul>

@@ -1,0 +1,28 @@
+{% if entry.slug == 'approach' %}
+  {% set nextEntry = craft.entries().section('portfolio').one() %}
+{% elseif entry.slug == 'portfolio' %}
+  {% set nextEntry = craft.entries().section('approach').one() %}
+{% endif %}
+{% set entryImage = nextEntry.bannerImage.one() %}
+{% set transformedImage = craft.imager.transformImage(entryImage,
+  {
+    width: 1440,
+    ratio: 8/3,
+    jpegQuality: 80,
+  }
+) %}
+
+{% if entryImage|length %}
+  <div class="page-nav post-nav sitewrapper">
+    <div class="-inner">
+      <a href="{{ nextEntry.url }}">
+        <span class="text">
+          <span class="label"><span class="underline">Next Page</span></span>
+          <span class="entry-title"><span class="underline">{{ nextEntry.title }}</span></span>
+          <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
+        </span>
+        <span class="entry-image" style="background-image:url('{{ transformedImage.getUrl() }}');"></span>
+      </a>
+    </div>
+  </div>
+{% endif %}

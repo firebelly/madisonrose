@@ -79,33 +79,45 @@
 ///   @include h1;
 /// }
 
-@mixin h2 {
-  @include paragraph-style(60, 64, -0.025em)
-}
-
 @mixin h1 {
-  @include h2;
+  @include paragraph-style(40, 48, -0.025em);
 
   @include media-md {
     @include paragraph-style(96, 96, -0.025em);
   }
 }
 
-@mixin h3 {
+@mixin h2 {
   @include paragraph-style(40, 48, -0.025em);
+
+  @include media-md {
+    @include paragraph-style(60, 64, -0.025em)
+  }
+}
+
+@mixin h3 {
+  @include paragraph-style(33, 40, -0.025em);
+
+  @include media-md {
+    @include paragraph-style(40, 48, -0.025em);
+  }
 }
 
 @mixin h3-caps {
-  @include paragraph-style(33, 40, 0.115em, 400, uppercase);
+  @include paragraph-style(33, 40, 0.115em, normal, uppercase);
 
   @include media-md {
-    @include paragraph-style(40, 48, 0.115em, 400, uppercase);
+    @include paragraph-style(40, 48, 0.115em, normal, uppercase);
   }
 }
 
 @mixin h4 {
   @include font-secondary;
-  @include paragraph-style(15, 20, 0.115em, normal, uppercase);
+  @include paragraph-style(12, 16, 0.115em, normal, uppercase);
+
+  @include media-md {
+    @include paragraph-style(15, 20, 0.115em, normal, uppercase);
+  }
 }
 
 @mixin p1 {
@@ -118,7 +130,11 @@
 }
 
 @mixin p2 {
-  @include paragraph-style(18, 28, 0.015em, 500);
+  @include paragraph-style(15, 20, 0.02em, 500);
+
+  @include media-md {
+    @include paragraph-style(18, 24, 0.015em, 500);
+  }
 }
 
 @mixin p3 {

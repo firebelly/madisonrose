@@ -1,16 +1,32 @@
 {% set params = craft.entries.section(section) %}
+
 {% set nextEntry = entry.getNext(params) %}
 {% if not nextEntry|length %}
   {% set nextEntry = craft.entries.section(section).one() %}
 {% endif %}
+
+{% set prevEntry = entry.getPrev(params) %}
+{% if not prevEntry|length %}
+  {% set prevEntry = craft.entries.section(section).inReverse().one() %}
+{% endif %}
+
 {% if section == 'properties' %}
   {% set label = 'Property' %}
-  {% set entryImage = nextEntry.propertyBannerImage.one() %}
+  {% set nextImage = nextEntry.propertyBannerImage.one() %}
+  {% set prevImage = prevEntry.propertyBannerImage.one() %}
 {% elseif section == 'team' %}
   {% set label = 'Profile' %}
-  {% set entryImage = nextEntry.teamPhoto.one() %}
+  {% set nextImage = nextEntry.teamPhoto.one() %}
+  {% set prevImage = nextEntry.teamPhoto.one() %}
 {% endif %}
-{% set transformedImage = craft.imager.transformImage(entryImage,
+{% set nextImage = craft.imager.transformImage(nextImage,
+  {
+    width: 1440,
+    ratio: 8/3,
+    jpegQuality: 80,
+  }
+) %}
+{% set prevImage = craft.imager.transformImage(prevImage,
   {
     width: 1440,
     ratio: 8/3,
@@ -18,15 +34,27 @@
   }
 ) %}
 
-<div class="entry-nav sitewrapper">
-  <div class="-inner">
-    <a href="{{ nextEntry.url }}">
-      <span class="text">
-        <span class="label">Next {{ label }}</span>
-        <span class="entry-title">{{ nextEntry.title }}</span>
-        <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
-      </span>
-      <span class="entry-image" style="background-image:url('{{ transformedImage.getUrl() }}');"></span>
-    </a>
-  </div>
-</div>
+<nav class="entry-nav post-nav sitewrapper">
+  <ul class="-inner grid">
+    <li class="next col-md-1-2 md-order-1">
+      <a href="{{ nextEntry.url }}">
+        <span class="text">
+          <span class="label"><span class="underline">Next {{ label }}</span></span>
+          <span class="entry-title"><span class="underline">{{ nextEntry.title }}</span></span>
+          <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
+        </span>
+        <span class="entry-image" style="background-image:url('{{ nextImage.getUrl() }}');"></span>
+      </a>
+    </li>
+    <li class="prev col-md-1-2 md-order-0">
+      <a href="{{ prevEntry.url }}">
+        <span class="text">
+          <span class="label"><span class="underline">Previous {{ label }}</span></span>
+          <span class="entry-title"><span class="underline">{{ prevEntry.title }}</span></span>
+          <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-large"/></svg>
+        </span>
+        <span class="entry-image" style="background-image:url('{{ prevImage.getUrl() }}');"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

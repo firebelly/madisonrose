@@ -10,9 +10,9 @@
   <div class="page-header">
     <div class="banner-top">
       <div class="sitewrapper grid">
-        <h2 class="page-headline col-lg-1-2">{{ entry.title }}</h2>
+        <h2 class="page-headline col-xl-1-2">{{ entry.title }}</h2>
         {% if entry.floorplan|length or entry.brochure|length %}
-          <div class="downloads">
+          <div class="downloads col-xl-1-2">
             <h3>Download:</h3>
             <ul>
             {% if entry.floorplan|length %}
@@ -194,6 +194,8 @@
         </div>
       </div>
     {% endif %}
+
+    {% include "partials/_entry-nav.html"  with {'section': 'properties'} %}
 
   </div>
 {% endblock %}

@@ -6,6 +6,11 @@
   background-image: linear-gradient(to top, rgba(color($color),1) 1px, rgba(0,0,0,0) 1px);
 }
 
+// Underlines for headlines
+@mixin headlineUnderline($color, $offset: 4px) {
+  background-image: linear-gradient(to top, rgba(0,0,0,0) $offset, rgba(color($color),1) $offset, rgba(color($color),1) #{$offset + 1}, rgba(0,0,0,0) #{$offset + 1});
+}
+
 @mixin underlineFade($color) {
   position: relative;
   text-decoration: none;

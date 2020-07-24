@@ -19,20 +19,6 @@ body.page-single-property {
       > .grid {
         align-items: flex-end;
       }
-
-      @include media-md {
-        padding-bottom: 64px;
-      }
-    }
-
-    .bottom-banner {
-      height: 304px;
-      background-size: cover;
-      background-position: center center;
-
-      @include media-md {
-        height: 428px;
-      }
     }
 
     .downloads {
@@ -50,6 +36,10 @@ body.page-single-property {
         line-height: 96px;
         position: relative;
         padding-right: 16px;
+
+        @include media-md {
+          line-height: 96px;
+        }
       }
 
       ul {

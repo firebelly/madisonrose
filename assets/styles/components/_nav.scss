@@ -12,7 +12,7 @@
   box-shadow: 0px 4px 12px 0px rgba(25,22,21, 0.25);
 
   a {
-    @include p2;
+    @include paragraph-style(18, 24, 0.015em, 500);
     display: block;
     color: color('rose');
     text-decoration: none;

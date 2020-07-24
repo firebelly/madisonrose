@@ -9,7 +9,6 @@ body.single-team-member {
         @include h4;
         position: relative;
         margin: $padding-md 0 0;
-        padding-bottom: $padding-md;
         &::before {
           width: 72px;
           content: '';
@@ -29,16 +28,6 @@ body.single-team-member {
           margin: 0;
           padding-bottom: 0;
         }
-      }
-    }
-
-    .bottom-banner {
-      height: 304px;
-      background-size: cover;
-      background-position: center center;
-
-      @include media-md {
-        height: 520px;
       }
     }
   }
