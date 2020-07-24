@@ -7,7 +7,7 @@
 
   <div class="page-header">
     {% if entry.bannerBackgroundVideo|length %}
-      {% set backgroundVideo = craft.embeddedAssets.get(entry.bannerBackgroundVideo.order('RAND()').one()) %}
+      {% set backgroundVideo = craft.embeddedAssets.get(entry.bannerBackgroundVideo.orderBy('RAND()').one()) %}
     {% endif %}
     {% if backgroundVideo is defined and backgroundVideo.url matches '/vimeo\.com/' %}
       {% if 'https://i.vimeocdn.com/filter/overlay?src0=' in backgroundVideo.image %}

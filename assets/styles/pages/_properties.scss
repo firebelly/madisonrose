@@ -208,6 +208,59 @@ body.page-single-property {
           right: $padding-md * 1.5;
         }
       }
+
+      // Multiple-property...properties?
+      &.multiple-properties {
+        .property-specs {
+          padding: 0;
+          position: relative;
+
+          .property-label {
+            @include h4;
+            color: color('teak');
+          }
+
+          @include media-md {
+            .property-label {
+              left: 0;
+              bottom: 100%;
+              position: absolute;
+              transform: translateY(-12px);
+            }
+
+            &:first-of-type {
+              padding-right: 20px;
+            }
+
+            + .property-specs {
+              padding-left: 36px;
+
+              .property-label {
+                left: 36px;
+              }
+            }
+          }
+        }
+
+        .info-list {
+          @include media-md {
+            z-index: 1;
+            padding-top: 40px;
+            position: relative;
+            background-color: color('cream');
+
+            &::before {
+              left: 0;
+              right: 0;
+              top: 20px;
+              height: 1px;
+              content: '';
+              position: absolute;
+              background-color: color('tan');
+            }
+          }
+        }
+      }
     }
 
     ul {
