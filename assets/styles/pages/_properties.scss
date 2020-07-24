@@ -172,6 +172,7 @@ body.page-single-property {
 
     .intro-text {
       p {
+        @include p2;
         margin: 0;
       }
     }

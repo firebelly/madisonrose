@@ -160,8 +160,12 @@ body.page-home {
         margin: 0;
       }
 
+      @include media-md {
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
       @include media-lg {
-        margin-top: 94px;
         padding-left: 54px;
       }
     }
