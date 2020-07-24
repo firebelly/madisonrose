@@ -3,8 +3,14 @@
 {% block content %}
   <div class="page-header">
     <div class="banner-top">
-      <div class="sitewrapper grid">
-        <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
+      <div class="sitewrapper">
+        <div class="grid spaced spaced-xl">
+          <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
+
+          {% if entry.pageSubHeadline %}
+            <p class="page-subheadline col-md-1-2">{{ entry.pageSubHeadline }}</p>
+          {% endif %}
+        </div>
       </div>
     </div>
 

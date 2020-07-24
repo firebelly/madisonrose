@@ -5,6 +5,26 @@ body.page-approach {
 
   .page-header {
     @include line(after, 120px);
+
+    .banner-top {
+      .page-subheadline {
+        @include p1;
+        position: relative;
+        margin: $padding-md 0 0;
+      }
+
+      @include media-md {
+        .grid {
+          align-items: flex-end;
+        }
+
+        .page-subheadline {
+          margin: 0;
+          max-width: 525px;
+          padding-bottom: 0;
+        }
+      }
+    }
   }
 
   .approach-section {
