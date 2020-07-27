@@ -3,9 +3,14 @@
 
 {# Macro for episode markup #}
 {% macro episodeMarkup(episode, episodeCount, loopIndex) %}
+  {% if loopIndex == 1 %}
+    {% set offset = 2 %}
+  {% else %}
+    {% set offset = 1 %}
+  {% endif %}
   <li class="episode col-md-1-2">
     <div class="-inner">
-      <p class="episode-meta"><span class="episode-number">Episode {{ loopIndex }}</span> <span class="episode-date">{{ episode.pubDate|date('n/j') }} <span class="dash"></span> {{ episode.pubDate|date('Y') }}</span></p>
+      <p class="episode-meta"><span class="episode-number">Episode {{ episodeCount + 1 - offset }}</span> <span class="episode-date">{{ episode.pubDate|date('n/j') }} <span class="dash"></span> {{ episode.pubDate|date('Y') }}</span></p>
       <h4 class="episode-title"><a href="{{ episode.link }}" target="_blank" rel="noopener">{{ episode.title }}</a></h4>
       <p class="episode-description">{{ episode.description }}</p>
     </div>
