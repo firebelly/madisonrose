@@ -1,4 +1,4 @@
-dateModified: 1596473764
+dateModified: 1596474889
 email:
   fromEmail: matt@firebellydesign.com
   fromName: 'Madison Rose'
@@ -799,6 +799,18 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  cf38eb19-a59b-4417-8a2f-06f49e3d094b:
+    contentColumnType: boolean
+    fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+    handle: maxWidth
+    instructions: 'Should the site wrapper have a max width?'
+    name: 'Max Width'
+    searchable: false
+    settings:
+      default: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   d3a9140a-63eb-423e-b960-a6c541ffc2b2:
     contentColumnType: string
     fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
@@ -1024,6 +1036,9 @@ globalSets:
               b958ad39-6be7-4172-b45c-78c4c943f398:
                 required: false
                 sortOrder: 2
+              cf38eb19-a59b-4417-8a2f-06f49e3d094b:
+                required: false
+                sortOrder: 5
             name: Settings
             sortOrder: 1
           -

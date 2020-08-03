@@ -57,14 +57,17 @@ ul {
   position: relative;
   @include clearfix();
   padding: 0 $padding-sm;
-  // Removing the max width to allow better flow
-  // for super large screens
-  // max-width: $sitewrapper;
+  max-width: $sitewrapper;
   @include media-md {
     padding: 0 $padding-md;
   }
   @include media-lg {
     padding: 0 $padding-lg;
+  }
+}
+body.no-max-width {
+  .sitewrapper {
+    max-width: none;
   }
 }
 
