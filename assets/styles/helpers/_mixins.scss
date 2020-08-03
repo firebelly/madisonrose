@@ -103,6 +103,11 @@
     @content;
   }
 }
+@mixin media-xxl() {
+  @media screen and (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
 
 // On-the fly media-queries
 @mixin screen($res-min, $res-max) {
