@@ -1,4 +1,4 @@
-{% if entry.slug == 'approach' %}
+{% if 'approach' in entry.slug %}
   {% set nextEntry = craft.entries().section('portfolio').one() %}
 {% elseif entry.slug == 'portfolio' %}
   {% set nextEntry = craft.entries().section('approach').one() %}

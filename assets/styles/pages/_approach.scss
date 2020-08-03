@@ -1,6 +1,6 @@
 // Approach Page
 
-body.page-approach {
+body[class^=page-approach] {
   @include darkTheme;
 
   .page-header {
@@ -191,6 +191,29 @@ body.page-approach {
         margin-top: 0;
         padding-top: 24px;
         border-top: 1px solid color('tan');
+      }
+    }
+  }
+}
+
+// Temporary Alterations to present to Matt
+body.page-approach-v2,
+body.page-approach-v3 {
+  @include media-lg {
+    .page-header {
+      .page-headline {
+        font-size: 80px;
+        line-height: 88px;
+      }
+    }
+  }
+}
+
+body.page-approach-v3 {
+  @include media-lg {
+    .page-header {
+      .banner-top {
+        padding-top: 144px;
       }
     }
   }

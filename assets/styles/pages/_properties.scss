@@ -358,7 +358,9 @@ body.page-single-property {
 
     // Images
     img {
+      width: 100%;
       display: block;
+      max-width: none;
     }
 
     // Video
