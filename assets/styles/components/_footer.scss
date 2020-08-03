@@ -40,6 +40,7 @@
       }
 
       @include media-md {
+        flex-wrap: nowrap;
         &::before {
           left: 25%;
           width: 75%;
