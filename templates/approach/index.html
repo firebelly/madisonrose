@@ -2,16 +2,6 @@
 
 {% block content %}
   <div class="page-header">
-    {% if entry.bannerImage|length %}
-      {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
-        {
-          width: 1440,
-          ratio: 8/3,
-          jpegQuality: 80,
-        }
-      ) %}
-      <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
-    {% endif %}
     <div class="banner-top">
       <div class="sitewrapper">
         <div class="grid spaced spaced-xl">
@@ -23,6 +13,17 @@
         </div>
       </div>
     </div>
+
+  {% if entry.bannerImage|length %}
+    {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
+      {
+        width: 1440,
+        ratio: 8/3,
+        jpegQuality: 80,
+      }
+    ) %}
+    <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+  {% endif %}
   </div>
 
   <div class="intro-section sitewrapper">

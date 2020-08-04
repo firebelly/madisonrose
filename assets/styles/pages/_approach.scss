@@ -14,6 +14,8 @@ body[class^=page-approach] {
       }
 
       @include media-md {
+        padding-top: 144px;
+
         .grid {
           align-items: flex-end;
         }
@@ -22,6 +24,11 @@ body[class^=page-approach] {
           margin: 0;
           max-width: 525px;
           padding-bottom: 0;
+        }
+
+        .page-headline {
+          font-size: 80px;
+          line-height: 88px;
         }
       }
     }
@@ -191,29 +198,6 @@ body[class^=page-approach] {
         margin-top: 0;
         padding-top: 24px;
         border-top: 1px solid color('tan');
-      }
-    }
-  }
-}
-
-// Temporary Alterations to present to Matt
-body.page-approach-v2,
-body.page-approach-v3 {
-  @include media-lg {
-    .page-header {
-      .page-headline {
-        font-size: 80px;
-        line-height: 88px;
-      }
-    }
-  }
-}
-
-body.page-approach-v3 {
-  @include media-lg {
-    .page-header {
-      .banner-top {
-        padding-top: 144px;
       }
     }
   }

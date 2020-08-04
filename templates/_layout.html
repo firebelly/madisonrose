@@ -4,7 +4,7 @@
     {% include "/partials/_head" %}
   </head>
 
-  <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %}page-{{ craft.app.request.getSegment(1)}}{% endif %}{{ siteSettings.maxWidth != 'on' ? ' no-max-width' : '' }}">
+  <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %}page-{{ craft.app.request.getSegment(1)}}{% endif %}">
     <div id="breakpoint-indicator"></div>
 
     <header class="site-header" role="banner">

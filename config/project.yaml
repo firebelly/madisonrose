@@ -1,4 +1,4 @@
-dateModified: 1596474889
+dateModified: 1596551178
 email:
   fromEmail: matt@firebellydesign.com
   fromName: 'Madison Rose'
@@ -799,18 +799,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  cf38eb19-a59b-4417-8a2f-06f49e3d094b:
-    contentColumnType: boolean
-    fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
-    handle: maxWidth
-    instructions: 'Should the site wrapper have a max width?'
-    name: 'Max Width'
-    searchable: false
-    settings:
-      default: '1'
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   d3a9140a-63eb-423e-b960-a6c541ffc2b2:
     contentColumnType: string
     fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
@@ -1036,9 +1024,6 @@ globalSets:
               b958ad39-6be7-4172-b45c-78c4c943f398:
                 required: false
                 sortOrder: 2
-              cf38eb19-a59b-4417-8a2f-06f49e3d094b:
-                required: false
-                sortOrder: 5
             name: Settings
             sortOrder: 1
           -
@@ -1962,76 +1947,6 @@ sections:
         template: portfolio/index
         uriFormat: portfolio
     type: single
-  5d7e2bb3-3925-4653-820e-f82b85c39160:
-    enableVersioning: true
-    entryTypes:
-      ea635b89-1cd9-44c5-b060-92c8b68df389:
-        fieldLayouts:
-          352067cc-7f68-4f14-8859-b5e512297cfa:
-            tabs:
-              -
-                fields:
-                  14a07465-edab-4172-8c0b-635dafe20c6c:
-                    required: false
-                    sortOrder: 6
-                  2de82262-66b6-457e-b455-14473efdef07:
-                    required: false
-                    sortOrder: 2
-                  35ba79e6-891a-43f8-b6a7-e4fa301a9023:
-                    required: false
-                    sortOrder: 7
-                  7b91d21d-ae25-4be5-907d-29ab22409f4c:
-                    required: false
-                    sortOrder: 5
-                  9b243530-6776-4588-971e-64a66a3daa16:
-                    required: false
-                    sortOrder: 3
-                  bc763978-3cf5-49e1-b063-5ffbb6829d42:
-                    required: false
-                    sortOrder: 8
-                  bd694bfe-e4cc-41aa-8fe2-443482ab7eb8:
-                    required: false
-                    sortOrder: 1
-                  fcb16124-86ae-48c6-a553-f47d8a4508a6:
-                    required: false
-                    sortOrder: 4
-                name: Settings
-                sortOrder: 1
-              -
-                fields:
-                  41b99460-f4ca-479b-8305-8dcef0ca020c:
-                    required: false
-                    sortOrder: 2
-                  bca8d47e-d9c8-4558-8b32-e3a9415ca00a:
-                    required: false
-                    sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: approachV3
-        hasTitleField: true
-        name: 'Approach V3'
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: Title
-    handle: approachV3
-    name: 'Approach V3'
-    previewTargets:
-      -
-        __assoc__:
-          -
-            - label
-            - 'Primary entry page'
-          -
-            - urlFormat
-            - '{url}'
-    propagationMethod: all
-    siteSettings:
-      2fa33456-77aa-4780-adc6-1103fb992339:
-        enabledByDefault: true
-        hasUrls: true
-        template: approach/index
-        uriFormat: approach-v3
-    type: single
   a3c1e77a-351c-4967-aaf4-7652412fdb9f:
     enableVersioning: true
     entryTypes:
@@ -2108,76 +2023,6 @@ sections:
       maxLevels: 1
       uid: 070661ab-4f76-4f8c-9b79-548205e42fc1
     type: structure
-  e26d0dc5-e4d2-4676-aff5-08bb580263cd:
-    enableVersioning: true
-    entryTypes:
-      38fe1b23-d124-4e65-915b-dafd766a8501:
-        fieldLayouts:
-          a7d991f7-e3bc-4f50-876e-6b88a605e384:
-            tabs:
-              -
-                fields:
-                  14a07465-edab-4172-8c0b-635dafe20c6c:
-                    required: false
-                    sortOrder: 6
-                  2de82262-66b6-457e-b455-14473efdef07:
-                    required: false
-                    sortOrder: 2
-                  35ba79e6-891a-43f8-b6a7-e4fa301a9023:
-                    required: false
-                    sortOrder: 7
-                  7b91d21d-ae25-4be5-907d-29ab22409f4c:
-                    required: false
-                    sortOrder: 5
-                  9b243530-6776-4588-971e-64a66a3daa16:
-                    required: false
-                    sortOrder: 3
-                  bc763978-3cf5-49e1-b063-5ffbb6829d42:
-                    required: false
-                    sortOrder: 8
-                  bd694bfe-e4cc-41aa-8fe2-443482ab7eb8:
-                    required: false
-                    sortOrder: 1
-                  fcb16124-86ae-48c6-a553-f47d8a4508a6:
-                    required: false
-                    sortOrder: 4
-                name: Settings
-                sortOrder: 1
-              -
-                fields:
-                  41b99460-f4ca-479b-8305-8dcef0ca020c:
-                    required: false
-                    sortOrder: 2
-                  bca8d47e-d9c8-4558-8b32-e3a9415ca00a:
-                    required: false
-                    sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: approachV2
-        hasTitleField: true
-        name: 'Approach V2'
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: Title
-    handle: approachV2
-    name: 'Approach V2'
-    previewTargets:
-      -
-        __assoc__:
-          -
-            - label
-            - 'Primary entry page'
-          -
-            - urlFormat
-            - '{url}'
-    propagationMethod: all
-    siteSettings:
-      2fa33456-77aa-4780-adc6-1103fb992339:
-        enabledByDefault: true
-        hasUrls: true
-        template: approach/index
-        uriFormat: approach-v2
-    type: single
 siteGroups:
   5a1279a8-5301-445a-9d28-a5ab15dda49e:
     name: 'Madison Rose'

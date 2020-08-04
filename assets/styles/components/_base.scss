@@ -57,17 +57,13 @@ ul {
   position: relative;
   @include clearfix();
   padding: 0 $padding-sm;
-  max-width: $sitewrapper;
+  // Removing max-width for better jumbotron experience
+  // max-width: $sitewrapper;
   @include media-md {
     padding: 0 $padding-md;
   }
   @include media-lg {
     padding: 0 $padding-lg;
-  }
-}
-body.no-max-width {
-  .sitewrapper {
-    max-width: none;
   }
 }
 
