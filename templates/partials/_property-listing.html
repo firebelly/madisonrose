@@ -4,7 +4,9 @@
       <div class="overlay">
         <div class="-inner">
           <p>View</p>
-          <p>Magna Fringilla Malesuada Parturient</p>
+          {% if property.propertyIntroHeadline|length %}
+            <p>{{ property.propertyIntroHeadline }}</p>
+          {% endif %}
         </div>
       </div>
       <img src="{{ property.listingImage.one().getUrl(orientation) }}" alt="{{ property.title }}">
