@@ -2,6 +2,8 @@
 //
 // Fades and slides in images as they appear in the viewport
 
+import appState from '../util/appState';
+
 let $reveals,
     activated = [],
     $window = $(window),
@@ -13,19 +15,18 @@ const imageReveals = {
 
   // Init sticky headers
   init() {
-    if (!$('.-reveal').length) {
-      return;
+    if ($('.-reveal').length) {
+      // Reset activated
+      activated = [];
+      $reveals = $('.-reveal');
+
+      imageReveals.resize();
+      imageReveals.update();
+
+      $window.on('scroll.reveals', imageReveals.scrolling);
+      $window.on('resize.reveals', imageReveals.resize);
+      $window.on('load.reveals', imageReveals.resize);
     }
-
-    // Reset activated
-    activated = [];
-    $reveals = $('.-reveal');
-    imageReveals.resize();
-    imageReveals.update();
-
-    $window.on('scroll.reveals', imageReveals.scrolling);
-    $window.on('resize.reveals', imageReveals.resize);
-    $window.on('load.reveals', imageReveals.resize);
 
     // Reposition after lazyloaded images show
     document.addEventListener('lazyloaded', function(e){
@@ -49,6 +50,9 @@ const imageReveals = {
     $reveals.each(function(i) {
       if (!activated[i] && this.getAttribute('data-originalPosition') <= (scrollTop + windowHeight - (windowHeight * 0.05))) {
         $(this).addClass('-active');
+        if (appState.popState) {
+          $(this).addClass('-instant');
+        }
         activated[i] = 1;
       }
     });

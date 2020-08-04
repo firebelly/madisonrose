@@ -2,6 +2,16 @@
 
 {% block content %}
   <div class="page-header">
+    {% if entry.bannerImage|length %}
+      {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
+        {
+          width: 1440,
+          ratio: 8/3,
+          jpegQuality: 80,
+        }
+      ) %}
+      <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+    {% endif %}
     <div class="banner-top">
       <div class="sitewrapper">
         <div class="grid spaced spaced-xl">
@@ -13,22 +23,11 @@
         </div>
       </div>
     </div>
-
-  {% if entry.bannerImage|length %}
-    {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
-      {
-        width: 1440,
-        ratio: 8/3,
-        jpegQuality: 80,
-      }
-    ) %}
-    <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
-  {% endif %}
   </div>
 
   <div class="intro-section sitewrapper">
     <div class="tagline">
-      <p>Work.<br> Life.<br> Balanced.</p>
+      <p><span class="-reveal">Work.</span><br> <span class="-reveal">Life.</span><br> <span class="-reveal">Balanced.</span></p>
     </div>
   </div>
 
@@ -53,11 +52,11 @@
 
   <div class="team-section">
     <div class="sitewrapper">
-      <h3>One Team.<br> One Goal.</h3>
+      <h3 class="-reveal">One Team.<br> One Goal.</h3>
       <div class="card-grid">
         <div class="grid spaced">
           {% for teamMember in craft.entries.section('team').all() %}
-            <div class="col-md-1-2">
+            <div class="col-md-1-2 -reveal">
               {% include "partials/_team-member-listing.html" %}
             </div>
           {% endfor %}
@@ -74,7 +73,7 @@
         <h3 class="section-title">The Madrose Method</h3>
         <ol class="method-list">
           {% for method in methods %}
-            <li class="method grid spaced spaced-lg">
+            <li class="method grid spaced spaced-lg -reveal">
               <h4 class="label col-md-1-2"><span class="number">{{ loop.index }}</span> <span class="text">{{ method.methodLabel }}</span></h4>
               <p class="col-md-1-2">{{ method.methodDescription }}</p>
             </li>
@@ -94,7 +93,7 @@
   {% if entry.philanthropyParagraph|length %}
     <div class="philanthropy-section section">
       <div class="sitewrapper">
-        <h3>Driven to Give.</h3>
+        <h3 class="-reveal">Driven to Give.</h3>
         <div class="grid spaced">
           <div class="philanthropy-text col-md-1-2">
             <p>{{ entry.philanthropyParagraph }}</p>

@@ -18,6 +18,10 @@ $colors: (
   @return map-get($colors, $color-name);
 }
 
+// Site Header Height
+$header-sm: 82px;
+$header-md: 114px;
+
 // Breakpoints
 $breakpoint-sm: 520px;
 $breakpoint-md: 768px;

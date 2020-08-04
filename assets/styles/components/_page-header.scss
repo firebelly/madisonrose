@@ -1,0 +1,52 @@
+// Page Header
+
+.page-header {
+  padding-top: $header-sm;
+
+  @include media-md {
+    padding-top: $header-md;
+  }
+
+  .page-headline {
+    @include h1;
+    margin: 0;
+  }
+
+  .banner-top {
+    padding: 24px 0;
+    background-size: cover;
+    background-position: center center;
+
+    @include media-md {
+      padding: 64px 0;
+    }
+  }
+
+  .bottom-banner {
+    @include imageTreatment;
+    height: 0;
+    background-size: cover;
+    padding-bottom: 34.5503472%;
+    background-position: center center;
+
+    .banner-text {
+      p {
+        @include p1;
+        position: relative;
+        &::before {
+          left: 0;
+          top: -32px;
+          height: 1px;
+          width: 72px;
+          content: '';
+          position: absolute;
+        }
+      }
+    }
+
+    @include media-lg {
+      height: 428px;
+      padding-bottom: 0;
+    }
+  }
+}

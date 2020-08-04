@@ -63,9 +63,9 @@
 
   <div class="intro-section sitewrapper">
     {% if entry.homeIntroParagraph %}
-      <p>{{ entry.homeIntroParagraph }}</p>
+      <p class="-reveal">{{ entry.homeIntroParagraph }}</p>
     {% endif %}
-    <p class="cta"><a href="{{ url('/approach') }}" class="button -hollow">See What We're About <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+    <p class="cta -reveal"><a href="{{ url('/approach') }}" class="button -hollow">See What We're About <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
   </div>
 
   <div class="portfolio-section sitewrapper">
@@ -74,35 +74,35 @@
     <div class="card-grid">
       <div class="-top grid spaced">
         {% if featuredProperties[0] %}
-          <div class="col-md-1-2">
+          <div class="col-md-1-2 -reveal">
             {% include 'partials/_property-listing.html' with {'property': featuredProperties[0], 'orientation': 'propertyListingPortrait'} %}
           </div>
         {% endif %}
         <div class="headline-item col-md-1-2">
           {% if entry.homePortfolioHeadline|length %}
-            <div class="portfolio-headline">
+            <div class="portfolio-headline -reveal">
               <h4>{{ entry.homePortfolioHeadline }}</h4>
             </div>
           {% endif %}
           {% if featuredProperties[1] is defined %}
-            {% include 'partials/_property-listing.html' with {'property': featuredProperties[1], 'orientation': 'propertyListingLandscape'} %}
+            {% include 'partials/_property-listing.html' with {'property': featuredProperties[1], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
           {% endif %}
         </div>
       </div>
       <div class="-bottom grid spaced">
         {% if featuredProperties[2] is defined %}
           <div class="properties col-md-1-2">
-            {% include 'partials/_property-listing.html' with {'property': featuredProperties[2], 'orientation': 'propertyListingLandscape'} %}
+            {% include 'partials/_property-listing.html' with {'property': featuredProperties[2], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
             {% if featuredProperties[3] is defined %}
-              {% include 'partials/_property-listing.html' with {'property': featuredProperties[3], 'orientation': 'propertyListingLandscape'} %}
+              {% include 'partials/_property-listing.html' with {'property': featuredProperties[3], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
             {% endif %}
           </div>
         {% endif %}
         <div class="portfolio-intro col-md-1-2">
           {% if entry.homePortfolioParagraph %}
-            <p>{{ entry.homePortfolioParagraph }}</p>
+            <p class="-reveal">{{ entry.homePortfolioParagraph }}</p>
           {% endif %}
-          <p class="cta"><a href="{{ url('/portfolio') }}" class="button -hollow">View All Properties <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+          <p class="cta -reveal"><a href="{{ url('/portfolio') }}" class="button -hollow">View All Properties <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
         </div>
       </div>
     </div>
@@ -117,8 +117,8 @@
 
   <div class="intro-section sitewrapper">
     <div class="tagline">
-      <p class="label">Fresh Perspective</p>
-      <p>Every<br> Building<br> Has a Story.</p>
+      <p class="label -reveal">Fresh Perspective</p>
+      <p class="-reveal">Every<br> Building<br> Has a Story.</p>
     </div>
   </div>
 

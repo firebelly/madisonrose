@@ -30,14 +30,14 @@
             {% set imageH = image.height %}
             {% if imageH > imageW %}
               {% if loop.index == 1 %}
-                {% set class = 'portrait' %}
+                {% set class = 'portrait -reveal' %}
                 {% set orientation = 'propertyListingPortrait' %}
               {% else %}
-                {% set class = 'portrait-small' %}
+                {% set class = 'portrait-small -reveal' %}
                 {% set orientation = 'propertyListingPortraitSmall' %}
               {% endif %}
             {% else %}
-              {% set class = 'landscape' %}
+              {% set class = 'landscape -reveal' %}
               {% set orientation = 'propertyListingLandscape' %}
             {% endif %}
 
@@ -47,9 +47,9 @@
 
         {% if entry.portfolioStatement|length %}
           <div class="portfolio-statement">
-            <p>{{ entry.portfolioStatement }}</p>
+            <p class="-reveal">{{ entry.portfolioStatement }}</p>
             {% if siteSettings.siteContactEmailAddress %}
-              <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in a Property" class="button -hollow">Interested in a Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+              <p class="cta -reveal"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in a Property" class="button -hollow">Interested in a Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
             {% endif %}
           </div>
         {% endif %}

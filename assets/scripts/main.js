@@ -8,6 +8,7 @@ import SwupGaPlugin from '@swup/ga-plugin';
 // Import local dependencies
 import Router from './util/Router';
 import appState from './util/appState';
+import imageReveals from './util/imageReveals';
 
 // Routes
 import common from './routes/common';
@@ -42,6 +43,7 @@ const routes = new Router({
 
 // Inits
 appState.init();
+imageReveals.init();
 
 // Load events
 $(document).ready(() => routes.loadEvents());
@@ -49,6 +51,7 @@ $(document).ready(() => routes.loadEvents());
 // Reload events when swup replaces content
 swup.on('contentReplaced', () => {
   routes.loadEvents();
+  imageReveals.init();
 });
 
 swup.on('transitionStart', () => {
@@ -56,4 +59,5 @@ swup.on('transitionStart', () => {
   document.activeElement.blur()
   // Cleanup calls for js
   routes.unload();
+  imageReveals.unload();
 });

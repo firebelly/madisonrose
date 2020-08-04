@@ -61,13 +61,18 @@ body.single-team-member {
     }
 
     .bio-contact {
-      margin-top: $padding-lg;
+      margin-top: $padding-md;
 
-      @include media-md {
-        margin-top: 0;
+      > .-inner {
+        padding-top: 10px;
+        border-top: 1px solid color('tan');
       }
 
-      > div {
+      @include media-md {
+        margin-top: -$padding-lg;
+      }
+
+      > .-inner > div {
         + div {
           margin-top: 30px;
         }

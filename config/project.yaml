@@ -1,4 +1,35 @@
-dateModified: 1596551178
+dateModified: 1596553150
+dolphiq_sitemap_entries:
+  1eab00ca-eeff-425b-8d55-f839dd90a286:
+    changefreq: weekly
+    linkId: 3eef12ed-a11f-4f0e-aacd-3bfaf28b82fa
+    priority: 0.5
+    type: section
+  2f5c3baa-e61d-4869-b3d1-777f384b91dd:
+    changefreq: weekly
+    linkId: 12e9e810-06e6-44c2-9abe-24f5079b8c7a
+    priority: 0.5
+    type: section
+  505b458a-4f9e-4f3d-9d8d-0c938775702b:
+    changefreq: weekly
+    linkId: a9e1f89b-6f3c-4a69-8b3b-39bb3c01513c
+    priority: 0.5
+    type: section
+  53e9a651-ea6a-4d7e-a04a-3f08ad5bc8ce:
+    changefreq: weekly
+    linkId: 53443206-ed2c-49b1-9821-44b6399af201
+    priority: 0.5
+    type: section
+  581f4c98-8120-4faf-8d1b-9e2831590da2:
+    changefreq: weekly
+    linkId: 18859eb3-c0bb-4761-9e92-4a120a5336c1
+    priority: 0.5
+    type: section
+  7620f271-e104-40bf-adbb-308645de5bd3:
+    changefreq: weekly
+    linkId: 051e116a-e7b3-48b6-ac65-ea3e87f9f8c1
+    priority: 0.5
+    type: section
 email:
   fromEmail: matt@firebellydesign.com
   fromName: 'Madison Rose'
@@ -1659,6 +1690,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  sitemap:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
   sprout-fields:
     edition: standard
     enabled: true

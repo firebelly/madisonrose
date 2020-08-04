@@ -8,6 +8,10 @@
 
 {% block content %}
   <div class="page-header">
+    {% if entry.propertyBannerImage|length %}
+      <div class="bottom-banner" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div>
+    {% endif %}
+
     <div class="banner-top">
       <div class="sitewrapper grid">
         <h2 class="page-headline col-xl-1-2">{{ entry.title }}</h2>
@@ -26,17 +30,13 @@
         {% endif %}
       </div>
     </div>
-
-    {% if entry.propertyBannerImage|length %}
-      <div class="bottom-banner" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div>
-    {% endif %}
   </div>
 
   <div class="page-body">
     {% if entry.propertyIntroHeadline|length or entry.propertyIntroText|length or entry.propertyInfo|length or entry.propertySpecs|length %}
       <div class="intro section sitewrapper">
       {% if entry.propertyIntroHeadline|length %}
-        <h3>{{ entry.propertyIntroHeadline }}</h3>
+        <h3 class="-reveal">{{ entry.propertyIntroHeadline }}</h3>
       {% endif %}
         <div class="grid spaced spaced-lg">
         {% if entry.propertyIntroText|length %}
@@ -109,13 +109,13 @@
         <div class="grid spaced">
         {% for item in entry.propertyMedia.all() %}
           {% if entry.propertyCta|length and loop.index == entry.propertyMedia.all()|length  %}
-            <div class="property-cta col-md-1-2">
+            <div class="property-cta col-md-1-2 -reveal">
               <p>{{ entry.propertyCta }}</p>
             {% if siteSettings.siteContactEmailAddress %}
               <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
             {% endif %}
             </div>
-            <figure class="media-item {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
+            <figure class="media-item -reveal {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
                 <span class="treated-image"><img src="{{ item.image.one().getUrl('propertyMediaHalf') }}" alt="{{ item.image.one().title }}"></span>
@@ -164,7 +164,7 @@
               </div>
             </figure>
           {% else %}
-            <figure class="media-item {{ item.type }}{{ item.type == 'image' and item.size == 'halfWidth' ? ' col-md-1-2' : ' col-full' }}">
+            <figure class="media-item -reveal {{ item.type }}{{ item.type == 'image' and item.size == 'halfWidth' ? ' col-md-1-2' : ' col-full' }}">
               <div class="-inner">
               {% if item.type == 'image' %}
                 {% if item.size == 'halfWidth' %}

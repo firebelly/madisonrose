@@ -14,8 +14,6 @@ body[class^=page-approach] {
       }
 
       @include media-md {
-        padding-top: 144px;
-
         .grid {
           align-items: flex-end;
         }
