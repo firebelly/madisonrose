@@ -5,6 +5,7 @@
     RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
     RewriteCond %{HTTP_HOST} !^www\.mad-rose\.com [NC]
     RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
+    RewriteCond %{HTTP_HOST} !^staging\.mad-rose\.com [NC]
     RewriteRule ^(.*)$ https://www.mad-rose.com/$1 [R=301,L]
 
     # Force SSL
