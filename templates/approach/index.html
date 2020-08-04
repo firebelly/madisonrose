@@ -67,43 +67,5 @@
     </div>
   {% endif %}
 
-  <div class="page-break">
-    <div class="image-break">
-      <div class="texture" style="background-image:url('{{ url('/assets/dist/images/map-1_square.jpg') }}');"></div>
-      <div class="image-background" style="background-image:url('{{ url('/assets/dist/images/about-page-break.jpg') }}');"></div>
-    </div>
-  </div>
-
-  {% if entry.philanthropyParagraph|length %}
-    <div class="philanthropy-section section">
-      <div class="sitewrapper">
-        <h3 class="-reveal">Driven to Give.</h3>
-        <div class="grid spaced">
-          <div class="philanthropy-text col-md-1-2">
-            <p>{{ entry.philanthropyParagraph }}</p>
-          </div>
-          {% if entry.philanthropyImage|length %}
-            {% set transformedImage = craft.imager.transformImage(entry.philanthropyImage.one(),
-              {
-                width: 1116,
-                jpegQuality: 80,
-              }
-            ) %}
-            <div class="col-md-1-2">
-              <figure class="philanthropy-image">
-                <img src="{{ transformedImage.getUrl() }}" alt="{{ entry.philanthropyImage.one().title }}">
-                {% if entry.philanthropyImage.one().caption|length %}
-                  <figcaption>
-                    <p>{{ entry.philanthropyImage.one().caption }}</p>
-                  </figcaption>
-                {% endif %}
-              </figure>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
   {% include "partials/_page-nav.html" %}
 {% endblock %}

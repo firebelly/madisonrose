@@ -28,6 +28,10 @@ def deploy(composer='y', assets='y'):
     local('yarn build:production')
     run('mkdir -p ' + env.remotepath + '/web/assets/dist')
     put('web/assets/dist', env.remotepath + '/web/assets/')
+  with cd(env.remotepath):
+    run('./craft clear-caches/compiled-templates')
+    run('./craft clear-caches/template-caches')
+    run('./craft project-config/apply')
 
 def update():
   with cd(env.remotepath):
