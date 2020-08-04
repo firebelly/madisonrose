@@ -3,16 +3,34 @@ fieldLayouts:
   9584ed71-8a49-47ae-942f-33de2c3a9e7a:
     tabs:
       -
-        fields:
-          531ba60c-9970-43ae-9fa2-eba1cc5847cf:
+        elements:
+          -
+            fieldUid: bf4f87da-e25e-4fbb-b0bf-fe7ddb4767e7
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          b9bbcf70-9583-4b97-9f99-ff71d0cece77:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: b9bbcf70-9583-4b97-9f99-ff71d0cece77
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          bf4f87da-e25e-4fbb-b0bf-fe7ddb4767e7:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 531ba60c-9970-43ae-9fa2-eba1cc5847cf
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
         name: Content
         sortOrder: 1
 fields:
@@ -31,6 +49,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -76,6 +95,7 @@ fields:
     name: Image
     searchable: true
     settings:
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -84,6 +104,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: 'Choose an Image'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -92,7 +113,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
     translationMethod: site

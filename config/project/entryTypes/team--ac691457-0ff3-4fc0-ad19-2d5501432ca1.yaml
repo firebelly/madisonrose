@@ -36,7 +36,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 25
+            width: 100
           -
             fieldUid: bd694bfe-e4cc-41aa-8fe2-443482ab7eb8
             instructions: null
@@ -45,7 +45,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 75
+            width: 50
           -
             fieldUid: 2de82262-66b6-457e-b455-14473efdef07
             instructions: null
@@ -54,9 +54,10 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
           -
-            type: craft\fieldlayoutelements\HorizontalRule
+            heading: 'Philanthropy Section'
+            type: craft\fieldlayoutelements\Heading
           -
             fieldUid: 35ba79e6-891a-43f8-b6a7-e4fa301a9023
             instructions: null
@@ -77,8 +78,30 @@ fieldLayouts:
             width: 25
         name: Content
         sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: bca8d47e-d9c8-4558-8b32-e3a9415ca00a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 41b99460-f4ca-479b-8305-8dcef0ca020c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
 handle: team
-hasTitleField: false
+hasTitleField: true
 name: Team
 section: 010ac43e-03be-4379-8745-9c4f110a0fa3
 sortOrder: 1

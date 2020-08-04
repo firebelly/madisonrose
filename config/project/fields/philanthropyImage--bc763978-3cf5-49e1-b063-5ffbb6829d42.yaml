@@ -1,11 +1,11 @@
 contentColumnType: string
-fieldGroup: 89bcd5e5-973b-441e-bf51-d40c6349e499
+fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
 handle: philanthropyImage
 instructions: ''
 name: 'Philanthropy Image'
 searchable: true
 settings:
-  allowSelfRelations: ''
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -14,6 +14,7 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Choose an image'
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -22,7 +23,7 @@ settings:
   sources: '*'
   targetSiteId: null
   useSingleFolder: true
-  validateRelatedElements: ''
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

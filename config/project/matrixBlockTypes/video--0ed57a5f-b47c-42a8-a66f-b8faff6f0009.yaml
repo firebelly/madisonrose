@@ -3,13 +3,25 @@ fieldLayouts:
   2db60b5f-cccd-4bb8-8466-87f11d02b42b:
     tabs:
       -
-        fields:
-          9ca59183-041b-4408-95e9-eaf9522e4f6a:
+        elements:
+          -
+            fieldUid: 9ca59183-041b-4408-95e9-eaf9522e4f6a
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          c6428a46-d124-4651-a441-a577544085ca:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: c6428a46-d124-4651-a441-a577544085ca
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
         name: Content
         sortOrder: 1
 fields:
@@ -21,6 +33,7 @@ fields:
     name: Video
     searchable: false
     settings:
+      allowSelfRelations: false
       allowedKinds:
         - json
       defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -29,6 +42,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: 'Choose a video'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
@@ -37,7 +51,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
     translationMethod: site
@@ -57,6 +71,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

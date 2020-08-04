@@ -4,37 +4,88 @@ fieldLayouts:
       -
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            autofocus: false
+            class: null
+            disabled: false
+            id: null
             instructions: null
-            label: ''
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
           -
             fieldUid: 9b243530-6776-4588-971e-64a66a3daa16
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: bd694bfe-e4cc-41aa-8fe2-443482ab7eb8
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
           -
             fieldUid: 2de82262-66b6-457e-b455-14473efdef07
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
           -
             fieldUid: 0e6a48ec-f15c-4773-99b3-b567a18c5db4
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Settings
         sortOrder: 1
       -
         elements:
           -
             fieldUid: bca8d47e-d9c8-4558-8b32-e3a9415ca00a
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 41b99460-f4ca-479b-8305-8dcef0ca020c
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: SEO
         sortOrder: 2
 handle: portfolio
@@ -43,3 +94,5 @@ name: Portfolio
 section: 53443206-ed2c-49b1-9821-44b6399af201
 sortOrder: 1
 titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
