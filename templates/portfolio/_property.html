@@ -109,10 +109,10 @@
         <div class="grid spaced">
         {% for item in entry.propertyMedia.all() %}
           {% if entry.propertyCta|length and loop.index == entry.propertyMedia.all()|length  %}
-            <div class="property-cta col-md-1-2 -reveal">
-              <p>{{ entry.propertyCta }}</p>
+            <div class="property-cta col-md-1-2">
+              <p class="-reveal">{{ entry.propertyCta }}</p>
             {% if siteSettings.siteContactEmailAddress %}
-              <p class="cta"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
+              <p class="cta -reveal"><a href="mailto:{{ siteSettings.siteContactEmailAddress }}?subject=Interest in {{ entry.title }}" class="button -hollow">Interested in this Property? <svg aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
             {% endif %}
             </div>
             <figure class="media-item -reveal {{ item.type }}{{ item.type == 'image' ? ' col-md-1-2' : '' }}">
