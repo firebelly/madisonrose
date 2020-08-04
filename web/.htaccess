@@ -1,6 +1,21 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Ensure consistent www URL
+    RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+    RewriteCond %{HTTP_HOST} !^www\.mad-rose\.com [NC]
+    RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
+    RewriteRule ^(.*)$ https://www.mad-rose.com/$1 [R=301,L]
+
+    # Force SSL
+    RewriteCond %{HTTP:X-Forwarded-SSL} !on
+    RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # Custom redirects
+    RewriteRule ^approach-v2/?$ /approach [R=301,L]
+    RewriteRule ^approach-v3/?$ /approach [R=301,L]
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
