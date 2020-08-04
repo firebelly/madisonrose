@@ -1,0 +1,54 @@
+dateModified: 1596570672
+email:
+  fromEmail: matt@firebellydesign.com
+  fromName: 'Madison Rose'
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cloner:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  craft-rss:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+  embeddedassets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  sitemap:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
+  sprout-fields:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.5.3
+system:
+  edition: pro
+  live: true
+  name: 'Madison Rose'
+  schemaVersion: 3.5.12
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

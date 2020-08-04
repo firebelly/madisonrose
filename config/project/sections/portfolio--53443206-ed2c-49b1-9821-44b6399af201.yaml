@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: portfolio
+name: Portfolio
+propagationMethod: all
+siteSettings:
+  2fa33456-77aa-4780-adc6-1103fb992339:
+    enabledByDefault: true
+    hasUrls: true
+    template: portfolio/index
+    uriFormat: portfolio
+type: single

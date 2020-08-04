@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 11fc22fb-a91f-4d7d-be3c-8b9cba17db05
+handle: bodyCopy
+instructions: ''
+name: Body
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Standard.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

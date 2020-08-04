@@ -1,0 +1,27 @@
+contentColumnType: string
+fieldGroup: 11fc22fb-a91f-4d7d-be3c-8b9cba17db05
+handle: bannerImage
+instructions: 'Banner image that appears at the top of the page. '
+name: 'Banner Image'
+searchable: false
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Choose an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

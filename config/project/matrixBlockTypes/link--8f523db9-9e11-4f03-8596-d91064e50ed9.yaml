@@ -1,0 +1,49 @@
+field: 37ad30c8-9d9b-4f79-ad58-cacee02e09cb
+fieldLayouts:
+  e631307e-b7de-4266-9ccb-9d24609b6da1:
+    tabs:
+      -
+        fields:
+          79c51894-dac7-4818-912c-76c2ee5f223f:
+            required: true
+            sortOrder: 1
+          b35a0c9f-284a-48d5-a6c2-2ae40df401f4:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  79c51894-dac7-4818-912c-76c2ee5f223f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkLabel
+    instructions: 'example: "LinkedIn"'
+    name: 'Link Label'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b35a0c9f-284a-48d5-a6c2-2ae40df401f4:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: linkUrl
+    instructions: 'The full URL of the link. Example: "https://www.linkedin.com/company/madisonrose/"'
+    name: 'Link URL'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: link
+name: Link
+sortOrder: 1

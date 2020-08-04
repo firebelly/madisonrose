@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
+handle: bioHeadline
+instructions: 'Short headline introducing the bio.'
+name: 'Bio Headline'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

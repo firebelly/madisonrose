@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: fb72e412-bd30-46c1-ba55-f64dbb5cb308
+handle: homePortfolioStat
+instructions: 'Portfolio stat listed in the portfolio section.'
+name: 'Portfolio Stat'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_homeportfoliostat}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

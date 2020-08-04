@@ -1,0 +1,20 @@
+contentColumnType: string
+fieldGroup: fb72e412-bd30-46c1-ba55-f64dbb5cb308
+handle: homeFeaturedProperties
+instructions: 'Four featured properties that are listed in the portfolio section.'
+name: 'Featured Properties'
+searchable: false
+settings:
+  allowSelfRelations: ''
+  limit: '4'
+  localizeRelations: false
+  selectionLabel: 'Add a property'
+  source: null
+  sources:
+    - 'section:18859eb3-c0bb-4761-9e92-4a120a5336c1'
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

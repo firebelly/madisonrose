@@ -1,0 +1,61 @@
+fieldLayouts:
+  bab91ec0-7f89-428e-b811-b6534682f6bf:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: ed4def61-9516-4fdb-8cfd-cf6e82781aa3
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eec564a3-b193-4cae-98c4-55116a814726
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 746456dc-2c8b-418f-9a80-247f50dc2ce9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41fa2d5e-02a5-4b6b-9753-65a2230fcb13
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Settings
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: eb9d3aba-bfda-4b56-bc5f-15f1b0d68bb3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 12bcda76-c2c9-45b3-8d36-b7bedb9d8b3c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b0da705a-50d8-4904-a300-378aa30a3e88
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0ee447c8-c7ae-43c4-8323-674f6119431f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 72722b74-58ef-4dd6-b73c-61071ddd46b3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3406380f-3fa1-48ed-a16b-d07bb9e59936
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 2
+handle: properties
+hasTitleField: true
+name: Properties
+section: 18859eb3-c0bb-4761-9e92-4a120a5336c1
+sortOrder: 1
+titleFormat: ''

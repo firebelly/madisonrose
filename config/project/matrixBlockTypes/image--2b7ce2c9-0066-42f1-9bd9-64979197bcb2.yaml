@@ -1,0 +1,102 @@
+field: 3406380f-3fa1-48ed-a16b-d07bb9e59936
+fieldLayouts:
+  9584ed71-8a49-47ae-942f-33de2c3a9e7a:
+    tabs:
+      -
+        fields:
+          531ba60c-9970-43ae-9fa2-eba1cc5847cf:
+            required: false
+            sortOrder: 3
+          b9bbcf70-9583-4b97-9f99-ff71d0cece77:
+            required: false
+            sortOrder: 2
+          bf4f87da-e25e-4fbb-b0bf-fe7ddb4767e7:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  531ba60c-9970-43ae-9fa2-eba1cc5847cf:
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: 'Optional caption that appears below the image.'
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b9bbcf70-9583-4b97-9f99-ff71d0cece77:
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: 'Full or half width.'
+    name: Size
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Half Width'
+            -
+              - value
+              - halfWidth
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Full Width'
+            -
+              - value
+              - fullWidth
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
+  bf4f87da-e25e-4fbb-b0bf-fe7ddb4767e7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose an Image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+      singleUploadLocationSubpath: '{owner.section}/{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Image
+sortOrder: 1

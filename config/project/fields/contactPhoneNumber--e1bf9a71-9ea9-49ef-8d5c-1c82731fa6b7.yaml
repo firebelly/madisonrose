@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: contactPhoneNumber
+instructions: 'The contact phone number listed in the footer'
+name: 'Contact Phone Number'
+searchable: true
+settings:
+  country: US
+  customPatternErrorMessage: ''
+  customPatternToggle: null
+  inputMask: null
+  limitToSingleCountry: '1'
+  mask: null
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: barrelstrength\sproutfields\fields\Phone

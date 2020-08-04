@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 1ef20c73-d4c2-4889-bc87-e239a901397d
+handle: propertyMedia
+instructions: 'Images or videos displayed in a grid format on the property page.'
+name: 'Property Media'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_propertymedia}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

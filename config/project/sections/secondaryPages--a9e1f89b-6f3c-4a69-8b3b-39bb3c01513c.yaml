@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: secondaryPages
+name: 'Secondary Pages'
+propagationMethod: all
+siteSettings:
+  2fa33456-77aa-4780-adc6-1103fb992339:
+    enabledByDefault: true
+    hasUrls: true
+    template: general/_secondary
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 1
+  uid: 070661ab-4f76-4f8c-9b79-548205e42fc1
+type: structure

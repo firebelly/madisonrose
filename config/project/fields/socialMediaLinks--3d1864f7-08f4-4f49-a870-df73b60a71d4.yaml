@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: socialMediaLinks
+instructions: 'Links to social media channels listed in the footer.'
+name: 'Social Media Links'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_socialmedialinks}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

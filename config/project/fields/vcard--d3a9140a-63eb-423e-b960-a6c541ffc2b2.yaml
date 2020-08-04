@@ -1,0 +1,28 @@
+contentColumnType: string
+fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
+handle: vcard
+instructions: 'Upload your vCard file'
+name: VCard
+searchable: true
+settings:
+  allowSelfRelations: ''
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.section}/{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 1ef20c73-d4c2-4889-bc87-e239a901397d
+handle: propertyCta
+instructions: 'Optional CTA listed at the end of the property media section that will include a link to email about the property.'
+name: 'Property CTA'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

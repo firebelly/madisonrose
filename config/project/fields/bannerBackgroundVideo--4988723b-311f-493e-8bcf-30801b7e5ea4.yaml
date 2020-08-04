@@ -1,0 +1,29 @@
+contentColumnType: string
+fieldGroup: fb72e412-bd30-46c1-ba55-f64dbb5cb308
+handle: bannerBackgroundVideo
+instructions: 'Optional background video from Vimeo. If you add multiple a random video will be chosen to be displayed each page load.'
+name: 'Banner Background Video'
+searchable: false
+settings:
+  allowSelfRelations: ''
+  allowedKinds:
+    - json
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Choose an embed'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

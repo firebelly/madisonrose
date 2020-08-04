@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: fb72e412-bd30-46c1-ba55-f64dbb5cb308
+handle: homePortfolioHeadline
+instructions: 'A brief headline that appears int he second position of the portfolio section on the homepage'
+name: 'Portfolio Headline'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

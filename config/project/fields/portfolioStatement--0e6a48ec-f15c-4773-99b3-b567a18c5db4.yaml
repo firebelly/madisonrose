@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: bbec80b8-3169-4b78-a95e-611d5a6317ba
+handle: portfolioStatement
+instructions: 'Statement that appears at the bottom of the portfolio page.'
+name: 'Portfolio Statement'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

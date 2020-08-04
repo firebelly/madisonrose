@@ -1,0 +1,17 @@
+contentColumnType: string(1200)
+fieldGroup: d69be803-87fe-443b-ad2b-bbd764b2be61
+handle: caption
+instructions: 'A short caption sometimes displayed alongside the image.'
+name: Caption
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 300
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -40,7 +40,7 @@
     }
   }
 
-  @include media-md {
+  @include media-nav {
     padding: 0;
     width: auto;
     float: right;
@@ -123,7 +123,7 @@
   position: absolute;
   right: $padding-sm;
 
-  @include media-md {
+  @include media-nav {
     display: none;
   }
 }

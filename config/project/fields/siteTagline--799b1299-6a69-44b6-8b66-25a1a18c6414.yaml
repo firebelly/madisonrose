@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: siteTagline
+instructions: 'Tagline used for site description.'
+name: 'Site Tagline'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

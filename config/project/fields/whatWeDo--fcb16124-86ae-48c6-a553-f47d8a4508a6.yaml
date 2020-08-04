@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 89bcd5e5-973b-441e-bf51-d40c6349e499
+handle: whatWeDo
+instructions: ''
+name: 'What We Do'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

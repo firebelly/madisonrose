@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 89bcd5e5-973b-441e-bf51-d40c6349e499
+handle: philanthropyParagraph
+instructions: ''
+name: 'Philanthropy Paragraph'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,43 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% block content %}
+  <div class="page-header">
+    {% if entry.bannerImage|length %}
+      {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
+        {
+          width: 1440,
+          ratio: 8/3,
+          jpegQuality: 80,
+        }
+      ) %}
+      <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+    {% endif %}
+    <div class="banner-top">
+      <div class="sitewrapper">
+        <div class="grid spaced spaced-xl">
+          <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
+
+          {% if entry.pageSubHeadline %}
+            <p class="page-subheadline col-md-1-2">{{ entry.pageSubHeadline }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-section">
+    <div class="sitewrapper">
+      <div class="card-grid">
+        <div class="grid spaced">
+          {% for teamMember in craft.entries.section('teamMembers').all() %}
+            <div class="col-md-1-2 -reveal">
+              {% include "partials/_team-member-listing.html" %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "partials/_page-nav.html" %}
+{% endblock %}

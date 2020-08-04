@@ -1,0 +1,16 @@
+contentColumnType: string
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: physicalAddress
+instructions: 'The physical address listed in the footer of the site.'
+name: 'Physical Address'
+searchable: true
+settings:
+  addressHelper: null
+  defaultCountry: US
+  defaultLanguage: en
+  hideCountryDropdown: null
+  showCountryDropdown: ''
+  value: null
+translationKeyFormat: null
+translationMethod: none
+type: barrelstrength\sproutfields\fields\Address

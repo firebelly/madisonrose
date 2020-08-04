@@ -55,7 +55,7 @@
       <h3 class="-reveal">One Team.<br> One Goal.</h3>
       <div class="card-grid">
         <div class="grid spaced">
-          {% for teamMember in craft.entries.section('team').all() %}
+          {% for teamMember in craft.entries.section('teamMembers').all() %}
             <div class="col-md-1-2 -reveal">
               {% include "partials/_team-member-listing.html" %}
             </div>

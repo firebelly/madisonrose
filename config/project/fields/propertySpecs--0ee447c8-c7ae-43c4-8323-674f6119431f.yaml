@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 1ef20c73-d4c2-4889-bc87-e239a901397d
+handle: propertySpecs
+instructions: 'One or more properties can be added with corresponding information'
+name: 'Property Specs'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_propertyspecs}}'
+  maxBlocks: '2'
+  minBlocks: '1'
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

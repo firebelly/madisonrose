@@ -1,0 +1,29 @@
+contentColumnType: string
+fieldGroup: 89bcd5e5-973b-441e-bf51-d40c6349e499
+handle: philanthropyImage
+instructions: ''
+name: 'Philanthropy Image'
+searchable: true
+settings:
+  allowSelfRelations: ''
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Choose an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

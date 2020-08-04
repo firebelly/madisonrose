@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: siteContactEmailAddress
+instructions: 'Email address for site contact, listed in the footer of the site.'
+name: 'Site Contact Email Address'
+searchable: false
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -1,0 +1,8 @@
+handle: globals
+hasUrls: true
+name: Globals
+settings:
+  path: uploads/globals
+sortOrder: 2
+type: craft\volumes\Local
+url: /uploads/globals/

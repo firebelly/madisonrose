@@ -1,6 +1,8 @@
 {% if 'approach' in entry.slug %}
   {% set nextEntry = craft.entries().section('portfolio').one() %}
 {% elseif entry.slug == 'portfolio' %}
+  {% set nextEntry = craft.entries().section('team').one() %}
+{% elseif entry.slug == 'team' %}
   {% set nextEntry = craft.entries().section('approach').one() %}
 {% endif %}
 {% set entryImage = nextEntry.bannerImage.one() %}

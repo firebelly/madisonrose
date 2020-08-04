@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 11fc22fb-a91f-4d7d-be3c-8b9cba17db05
+handle: pageHeadline
+instructions: 'The main headline for the page'
+name: 'Page Headline'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '2'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

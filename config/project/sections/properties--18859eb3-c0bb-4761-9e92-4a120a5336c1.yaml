@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: properties
+name: Properties
+propagationMethod: all
+siteSettings:
+  2fa33456-77aa-4780-adc6-1103fb992339:
+    enabledByDefault: true
+    hasUrls: true
+    template: portfolio/_property
+    uriFormat: 'portfolio/{slug}'
+structure:
+  maxLevels: 1
+  uid: 983bc061-489e-41c9-92f4-6cef61030532
+type: structure

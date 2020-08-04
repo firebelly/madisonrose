@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 89bcd5e5-973b-441e-bf51-d40c6349e499
+handle: madroseMethod
+instructions: ''
+name: 'Madrose Method'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_madrosemethod}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

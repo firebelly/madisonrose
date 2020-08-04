@@ -1,0 +1,54 @@
+field: 14a07465-edab-4172-8c0b-635dafe20c6c
+fieldLayouts:
+  8c269841-48f1-408c-9b6e-f618bbd52765:
+    tabs:
+      -
+        fields:
+          50465c68-852f-4a58-b7b8-815e72c9e3c7:
+            required: true
+            sortOrder: 2
+          b057d499-cb9e-496c-b111-9a0f09914f34:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  50465c68-852f-4a58-b7b8-815e72c9e3c7:
+    contentColumnType: text
+    fieldGroup: null
+    handle: methodDescription
+    instructions: ''
+    name: Description
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b057d499-cb9e-496c-b111-9a0f09914f34:
+    contentColumnType: text
+    fieldGroup: null
+    handle: methodLabel
+    instructions: ''
+    name: Label
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: method
+name: Method
+sortOrder: 1

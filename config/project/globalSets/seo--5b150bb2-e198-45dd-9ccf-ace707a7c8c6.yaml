@@ -1,0 +1,15 @@
+fieldLayouts:
+  5205aee1-f97b-4d3e-97a4-d66300fd67e7:
+    tabs:
+      -
+        fields:
+          55da8484-a599-4d66-a944-eb3dc7c8b171:
+            required: false
+            sortOrder: 2
+          bca8d47e-d9c8-4558-8b32-e3a9415ca00a:
+            required: false
+            sortOrder: 1
+        name: Globals
+        sortOrder: 1
+handle: seo
+name: Seo

@@ -1,0 +1,37 @@
+fieldLayouts:
+  64286e95-0289-47e9-8d0b-a04843e6e01e:
+    tabs:
+      -
+        fields:
+          1c388444-a212-491c-bec0-ae528a252cf2:
+            required: false
+            sortOrder: 3
+          799b1299-6a69-44b6-8b66-25a1a18c6414:
+            required: false
+            sortOrder: 1
+          b9100406-92aa-47fa-b603-7a4a87959ab3:
+            required: false
+            sortOrder: 4
+          b958ad39-6be7-4172-b45c-78c4c943f398:
+            required: false
+            sortOrder: 2
+        name: Settings
+        sortOrder: 1
+      -
+        fields:
+          3237261e-4384-49ba-899d-4dd74be7358d:
+            required: false
+            sortOrder: 1
+          3d1864f7-08f4-4f49-a870-df73b60a71d4:
+            required: false
+            sortOrder: 4
+          e1bf9a71-9ea9-49ef-8d5c-1c82731fa6b7:
+            required: false
+            sortOrder: 2
+          fc0723fa-37e9-480d-bfe6-c72b1e27eece:
+            required: false
+            sortOrder: 3
+        name: Contact
+        sortOrder: 2
+handle: siteSettings
+name: 'Site Settings'

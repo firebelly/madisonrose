@@ -1,0 +1,27 @@
+contentColumnType: string
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: podcastImage
+instructions: 'Image displayed in the podcast section on the homepage.'
+name: 'Podcast Image'
+searchable: false
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Choose an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:640389c4-9790-4152-bfa8-77370ca3d12f'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

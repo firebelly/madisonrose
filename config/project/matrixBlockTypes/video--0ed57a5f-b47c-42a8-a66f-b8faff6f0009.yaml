@@ -1,0 +1,65 @@
+field: 3406380f-3fa1-48ed-a16b-d07bb9e59936
+fieldLayouts:
+  2db60b5f-cccd-4bb8-8466-87f11d02b42b:
+    tabs:
+      -
+        fields:
+          9ca59183-041b-4408-95e9-eaf9522e4f6a:
+            required: false
+            sortOrder: 1
+          c6428a46-d124-4651-a441-a577544085ca:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  9ca59183-041b-4408-95e9-eaf9522e4f6a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: video
+    instructions: 'Add a vimeo video by copying the url of the video and pasting into the embed field after clicking on "embed" when in the asset dialog.'
+    name: Video
+    searchable: false
+    settings:
+      allowedKinds:
+        - json
+      defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose a video'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+      singleUploadLocationSubpath: '{owner.section}/{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  c6428a46-d124-4651-a441-a577544085ca:
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoCaption
+    instructions: 'Optional caption that appears below the video.'
+    name: 'Video Caption'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: video
+name: Video
+sortOrder: 2

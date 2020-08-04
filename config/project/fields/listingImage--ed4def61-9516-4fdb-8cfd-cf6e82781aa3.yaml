@@ -1,0 +1,27 @@
+contentColumnType: string
+fieldGroup: 1ef20c73-d4c2-4889-bc87-e239a901397d
+handle: listingImage
+instructions: 'The image displayed on the homepage and properties page.'
+name: 'Listing Image'
+searchable: true
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Choose an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.section}/{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

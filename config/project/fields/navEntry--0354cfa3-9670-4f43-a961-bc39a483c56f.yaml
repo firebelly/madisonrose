@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 3aff0b6d-81b1-4da3-911e-0cad7226e2ea
+handle: navEntry
+instructions: 'Choose an entry to appear in the primary site navigation'
+name: 'Nav Entry'
+searchable: false
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add an entry'
+  source: null
+  sources:
+    - singles
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: fb72e412-bd30-46c1-ba55-f64dbb5cb308
+handle: homePortfolioParagraph
+instructions: 'Short paragraph introducing the portfolio page'
+name: 'Portfolio Paragraph'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '3'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

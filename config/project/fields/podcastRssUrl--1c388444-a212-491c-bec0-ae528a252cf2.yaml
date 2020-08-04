@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: dd5d38cd-9708-4507-a7cf-ba4496aae5c7
+handle: podcastRssUrl
+instructions: 'The full RSS feed url of the podcast'
+name: 'Podcast RSS URL'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

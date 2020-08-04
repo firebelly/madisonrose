@@ -1,0 +1,21 @@
+fieldLayouts:
+  b69ab34e-7eb1-4ce9-857f-fd1d78fdb124:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 0354cfa3-9670-4f43-a961-bc39a483c56f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Settings
+        sortOrder: 1
+handle: primaryNavigation
+hasTitleField: true
+name: 'Primary Navigation'
+section: a3c1e77a-351c-4967-aaf4-7652412fdb9f
+sortOrder: 1
+titleFormat: ''

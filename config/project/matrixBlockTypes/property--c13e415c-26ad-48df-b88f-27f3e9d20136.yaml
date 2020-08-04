@@ -1,0 +1,94 @@
+field: 0ee447c8-c7ae-43c4-8323-674f6119431f
+fieldLayouts:
+  3b28177d-422a-44c5-84f4-73e29a2dc1d6:
+    tabs:
+      -
+        fields:
+          5658ecc6-5415-4f9f-8a89-3a591c268aaa:
+            required: false
+            sortOrder: 2
+          7f90a98e-80bb-4712-9f53-cd1711830ce8:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  5658ecc6-5415-4f9f-8a89-3a591c268aaa:
+    contentColumnType: text
+    fieldGroup: null
+    handle: propertySpecs
+    instructions: 'Label and details of property specs'
+    name: 'Property Specs'
+    searchable: true
+    settings:
+      addRowLabel: 'Add a spec'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Label
+                -
+                  - handle
+                  - label
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Details
+                -
+                  - handle
+                  - details
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  7f90a98e-80bb-4712-9f53-cd1711830ce8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: propertyLabel
+    instructions: 'ex: 111 E Wacker Drive'
+    name: 'Property Label'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: property
+name: Property
+sortOrder: 1

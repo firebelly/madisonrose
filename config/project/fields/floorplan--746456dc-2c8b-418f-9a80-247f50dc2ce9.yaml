@@ -1,0 +1,31 @@
+contentColumnType: string
+fieldGroup: 1ef20c73-d4c2-4889-bc87-e239a901397d
+handle: floorplan
+instructions: 'PDF download of the floorplan.'
+name: Floorplan
+searchable: true
+settings:
+  allowedKinds:
+    - image
+    - pdf
+    - powerpoint
+    - text
+  defaultUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:2607b73d-492a-4009-bac0-59c95f16694a'
+  singleUploadLocationSubpath: '{owner.section}/{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

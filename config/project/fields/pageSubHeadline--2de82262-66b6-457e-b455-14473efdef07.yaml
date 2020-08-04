@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 11fc22fb-a91f-4d7d-be3c-8b9cba17db05
+handle: pageSubHeadline
+instructions: 'Secondary headline for the page.'
+name: 'Page Sub-headline'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

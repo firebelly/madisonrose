@@ -1,0 +1,8 @@
+baseUrl: $DEFAULT_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: 'Madison Rose'
+primary: true
+siteGroup: 5a1279a8-5301-445a-9d28-a5ab15dda49e
+sortOrder: 1

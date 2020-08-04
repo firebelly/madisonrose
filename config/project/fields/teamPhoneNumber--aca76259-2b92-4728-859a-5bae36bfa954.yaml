@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: 404a9b6a-833f-4ea6-9914-e057f51a2b80
+handle: teamPhoneNumber
+instructions: ''
+name: 'Phone Number'
+searchable: true
+settings:
+  country: US
+  customPatternErrorMessage: ''
+  customPatternToggle: null
+  inputMask: null
+  limitToSingleCountry: '1'
+  mask: null
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: barrelstrength\sproutfields\fields\Phone

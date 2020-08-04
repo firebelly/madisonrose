@@ -1,0 +1,45 @@
+fieldLayouts:
+  4d8460b5-108a-483a-bda3-5ad20cabd14b:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 9b243530-6776-4588-971e-64a66a3daa16
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: bd694bfe-e4cc-41aa-8fe2-443482ab7eb8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2de82262-66b6-457e-b455-14473efdef07
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0e6a48ec-f15c-4773-99b3-b567a18c5db4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Settings
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: bca8d47e-d9c8-4558-8b32-e3a9415ca00a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41b99460-f4ca-479b-8305-8dcef0ca020c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: portfolio
+hasTitleField: false
+name: Portfolio
+section: 53443206-ed2c-49b1-9821-44b6399af201
+sortOrder: 1
+titleFormat: '{section.name|raw}'
