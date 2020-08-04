@@ -30,7 +30,7 @@ def deploy(composer='y', assets='y'):
     put('web/assets/dist', env.remotepath + '/web/assets/')
   with cd(env.remotepath):
     run('./craft clear-caches/compiled-templates')
-    run('./craft clear-caches/template-caches')
+    run('./craft invalidate-tags/template')
     run('./craft project-config/apply')
 
 def update():
