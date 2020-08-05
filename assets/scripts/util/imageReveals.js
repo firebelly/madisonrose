@@ -26,7 +26,7 @@ const imageReveals = {
         if ($(this).is('.-in-sequence')) {
           let animationItems = $(this).find('.-reveal-item');
           animationItems.each(function(i) {
-            $(this).css('transition-delay', 0.15 * i + 's');
+            $(this).css('transition-delay', 0.5 * i + 's');
           });
         }
       });

@@ -11,7 +11,8 @@
   opacity: 0;
   &:not(.-instant) {
     transform: translate3d(0, 40px, 0);
-    transition: opacity 1s ease-out, transform 0.5s ease-out;
+    transition: transform 1.25s $cubic-ease, opacity 0.5s $cubic-ease;
+    will-change: transform, opacity;
   }
   @include media-md {
     transform: translate3d(0, 60px, 0);
