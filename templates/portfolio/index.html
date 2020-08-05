@@ -30,7 +30,7 @@
             {% set imageH = image.height %}
             {% if imageH > imageW %}
               {% if loop.index == 1 %}
-                {% set class = 'portrait -reveal' %}
+                {% set class = 'portrait-large' %}
                 {% set orientation = 'propertyListingPortrait' %}
               {% else %}
                 {% set class = 'portrait-small -reveal' %}
