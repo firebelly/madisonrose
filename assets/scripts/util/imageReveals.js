@@ -20,6 +20,17 @@ const imageReveals = {
       activated = [];
       $reveals = $('.-reveal');
 
+      // Add transition delays for -in-sequence
+      // -reveal sections/items
+      $reveals.each(function(i) {
+        if ($(this).is('.-in-sequence')) {
+          let animationItems = $(this).find('.-reveal-item');
+          animationItems.each(function(i) {
+            $(this).css('transition-delay', 0.15 * i + 's');
+          });
+        }
+      });
+
       imageReveals.resize();
       imageReveals.update();
 

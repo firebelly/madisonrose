@@ -6,7 +6,8 @@
 }
 
 // Image/Element reveals
-.-reveal {
+.-reveal:not(.-in-sequence),
+.-reveal-item {
   opacity: 0;
   &:not(.-instant) {
     transform: translate3d(0, 40px, 0);
@@ -19,6 +20,15 @@
   &.-active {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+// In-sequence reveals
+.-reveal.-in-sequence {
+  &.-active {
+    .-reveal-item {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 // prefers reduced motion
