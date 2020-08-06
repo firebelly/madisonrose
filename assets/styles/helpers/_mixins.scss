@@ -176,13 +176,13 @@
   }
 }
 
-@mixin eyebrowLine($color: 'teak') {
+@mixin eyebrowLine($color: 'tan', $margin: 32px) {
   &::before {
     content: '';
     height: 1px;
     width: 72px;
     display: block;
-    margin-bottom: 32px;
+    margin-bottom: $margin;
     background-color: color($color);
   }
 }

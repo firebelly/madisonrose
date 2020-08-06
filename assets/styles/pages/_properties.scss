@@ -75,6 +75,7 @@ body.page-single-property {
 
         a {
           @include h4;
+          white-space: nowrap;
           color: color('rose');
           vertical-align: middle;
           transition: color 0.35s ease-out;
@@ -103,6 +104,7 @@ body.page-single-property {
 
       @include media-md {
         margin-bottom: 0;
+        align-items: center;
 
         h3 {
           display: block;
@@ -133,19 +135,16 @@ body.page-single-property {
         bottom: 13px;
         max-width: 50%;
         flex-basis: 50%;
-        justify-content: flex-end;
       }
     }
   }
 
   // Intro Section
   .section.intro {
-    padding-top: 128px;
     padding-bottom: 60px;
     @include line(before, 100%);
 
     @include media-md {
-      padding-top: 128px;
       padding-bottom: 128px;
     }
 
@@ -171,6 +170,14 @@ body.page-single-property {
     }
 
     .intro-text {
+      @include eyebrowLine('tan', 13px);
+
+      h4 {
+        @include h4;
+        margin: 0 0 40px;
+        color: color('teak');
+      }
+
       p {
         @include p2;
         margin: 0;
@@ -183,8 +190,10 @@ body.page-single-property {
 
       @include media-md {
         margin-top: 0;
+        padding-top: 13px;
+
         &::before {
-          top: -25px;
+          top: 0;
           height: 1px;
           content: '';
           left: $padding-sm;
@@ -193,7 +202,7 @@ body.page-single-property {
           border-top: 1px solid color('tan');
         }
         &::after {
-          top: 0;
+          top: 18px;
           left: 50%;
           bottom: 0;
           width: 1px;
@@ -212,28 +221,43 @@ body.page-single-property {
 
       // Multiple-property...properties?
       &.multiple-properties {
+        padding-top: 0;
+
+        &::before {
+          top: 30px;
+        }
+        &::after {
+          top: 47px;
+        }
+
         .property-specs {
           padding: 0;
           position: relative;
 
+          + .property-specs {
+            margin-top: $padding-sm;
+          }
+
           .property-label {
             @include h4;
+            margin: 0;
+            padding-bottom: 10px;
             color: color('teak');
           }
 
           @include media-md {
-            .property-label {
-              left: 0;
-              bottom: 100%;
-              position: absolute;
-              transform: translateY(-12px);
-            }
-
             &:first-of-type {
               padding-right: 20px;
             }
 
+            .property-label {
+              margin-bottom: 25px;
+              background-color: color('cream');
+              border-bottom: 1px solid color('tan');
+            }
+
             + .property-specs {
+              margin-top: 0;
               padding-left: 36px;
 
               .property-label {

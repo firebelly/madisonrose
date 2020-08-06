@@ -10,17 +10,15 @@
           jpegQuality: 80,
         }
       ) %}
-      <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+      <div class="image-banner"><div class="background" style="background-image:url('{{ transformedImage.getUrl() }}');"></div></div>
     {% endif %}
-    <div class="banner-top">
-      <div class="sitewrapper">
-        <div class="grid spaced spaced-xl">
-          <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
+    <div class="banner-headline sitewrapper">
+      <div class="grid spaced spaced-xl">
+        <h2 class="page-headline col-md-1-2">{{ entry.pageHeadline|length ? entry.pageHeadline|nl2br : entry.title }}</h2>
 
-          {% if entry.pageSubHeadline %}
-            <p class="page-subheadline col-md-1-2">{{ entry.pageSubHeadline }}</p>
-          {% endif %}
-        </div>
+        {% if entry.pageSubHeadline %}
+          <p class="page-subheadline col-md-1-2">{{ entry.pageSubHeadline }}</p>
+        {% endif %}
       </div>
     </div>
   </div>

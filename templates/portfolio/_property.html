@@ -9,11 +9,11 @@
 {% block content %}
   <div class="page-header">
     {% if entry.propertyBannerImage|length %}
-      <div class="bottom-banner" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div>
+      <div class="image-banner"><div class="background" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div></div>
     {% endif %}
 
-    <div class="banner-top">
-      <div class="sitewrapper grid">
+    <div class="sitewrapper banner-headline">
+      <div class="grid spaced spaced-lg">
         <h2 class="page-headline col-xl-1-2">{{ entry.title }}</h2>
         {% if entry.floorplan|length or entry.brochure|length %}
           <div class="downloads col-xl-1-2">
@@ -35,71 +35,74 @@
   <div class="page-body">
     {% if entry.propertyIntroHeadline|length or entry.propertyIntroText|length or entry.propertyInfo|length or entry.propertySpecs|length %}
       <div class="intro section sitewrapper">
-      {% if entry.propertyIntroHeadline|length %}
-        <h3 class="-reveal">{{ entry.propertyIntroHeadline }}</h3>
-      {% endif %}
         <div class="grid spaced spaced-lg">
-        {% if entry.propertyIntroText|length %}
-          <div class="intro-text col-md-1-2">
+
           {% if entry.propertyIntroText|length %}
-            <p>{{ entry.propertyIntroText }}</p>
-          {% endif %}
-          </div>
-        {% endif %}
-        {% if entry.propertyInfo|length or entry.propertySpecs|length %}
-          <div class="property-info col-md-1-2{{ entry.propertySpecs|length > 1 ? ' multiple-properties' : '' }}">
-            <div class="grid spaced">
-              {% if entry.propertySpecs|length > 1 %}
-                {% for property in entry.propertySpecs.all() %}
-                  <div class="property-specs col-md-1-2">
-                    <h4 class="property-label">{{ property.propertyLabel }}</h4>
-                    {% if property.propertySpecs|length %}
-                      <ul class="spec-list">
-                        {% for spec in property.propertySpecs %}
-                          <li>
-                            <span class="label">{{ spec.label }}</span>
-                            <span class="info">{{ spec.details }}</span>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-                {% if entry.propertyInfo|length %}
-                  <ul class="info-list">
-                  {% for info in entry.propertyInfo.all() %}
-                    <li>
-                      <span class="label">{{ info.label }}</span>
-                      <span class="info">{{ info.text }}</span>
-                    </li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
-              {% else %}
-                {% if entry.propertyInfo|length %}
-                  <ul class="info-list col-md-1-2">
-                  {% for info in entry.propertyInfo.all() %}
-                    <li>
-                      <span class="label">{{ info.label }}</span>
-                      <span class="info">{{ info.text }}</span>
-                    </li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
-                {% if entry.propertySpecs|length %}
-                  <ul class="spec-list col-md-1-2">
-                  {% for spec in entry.propertySpecs.one().propertySpecs %}
-                    <li>
-                      <span class="label">{{ spec.label }}</span>
-                      <span class="info">{{ spec.details }}</span>
-                    </li>
-                  {% endfor %}
-                  </ul>
-                {% endif %}
+            <div class="intro-text col-md-1-2">
+              {% if entry.propertyIntroHeadline|length %}
+                <h4>{{ entry.propertyIntroHeadline }}</h4>
+              {% endif %}
+
+              {% if entry.propertyIntroText|length %}
+                <p>{{ entry.propertyIntroText }}</p>
               {% endif %}
             </div>
-          </div>
-        {% endif %}
+          {% endif %}
+
+          {% if entry.propertyInfo|length or entry.propertySpecs|length %}
+            <div class="property-info col-md-1-2{{ entry.propertySpecs|length > 1 ? ' multiple-properties' : '' }}">
+              <div class="grid spaced">
+                {% if entry.propertySpecs|length > 1 %}
+                  {% for property in entry.propertySpecs.all() %}
+                    <div class="property-specs col-md-1-2">
+                      <h4 class="property-label">{{ property.propertyLabel }}</h4>
+                      {% if property.propertySpecs|length %}
+                        <ul class="spec-list">
+                          {% for spec in property.propertySpecs %}
+                            <li>
+                              <span class="label">{{ spec.label }}</span>
+                              <span class="info">{{ spec.details }}</span>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                  {% if entry.propertyInfo|length %}
+                    <ul class="info-list">
+                    {% for info in entry.propertyInfo.all() %}
+                      <li>
+                        <span class="label">{{ info.label }}</span>
+                        <span class="info">{{ info.text }}</span>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% else %}
+                  {% if entry.propertyInfo|length %}
+                    <ul class="info-list col-md-1-2">
+                    {% for info in entry.propertyInfo.all() %}
+                      <li>
+                        <span class="label">{{ info.label }}</span>
+                        <span class="info">{{ info.text }}</span>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                  {% if entry.propertySpecs|length %}
+                    <ul class="spec-list col-md-1-2">
+                    {% for spec in entry.propertySpecs.one().propertySpecs %}
+                      <li>
+                        <span class="label">{{ spec.label }}</span>
+                        <span class="info">{{ spec.details }}</span>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endif %}

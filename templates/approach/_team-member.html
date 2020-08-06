@@ -16,15 +16,13 @@
           jpegQuality: 80,
         }
       ) %}
-      <div class="bottom-banner" style="background-image:url('{{ transformedImage.getUrl() }}');"></div>
+      <div class="image-banner"><div class="background" style="background-image:url('{{ transformedImage.getUrl() }}');"></div></div>
     {% endif %}
 
-    <div class="banner-top">
-      <div class="sitewrapper">
-        <div class="grid spaced spaced-xl">
-          <h2 class="page-headline col-md-1-2">{{ entry.title|replace(' ', ' \n')|nl2br }}</h2>
-          <p class="position col-md-1-2">{{ entry.position }}</p>
-        </div>
+    <div class="banner-headline sitewrapper">
+      <div class="grid spaced spaced-xl">
+        <h2 class="page-headline col-md-1-2">{{ entry.title|replace(' ', ' \n')|nl2br }}</h2>
+        <p class="position col-md-1-2">{{ entry.position }}</p>
       </div>
     </div>
   </div>

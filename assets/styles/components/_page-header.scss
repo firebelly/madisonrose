@@ -7,6 +7,25 @@
     padding-top: $header-md;
   }
 
+  .banner-headline {
+    padding-top: $padding-md;
+    padding-bottom: $padding-md;
+    background-color: color('cream');
+
+    .page-headline {
+      max-width: 800px;
+    }
+
+    @include media-md {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+
+    @include media-xl {
+      @include line(before, 100%);
+    }
+  }
+
   .page-headline {
     @include h2;
     margin: 0;
@@ -41,16 +60,46 @@
     }
   }
 
-  .bottom-banner {
-    @include imageTreatment;
-    height: 0;
-    background-size: cover;
-    padding-bottom: 34.5503472%;
-    background-position: center center;
+  .image-banner {
+    width: 100%;
+    position: relative;
+    &::after {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      height: 50%;
+      position: absolute;
+      background-color: color('cream');
+    }
+
+    .background {
+      @include imageTreatment;
+      height: 0;
+      z-index: 1;
+      position: relative;
+      padding-bottom: 50%;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    @include media-sm {
+      .background {
+        width: calc(100% - #{$padding-md});
+      }
+    }
 
     @include media-lg {
-      height: 428px;
-      padding-bottom: 0;
+      .background {
+        width: calc(100% - #{$padding-lg});
+      }
+    }
+
+    @include media-xl {
+      .background {
+        padding: 0;
+        height: 648px;
+      }
     }
   }
 }
