@@ -10,7 +10,10 @@ body.page-portfolio {
       padding-bottom: 48px;
     }
     @include media-lg {
-      padding-bottom: 101px;
+      padding-bottom: 37px;
+    }
+    @include media-xxl {
+      min-height: 600px;
     }
 
     .banner-top {
@@ -59,16 +62,13 @@ body.page-portfolio {
         }
 
         .property {
+          align-self: end;
           margin-bottom: 0;
           position: relative;
-          align-self: end;
           margin-top: $vertical-spacing-md;
 
-          &:nth-child(-n+2) {
-          }
-
           &.portrait-large {
-            margin-top: -100%;
+            margin-top: -500px;
             grid-column: span 2;
           }
           &.landscape {

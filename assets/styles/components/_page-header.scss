@@ -10,6 +10,10 @@
   .page-headline {
     @include h2;
     margin: 0;
+
+    + .banner-text {
+      margin-top: 52px;
+    }
   }
 
   .banner-top {
@@ -22,27 +26,27 @@
     }
   }
 
+  .banner-text {
+    p {
+      @include p2;
+      position: relative;
+      &::before {
+        left: 0;
+        top: -32px;
+        height: 1px;
+        width: 72px;
+        content: '';
+        position: absolute;
+      }
+    }
+  }
+
   .bottom-banner {
     @include imageTreatment;
     height: 0;
     background-size: cover;
     padding-bottom: 34.5503472%;
     background-position: center center;
-
-    .banner-text {
-      p {
-        @include p1;
-        position: relative;
-        &::before {
-          left: 0;
-          top: -32px;
-          height: 1px;
-          width: 72px;
-          content: '';
-          position: absolute;
-        }
-      }
-    }
 
     @include media-lg {
       height: 428px;
