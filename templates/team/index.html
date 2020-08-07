@@ -5,8 +5,8 @@
     {% if entry.bannerImage|length %}
       {% set transformedImage = craft.imager.transformImage(entry.bannerImage.one(),
         {
-          width: 1440,
-          ratio: 8/3,
+          width: 2200,
+          ratio: 2/1,
           jpegQuality: 80,
         }
       ) %}
