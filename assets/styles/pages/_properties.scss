@@ -10,8 +10,11 @@ body.page-single-property {
     .page-headline {
       margin-bottom: 24px;
 
-      @media screen and (min-width: 1420px) {
-        margin-bottom: 0;
+      @include media-md {
+        max-width: 800px;
+      }
+      @include media-lg {
+        max-width: none;
       }
     }
 
@@ -129,12 +132,6 @@ body.page-single-property {
             }
           }
         }
-      }
-
-      @media screen and (min-width: 1420px) {
-        bottom: 13px;
-        max-width: 50%;
-        flex-basis: 50%;
       }
     }
   }

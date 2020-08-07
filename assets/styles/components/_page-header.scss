@@ -12,10 +12,6 @@
     padding-bottom: $padding-md;
     background-color: color('cream');
 
-    .page-headline {
-      max-width: 800px;
-    }
-
     @include media-md {
       padding-top: 72px;
       padding-bottom: 72px;
