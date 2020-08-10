@@ -20,10 +20,14 @@
 
 .card {
   position: relative;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
   padding-bottom: 8px;
   background-color: color('cream');
   border-bottom: 1px solid color('tan');
+
+  @include media-md {
+    margin-bottom: 64px;
+  }
 
   > a {
     display: block;

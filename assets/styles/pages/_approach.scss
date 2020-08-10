@@ -6,6 +6,15 @@ body[class^=page-approach] {
   .page-header {
     @include line(after, 120px);
 
+    .image-banner .background {
+      @include media-md {
+        background-position: calc(50% + 12px) center;
+      }
+      @include media-lg {
+        background-position: calc(50% + 72px) center;
+      }
+    }
+
     .banner-top {
       .page-subheadline {
         @include p1;

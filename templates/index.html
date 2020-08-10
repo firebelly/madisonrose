@@ -72,37 +72,32 @@
     <h3 class="section-title">Current Portfolio</h3>
     {% set featuredProperties = entry.homeFeaturedProperties.all() %}
     <div class="card-grid">
-      <div class="-top grid spaced">
-        {% if featuredProperties[0] %}
-          <div class="col-md-1-2 -reveal">
-            {% include 'partials/_property-listing.html' with {'property': featuredProperties[0], 'orientation': 'propertyListingPortrait'} %}
-          </div>
-        {% endif %}
-        <div class="headline-item col-md-1-2">
-          {% if entry.homePortfolioHeadline|length %}
-            <div class="portfolio-headline -reveal">
-              <h4>{{ entry.homePortfolioHeadline }}</h4>
-            </div>
+      <div class="grid spaced">
+        <div class="col-md-1-2">
+          {% if featuredProperties[0] %}
+            {% include 'partials/_property-listing.html' with {'property': featuredProperties[0], 'orientation': 'propertyListingPortrait', 'class': '-reveal'} %}
           {% endif %}
-          {% if featuredProperties[1] is defined %}
-            {% include 'partials/_property-listing.html' with {'property': featuredProperties[1], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
-          {% endif %}
-        </div>
-      </div>
-      <div class="-bottom grid spaced">
-        {% if featuredProperties[2] is defined %}
-          <div class="properties col-md-1-2">
-            {% include 'partials/_property-listing.html' with {'property': featuredProperties[2], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
-            {% if featuredProperties[3] is defined %}
-              {% include 'partials/_property-listing.html' with {'property': featuredProperties[3], 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
+
+          <div class="portfolio-text">
+            {% if entry.homePortfolioHeadline|length %}
+              <div class="portfolio-headline -reveal">
+                <h4>{{ entry.homePortfolioHeadline }}</h4>
+              </div>
             {% endif %}
+
+            {% if entry.homePortfolioParagraph %}
+              <p class="-reveal">{{ entry.homePortfolioParagraph }}</p>
+            {% endif %}
+            <p class="cta -reveal"><a href="{{ url('/portfolio') }}" class="button -hollow">View All Properties <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
           </div>
-        {% endif %}
-        <div class="portfolio-intro col-md-1-2">
-          {% if entry.homePortfolioParagraph %}
-            <p class="-reveal">{{ entry.homePortfolioParagraph }}</p>
+        </div>
+
+        <div class="col-md-1-2">
+          {% if featuredProperties|length > 1 %}
+            {% for featuredProperty in entry.homeFeaturedProperties.offset(1).all() %}
+              {% include 'partials/_property-listing.html' with {'property': featuredProperty, 'orientation': 'propertyListingLandscape', 'class': '-reveal'} %}
+            {% endfor %}
           {% endif %}
-          <p class="cta -reveal"><a href="{{ url('/portfolio') }}" class="button -hollow">View All Properties <svg class="icon icon-arrow-small" aria-hidden="true" role="presentation"><use xlink:href="#icon-arrow-small"/></svg></a></p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@
 // Intro Section
 .intro-section {
   @include line(before, 80px);
-  @include line(after, 120px);
+  @include line(after, 80px);
   text-align: center;
   padding: 64px 0 80px;
 
@@ -22,7 +22,7 @@
   }
 
   .cta {
-    margin: 32px 0 0;
+    margin: 24px 0 0;
   }
 
   .tagline {
@@ -40,13 +40,7 @@
   }
 
   @include media-md {
-    padding: 104px 0 168px;
-  }
-
-  @include media-lg {
-    .cta {
-      margin-top: 80px;
-    }
+    padding: 96px 0 112px;
   }
 }
 
