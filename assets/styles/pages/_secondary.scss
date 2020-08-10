@@ -3,8 +3,29 @@
 body.secondary-page {
   @include darkTheme;
 
+  .page-header {
+    @include line(after);
+
+    .page-headline {
+      color: color('cream');
+    }
+
+    @include media-md {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include media-lg {
+      padding-top: 164px;
+      &::after {
+        display: block;
+      }
+    }
+  }
+
   .page-body {
-    @include line(before, calc(100% - 16px));
+    @include line(before, 100%);
     padding-top: 72px;
 
     > * :first-child {
@@ -21,7 +42,6 @@ body.secondary-page {
 
     @include media-lg {
       &::before {
-        top: 16px;
         display: block;
       }
     }
