@@ -2,11 +2,6 @@
 
 .team-section {
   @include line(before, 100%);
-  padding-bottom: 152px;
-
-  @include media-md {
-    padding-bottom: 160px;
-  }
 
   > .sitewrapper > h3 {
     @include h2;

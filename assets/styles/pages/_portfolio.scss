@@ -21,7 +21,7 @@ body.page-portfolio {
     }
 
     .banner-text {
-      @include eyebrowLine;
+      @include eyebrowLine(teak);
 
       p {
         margin: 0;
@@ -37,7 +37,7 @@ body.page-portfolio {
   .card-grid {
     @include media-sm {
       &::after {
-        bottom: -56px;
+        bottom: -20px;
         top: $padding-sm;
       }
     }
@@ -52,9 +52,9 @@ body.page-portfolio {
       @include media-sm {
         display: grid;
         direction: rtl;
+        margin-bottom: 20px;
         align-items: stretch;
         grid-column-gap: 36px;
-        margin-bottom: $vertical-spacing-md;
         grid-template-columns: 1fr 1fr 1fr 1fr;
 
         > * {

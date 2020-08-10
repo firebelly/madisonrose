@@ -38,7 +38,8 @@ $beat: 10px;
 $padding-sm: 18px;
 $padding-md: 24px;
 $padding-lg: 144px;
-$vertical-spacing-md: 64px;
+$vertical-spacing-sm: 32px;
+$vertical-spacing-md: $vertical-spacing-sm * 2;
 
 // Easing
 $cubic-ease: cubic-bezier(0.165, 0.84, 0.44, 1);

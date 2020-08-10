@@ -41,9 +41,9 @@ body.page-home {
       @include media-md {
         display: flex;
         padding-top: 172px;
-        padding-bottom: 64px;
         flex-direction: column;
         justify-content: center;
+        padding-bottom: $vertical-spacing-md;
       }
     }
 
@@ -82,8 +82,8 @@ body.page-home {
       background-color: color('hemlock');
 
       .banner-text {
-        padding: 64px 0 36px;
         color: color('cream');
+        padding: $vertical-spacing-md 0 36px;
 
         p {
           @include p1;
@@ -152,7 +152,7 @@ body.page-home {
 
     .portfolio-text {
       color: color('teak');
-      padding-bottom: 64px;
+      padding-bottom: $vertical-spacing-md;
 
       h4 {
         @include h3;
@@ -174,7 +174,7 @@ body.page-home {
         }
 
         p + p {
-          margin-top: 64px;
+          margin-top: $vertical-spacing-md;
         }
       }
     }

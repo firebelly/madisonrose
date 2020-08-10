@@ -37,7 +37,7 @@
     background-position: center center;
 
     @include media-md {
-      padding: 64px 0;
+      padding: $vertical-spacing-md 0;
     }
   }
 
@@ -47,11 +47,11 @@
       position: relative;
       &::before {
         left: 0;
-        top: -32px;
         height: 1px;
         width: 72px;
         content: '';
         position: absolute;
+        top: -$vertical-spacing-sm;
       }
     }
   }

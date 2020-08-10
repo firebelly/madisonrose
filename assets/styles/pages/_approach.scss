@@ -43,7 +43,7 @@ body[class^=page-approach] {
     h3 {
       @include h4;
       color: color('teak');
-      margin: $padding-sm 0 32px;
+      margin: $padding-sm 0 $vertical-spacing-sm;
     }
 
     @include media-md {
@@ -81,7 +81,7 @@ body[class^=page-approach] {
     }
 
     li {
-      margin-top: 64px;
+      margin-top: $vertical-spacing-md;
 
       h4 {
         text-align: center;
