@@ -18,6 +18,7 @@ html:not(.is-changing) body.page-home {
 
 body.page-home {
   .page-header {
+    padding-top: 0;
     .banner-top {
       padding-top: 128px;
       position: relative;
@@ -72,7 +73,6 @@ body.page-home {
     }
 
     .page-headline {
-      @include h1;
       opacity: 0;
       animation: fadeInUp 2.5s 0.5s forwards;
     }
