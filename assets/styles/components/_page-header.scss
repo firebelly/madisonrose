@@ -76,6 +76,7 @@
       position: relative;
       padding-bottom: 50%;
       background-size: cover;
+      width: calc(100% - #{$padding-sm});
       background-position: center center;
     }
 

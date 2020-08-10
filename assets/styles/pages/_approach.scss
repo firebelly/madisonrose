@@ -7,7 +7,8 @@ body[class^=page-approach] {
     @include line(after, 120px);
 
     .image-banner .background {
-      @include media-md {
+      background-position: calc(50% + 9px) center;
+      @include media-sm {
         background-position: calc(50% + 12px) center;
       }
       @include media-lg {
