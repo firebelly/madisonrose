@@ -4,8 +4,6 @@ body[class^=page-approach] {
   @include darkTheme;
 
   .page-header {
-    @include line(after, 120px);
-
     .image-banner .background {
       background-position: calc(50% + 9px) center;
       @include media-sm {
@@ -14,6 +12,10 @@ body[class^=page-approach] {
       @include media-lg {
         background-position: calc(50% + 72px) center;
       }
+    }
+
+    .banner-headline::before {
+      display: none;
     }
 
     .banner-top {
@@ -38,50 +40,56 @@ body[class^=page-approach] {
   }
 
   .approach-section {
-    padding-bottom: 82px;
+    padding-bottom: $vertical-spacing-md;
 
     h3 {
       @include h4;
+      padding-top: 6px;
       color: color('teak');
+      border-top: 1px solid color('tan');
       margin: $padding-sm 0 $vertical-spacing-sm;
     }
 
+    p {
+      margin: 0;
+    }
+
+    > .-inner > .grid > div + div {
+      margin-top: $vertical-spacing-sm;
+    }
+
     @include media-md {
-      @include line(before, 100%);
-      padding-bottom: 128px;
+      padding-bottom: 56px;
       margin-top: $padding-sm;
-      &::before {
-        top: 38px;
+
+      > .-inner {
+        border-top: 1px solid color('tan');
       }
 
-      > .grid {
-        position: relative;
-        &::after {
-          top: 0;
-          height: 1px;
-          content: '';
-          position: absolute;
-          left: $padding-lg / 2;
-          right: $padding-lg / 2;
-          border-top: 1px solid color('tan');
-        }
+      h3 {
+        border-top: none;
+      }
+
+      > .-inner > .grid > div + div {
+        margin-top: 0;
       }
     }
   }
 
   .method-section {
     @include line(before, 100%);
-    padding-bottom: 128px;
+    padding-bottom: $vertical-spacing-md;
     &::before {
       top: 36px;
     }
 
     ol {
+      margin: 0;
       padding: 0;
     }
 
     li {
-      margin-top: $vertical-spacing-md;
+      margin-top: 48px;
 
       h4 {
         text-align: center;
@@ -108,8 +116,6 @@ body[class^=page-approach] {
     }
 
     @include media-md {
-      padding-bottom: 160px;
-
       li {
         h4 {
           display: flex;

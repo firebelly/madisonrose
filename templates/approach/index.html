@@ -23,27 +23,23 @@
     </div>
   </div>
 
-  <div class="intro-section sitewrapper">
-    <div class="tagline">
-      <p><span class="-reveal">Work.</span><br> <span class="-reveal">Life.</span><br> <span class="-reveal">Balanced.</span></p>
-    </div>
-  </div>
-
   {% if entry.whatWeDo|length or entry.howWereDifferent|length %}
     <div class="approach-section section sitewrapper">
-      <div class="grid spaced spaced-xl">
-        {% if entry.whatWeDo|length %}
-          <div class="col-md-1-2">
-            <h3>What We Do</h3>
-            {{ entry.whatWeDo }}
-          </div>
-        {% endif %}
-        {% if entry.howWereDifferent|length %}
-          <div class="col-md-1-2">
-            <h3>How We're Different</h3>
-            {{ entry.howWereDifferent }}
-          </div>
-        {% endif %}
+      <div class="-inner">
+        <div class="grid spaced spaced-xl">
+          {% if entry.whatWeDo|length %}
+            <div class="col-md-1-2">
+              <h3>What We Do</h3>
+              {{ entry.whatWeDo }}
+            </div>
+          {% endif %}
+          {% if entry.howWereDifferent|length %}
+            <div class="col-md-1-2">
+              <h3>How We're Different</h3>
+              {{ entry.howWereDifferent }}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   {% endif %}
@@ -64,6 +60,19 @@
       </div>
     </div>
   {% endif %}
+
+  <div class="page-break">
+    <div class="image-break">
+      <div class="texture" style="background-image:url('{{ rev('/images/map-1_square.jpg') }}');"></div>
+      <div class="image-background" style="background-image:url('{{ rev('/images/approach-page-break.jpg') }}');"></div>
+    </div>
+  </div>
+
+  <div class="intro-section sitewrapper">
+    <div class="tagline">
+      <p><span class="-reveal">Work.</span><br> <span class="-reveal">Life.</span><br> <span class="-reveal">Balanced.</span></p>
+    </div>
+  </div>
 
   {% include "partials/_page-nav.html" %}
 {% endblock %}
