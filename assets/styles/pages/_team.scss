@@ -1,5 +1,9 @@
 // Team Page
 
+body.page-team {
+  @include colorTheme('cream', 'lichen', 'hemlock', '../images/texture-green.jpg');
+}
+
 .page-header {
   .banner-headline > .grid {
     @include media-md {

@@ -1,7 +1,7 @@
 // Team Member Page
 
 body.single-team-member {
-  @include darkTheme;
+  @include colorTheme('cream', 'lichen', 'hemlock', '../images/texture-green.jpg');
 
   .page-header {
     .banner-top {

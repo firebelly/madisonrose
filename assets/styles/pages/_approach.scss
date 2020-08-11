@@ -1,7 +1,7 @@
 // Approach Page
 
 body[class^=page-approach] {
-  @include darkTheme;
+  @include colorTheme('cream', 'tan', 'teak', '../images/texture-teak.jpg');
 
   .page-header {
     .image-banner .background {

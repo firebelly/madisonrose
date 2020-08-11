@@ -1,7 +1,7 @@
 // Error Page Styles
 
 body.error-page {
-  @include darkTheme;
+  @include colorTheme('cream', 'lichen', 'hemlock', '../images/texture-green.jpg');
 
   .page-header {
     .banner-top {

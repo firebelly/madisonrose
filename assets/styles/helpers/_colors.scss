@@ -11,13 +11,13 @@
 }
 
 // Light/Dark Theme
-@mixin darkTheme() {
+@mixin colorTheme($text, $hover, $background, $textureFile) {
   .site-header {
     .site-title {
       a {
         #logo {
           .text {
-            fill: color('cream');
+            fill: color($text);
           }
         }
       }
@@ -26,7 +26,7 @@
 
   .nav-toggle {
     svg {
-      fill: color('cream');
+      fill: color($text);
     }
   }
 
@@ -34,19 +34,19 @@
     @include media-md {
       li.-current {
         a {
-          color: color('lichen');
+          color: color($hover);
         }
       }
       a {
-        color: color('cream');
+        color: color($text);
         &::after {
-          background-color: color('lichen');
+          background-color: color($hover);
         }
         &:hover,
         &:focus {
-          color: color('lichen');
+          color: color($hover);
           &::after {
-            background-color: color('lichen');
+            background-color: color($hover);
           }
         }
       }
@@ -54,8 +54,8 @@
   }
 
   .page-header {
-    background-image: url('../images/texture-green.jpg');
+    background-image: url($textureFile);
     background-size: 195px 195px;
-    background-color: color('hemlock');
+    background-color: color($background);
   }
 }

@@ -184,7 +184,12 @@ body.page-home {
     padding-bottom: $vertical-spacing-md - 16px;
 
     @include media-md {
-      padding-bottom: 104px;
+      padding-top: $vertical-spacing-md;
+      padding-bottom: $vertical-spacing-md;
+      &::before,
+      &::after {
+        height: 52px;
+      }
     }
   }
 }
