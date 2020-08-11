@@ -5,13 +5,12 @@
 
 {% block content %}
   <div class="page-header">
-    <div class="bottom-banner" style="background-image:url('{{ rev('/images/404-banner.jpg') }}');"></div>
-    <div class="banner-top">
-      <div class="sitewrapper">
-        <div class="grid spaced spaced-xl">
-          <h2 class="page-headline col-md-1-2">{{ title }}</h2>
-          <p class="subhead col-md-1-2">We can’t find the page you’re looking for!<br> Please Try another one.<br> In the meantime, enjoy the view.</p>
-        </div>
+    <div class="image-banner"><div class="background" style="background-image:url('{{ rev('/images/404-banner.jpg') }}');"></div></div>
+
+    <div class="banner-headline sitewrapper">
+      <div class="grid spaced spaced-xl">
+        <h2 class="page-headline col-md-1-2">{{ title }}</h2>
+        <p class="page-subheadline col-md-1-2">We can’t find the page you’re looking for!<br> Please Try another one.<br> In the meantime, enjoy the view.</p>
       </div>
     </div>
   </div>

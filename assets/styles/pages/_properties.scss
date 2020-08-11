@@ -95,9 +95,13 @@ body.page-single-property {
       vertical-align: text-bottom;
     }
 
+    @include media-md {
+      padding-top: 0;
+      border-top: none;
+    }
+
     @include media-lg {
       display: flex;
-      padding-top: 0;
       margin-bottom: 20px;
       align-items: center;
       justify-content: space-between;

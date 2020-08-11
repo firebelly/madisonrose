@@ -4,19 +4,19 @@ body.error-page {
   @include colorTheme('cream', 'lichen', 'hemlock', '../images/texture-green.jpg');
 
   .page-header {
-    .banner-top {
-      @include media-md {
-        padding-bottom: 80px;
+    @include media-md {
+      .banner-headline::before {
+        display: none;
       }
-    }
 
-    .subhead {
-      @include h4;
-      @include eyebrowLine('cream');
-      margin: 72px 0 0;
-
-      @include media-md {
-        margin-top: 128px;
+      .image-banner {
+        &::after {
+          display: none;
+        }
+        .background {
+          padding: 0;
+          height: 328px;
+        }
       }
     }
   }
