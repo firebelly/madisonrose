@@ -12,6 +12,12 @@ body.single-team-member {
         padding-bottom: 124px;
       }
 
+      .page-headline {
+        @include media-md {
+          padding-right: $padding-md;
+        }
+      }
+
       .position {
         @include eyebrowLine(cream);
         @include h4;
@@ -19,6 +25,7 @@ body.single-team-member {
 
         @include media-md {
           margin-top: 52px;
+          padding-right: $padding-md;
         }
       }
     }
