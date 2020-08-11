@@ -1,5 +1,23 @@
 // Team Page
 
+.page-header {
+  .banner-headline > .grid {
+    @include media-md {
+      align-items: center;
+    }
+  }
+  .page-subheadline {
+    @include eyebrowLine;
+    @include h4;
+    color: color('teak');
+    margin: $padding-md 0 0;
+
+    @include media-md {
+      margin: 0;
+    }
+  }
+}
+
 .team-section {
   @include line(before, 100%);
 

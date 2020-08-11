@@ -167,7 +167,7 @@ body.page-single-property {
     }
 
     .intro-text {
-      @include eyebrowLine('tan', 13px);
+      @include eyebrowLine('tan', 13px, 13px);
 
       h4 {
         @include h4;
@@ -332,7 +332,10 @@ body.page-single-property {
     @include line(before, 100%);
   }
   .media-item {
-    margin: 0 0 $vertical-spacing-md;
+    margin: 0 0 $vertical-spacing-sm;
+    @include media-md {
+      margin-bottom: $vertical-spacing-md;
+    }
 
     // Title/Caption
     figcaption {
