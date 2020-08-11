@@ -38,8 +38,8 @@
 // Philanthropy Section
 .philanthropy-section {
   @include line(before, 100%);
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: $vertical-spacing-md;
+  padding-bottom: $vertical-spacing-md;
 
   > .sitewrapper > h3 {
     @include h2;
@@ -69,9 +69,6 @@
   }
 
   @include media-md {
-    padding-top: 72px;
-    padding-bottom: 200px;
-
     .philanthropy-text {
       padding-right: 72px;
     }
