@@ -11,34 +11,17 @@
     {% if entry.propertyBannerImage|length %}
       <div class="image-banner"><div class="background" style="background-image:url('{{ entry.propertyBannerImage.one().getUrl() }}');"></div></div>
     {% endif %}
-
-    <div class="sitewrapper banner-headline">
-      <div class="grid spaced spaced-lg">
-        <h2 class="page-headline col-xl-1-2">{{ entry.title }}</h2>
-        {% if entry.floorplan|length or entry.brochure|length %}
-          <div class="downloads col-xl-1-2">
-            <h3>Download:</h3>
-            <ul>
-            {% if entry.floorplan|length %}
-              <li><a href="{{ entry.floorplan.one().getUrl() }}" data-no-swup><span>Building<br> Floorplan</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
-            {% endif %}
-            {% if entry.brochure|length %}
-              <li><a href="{{ entry.brochure.one().getUrl() }}" data-no-swup><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
-            {% endif %}
-            </ul>
-          </div>
-        {% endif %}
-      </div>
-    </div>
   </div>
 
   <div class="page-body">
-    {% if entry.propertyIntroHeadline|length or entry.propertyIntroText|length or entry.propertyInfo|length or entry.propertySpecs|length %}
-      <div class="intro section sitewrapper">
-        <div class="grid spaced spaced-lg">
+    <div class="intro section sitewrapper">
+      <div class="grid spaced spaced-lg">
+
+        <div class="col-md-1-2">
+          <h2 class="page-headline">{{ entry.title }}</h2>
 
           {% if entry.propertyIntroText|length %}
-            <div class="intro-text col-md-1-2">
+            <div class="intro-text">
               {% if entry.propertyIntroHeadline|length %}
                 <h4>{{ entry.propertyIntroHeadline }}</h4>
               {% endif %}
@@ -48,9 +31,27 @@
               {% endif %}
             </div>
           {% endif %}
+        </div>
 
-          {% if entry.propertyInfo|length or entry.propertySpecs|length %}
-            <div class="property-info col-md-1-2{{ entry.propertySpecs|length > 1 ? ' multiple-properties' : '' }}">
+
+        {% if entry.floorplan|length or entry.brochure|length or entry.propertyInfo|length or entry.propertySpecs|length %}
+          <div class="col-md-1-2">
+
+            {% if entry.floorplan|length or entry.brochure|length %}
+              <div class="downloads">
+                <h3>Downloads:</h3>
+                <ul>
+                {% if entry.floorplan|length %}
+                  <li><a href="{{ entry.floorplan.one().getUrl() }}" download="{{ entry.floorplan.one().title }}.pdf" data-no-swup><span>Building Floorplan</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+                {% endif %}
+                {% if entry.brochure|length %}
+                  <li><a href="{{ entry.brochure.one().getUrl() }}" download="{{ entry.brochure.one().title }}.pdf" data-no-swup><span>Brochure</span><svg aria-hidden="true" role="presentation"><use xlink:href="#icon-download"/></svg></a></li>
+                {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="property-info{{ entry.propertySpecs|length > 1 ? ' multiple-properties' : '' }}">
               <div class="grid spaced">
                 {% if entry.propertySpecs|length > 1 %}
                   {% for property in entry.propertySpecs.all() %}
@@ -102,10 +103,11 @@
                 {% endif %}
               </div>
             </div>
-          {% endif %}
-        </div>
+
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
+    </div>
 
     {% if entry.propertyMedia|length %}
       <div class="property-media section sitewrapper">
