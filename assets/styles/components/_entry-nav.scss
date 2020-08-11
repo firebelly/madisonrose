@@ -2,10 +2,10 @@
 
 // Common Styles
 .post-nav {
-  margin-top: 16px;
-  margin-bottom: 64px;
+  margin-bottom: $vertical-spacing-md;
 
   > .-inner {
+    margin: 0;
     position: relative;
   }
 
@@ -53,10 +53,10 @@
   > .-inner {
     @include media-md {
       &::before {
-        top: -1px;
+        top: 0;
         left: 50%;
         z-index: 1;
-        height: 3px;
+        height: 1px;
         width: 36px;
         content: '';
         position: absolute;
@@ -64,12 +64,14 @@
         background-color: color('cream');
       }
       &::after {
+        top: -1px;
         left: 50%;
-        top: 24px;
         bottom: 0;
+        z-index: 1;
         width: 1px;
         content: '';
         position: absolute;
+        transform: translateX(-50%);
         background-color: color('tan');
       }
     }

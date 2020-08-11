@@ -330,23 +330,14 @@ body.page-single-property {
   // Property Media
   .property-media {
     @include line(before, 100%);
-    padding-bottom: 65px;
-
-    @include media-md {
-      padding-bottom: $padding-lg;
-    }
   }
   .media-item {
-    margin: 0 0 60px;
-
-    > .-inner {
-      padding-bottom: 8px;
-      border-bottom: 1px solid color('tan');
-    }
+    margin: 0 0 $vertical-spacing-md;
 
     // Title/Caption
     figcaption {
-      padding-top: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid color('tan');
 
       p {
         margin: 0;
