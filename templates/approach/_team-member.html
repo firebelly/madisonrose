@@ -1,6 +1,13 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% set bodyClass = 'single-team-member' %}
+{% set bioImage = craft.imager.transformImage(entry.teamPhoto.one(),
+  {
+    width: 1200,
+    ratio: 0.712206633/1,
+    jpegQuality: 80,
+  }
+) %}
 {% set seoImage = craft.imager.transformImage(entry.teamPhoto.one(), { width: 1200, height: 627, mode: 'crop' }) %}
 {% if entry.bioHeadline|length %}
   {% set seoDescription = entry.bioHeadline %}
@@ -8,36 +15,26 @@
 
 {% block content %}
   <div class="page-header">
-    {% if entry.teamPhoto|length %}
-      {% set transformedImage = craft.imager.transformImage(entry.teamPhoto.one(),
-        {
-          width: 2200,
-          ratio: 2/1,
-          jpegQuality: 80,
-        }
-      ) %}
-      <div class="image-banner"><div class="background" style="background-image:url('{{ transformedImage.getUrl() }}');"></div></div>
-    {% endif %}
-
-    <div class="banner-headline sitewrapper">
-      <div class="grid spaced spaced-xl">
-        <h2 class="page-headline col-md-1-2">{{ entry.title|replace(' ', ' \n')|nl2br }}</h2>
-        <p class="position col-md-1-2">{{ entry.position }}</p>
+    <div class="banner-top">
+      <div class="sitewrapper grid">
+        <div class="col-md-1-2">
+          <h2 class="page-headline">{{ entry.title }}</h2>
+          <p class="position">{{ entry.position }}</p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="bio-section section">
     <div class="sitewrapper">
-      {% if entry.bioHeadline|length %}
-        <h3>{{ entry.bioHeadline }}</h3>
-      {% endif %}
       <div class="grid spaced spaced-xl">
-        <div class="bio col-md-1-2">
-          {{ entry.teamBio }}
-        </div>
-        <div class="bio-contact col-md-1-2">
-          <div class="-inner">
+
+        <div class="col-md-1-2 md-order-1">
+          <div class="bio-image -reveal">
+            <img src="{{ bioImage.getUrl() }}" alt="{{ entry.teamPhoto.one().title }}">
+          </div>
+
+          <div class="bio-contact">
             {% if entry.teamEmail|length %}
               <div>
                 <p class="label">Email</p>
@@ -68,6 +65,11 @@
             {% endif %}
           </div>
         </div>
+
+        <div class="bio col-md-1-2 md-order-0">
+          {{ entry.teamBio }}
+        </div>
+
       </div>
     </div>
   </div>

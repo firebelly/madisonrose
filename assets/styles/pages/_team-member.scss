@@ -5,28 +5,20 @@ body.single-team-member {
 
   .page-header {
     .banner-top {
-      .position {
-        @include h4;
-        position: relative;
-        margin: $padding-md 0 0;
-        &::before {
-          width: 72px;
-          content: '';
-          height: 1px;
-          display: block;
-          margin-bottom: 30px;
-          background-color: color('cream');
-        }
-      }
+      color: color('cream');
+      padding-bottom: 94px;
 
       @include media-md {
-        .grid {
-          align-items: flex-end;
-        }
+        padding-bottom: 124px;
+      }
 
-        .position {
-          margin: 0;
-          padding-bottom: 0;
+      .position {
+        @include eyebrowLine(cream);
+        @include h4;
+        margin: $padding-md 0 0;
+
+        @include media-md {
+          margin-top: 52px;
         }
       }
     }
@@ -34,9 +26,11 @@ body.single-team-member {
 
   .bio-section {
     @include line(before, 100%);
-    margin-top: 16px;
-    padding-top: 56px;
-    padding-bottom: 150px;
+    padding-bottom: $vertical-spacing-md;
+
+    @include media-md {
+      padding-top: $vertical-spacing-md;
+    }
 
     h3 {
       @include h3;
@@ -49,6 +43,7 @@ body.single-team-member {
     }
 
     .bio {
+      @include eyebrowLine;
       @include p2;
 
       p {
@@ -60,19 +55,35 @@ body.single-team-member {
       }
     }
 
-    .bio-contact {
-      margin-top: $padding-md;
+    .bio-image {
+      @include imageTreatment;
+      margin-top: -$vertical-spacing-md;
 
-      > .-inner {
-        padding-top: 10px;
-        border-top: 1px solid color('tan');
+      img {
+        display: block;
       }
 
       @include media-md {
-        margin-top: -$padding-lg;
+        margin-top: -400px;
       }
 
-      > .-inner > div {
+      @include media-lg {
+        margin-left: -54px;
+        width: calc(100% + 54px);
+      }
+    }
+
+    .bio-contact {
+      padding-top: 10px;
+      margin-bottom: 40px;
+      margin-top: $padding-md;
+      border-top: 1px solid color('tan');
+
+      @include media-md {
+        margin-bottom: 0;
+      }
+
+       > div {
         + div {
           margin-top: 30px;
         }
