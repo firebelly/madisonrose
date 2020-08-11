@@ -179,4 +179,12 @@ body.page-home {
       }
     }
   }
+
+  .bottom-intro {
+    padding-bottom: $vertical-spacing-md - 16px;
+
+    @include media-md {
+      padding-bottom: 104px;
+    }
+  }
 }

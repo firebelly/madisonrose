@@ -5,12 +5,12 @@ body[class^=page-approach] {
 
   .page-header {
     .image-banner .background {
-      background-position: calc(50% + 9px) center;
+      background-position: calc(50% + #{$padding-sm}) center;
       @include media-sm {
-        background-position: calc(50% + 12px) center;
+        background-position: calc(50% + #{$padding-md}) center;
       }
       @include media-lg {
-        background-position: calc(50% + 72px) center;
+        background-position: calc(50% + #{$padding-lg}) center;
       }
     }
 

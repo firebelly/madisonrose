@@ -14,7 +14,7 @@
   @include line(before, 80px);
   @include line(after, 80px);
   text-align: center;
-  padding: 64px 0 80px;
+  padding: $vertical-spacing-md 0;
 
   p:not(.cta) {
     margin: 0 auto;

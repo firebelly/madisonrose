@@ -73,22 +73,24 @@
       @include imageTreatment;
       height: 0;
       z-index: 1;
+      width: 100%;
+      left: -$padding-sm;
       position: relative;
       padding-bottom: 50%;
       background-size: cover;
-      width: calc(100% - #{$padding-sm});
+      background-repeat: no-repeat;
       background-position: center center;
     }
 
     @include media-sm {
       .background {
-        width: calc(100% - #{$padding-md});
+        left: -$padding-md;
       }
     }
 
     @include media-lg {
       .background {
-        width: calc(100% - #{$padding-lg});
+        left: -$padding-lg;
       }
     }
 
