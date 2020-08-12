@@ -1,13 +1,16 @@
 from fabric.api import *
 import os
 
-env.hosts = ['opal4.opalstack.com']
+env.hosts = ['staging.mad-rose.com']
 env.user = 'madisonrose'
-env.path = '~/Sites/madisonrose'
 env.remotepath = '/home/madisonrose/apps/madisonrose_staging'
 env.git_branch = 'master'
 env.warn_only = True
-env.remote_protocol = 'http'
+
+def production():
+  env.hosts = ['opal4.opalstack.com']
+  env.git_branch = 'master'
+  env.remotepath = '/home/madisonrose/apps/madisonrose_production'
 
 def devsetup():
   print "Installing composer, node and bower assets...\n"
