@@ -31,7 +31,7 @@
   }
 
   .site-nav {
-    @include media-md {
+    @include media-nav {
       li.-current {
         a {
           color: color($hover);
