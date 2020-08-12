@@ -62,10 +62,6 @@
     RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-    # Custom redirects
-    RewriteRule ^approach-v2/?$ /approach [R=301,L]
-    RewriteRule ^approach-v3/?$ /approach [R=301,L]
-
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
