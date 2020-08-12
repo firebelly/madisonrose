@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }} | {{ siteName }}{% else %}{{ siteName }} | {{ siteSettings.siteTagline }}{% endif %}{% endif %}</title>
+<title>{% if entry is not defined %}{% if title is defined %}{{ title }}{% else %}404: Page Not Found{% endif %}{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }} | {{ siteName }}{% else %}{{ siteName }} | {{ siteSettings.siteTagline }}{% endif %}{% endif %}</title>
 
 <link rel="canonical" href="{{ craft.app.request.absoluteUrl }}">
 
