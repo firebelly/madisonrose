@@ -74,6 +74,42 @@ export default {
 
     function _openNav() {
       $body.addClass('nav-open');
+      _showOverlay();
+
+      $siteNav.velocity({
+        opacity: 1
+      }, {
+        display: 'block',
+        easing: 'ease-out',
+        duration: 350
+      }).addClass('-active');
+
+      appState.navOpen = true;
+    }
+
+    function _closeNav() {
+      $body.removeClass('nav-open');
+      _hideOverlay();
+
+      $siteNav.velocity({
+        opacity: 0
+      }, {
+        display: 'none',
+        easing: 'ease-out',
+        duration: 350
+      }).removeClass('-active');
+
+      appState.navOpen = false;
+    }
+
+    function _resetNav() {
+      _hideOverlay();
+      $body.removeClass('nav-open');
+      $siteNav.attr('style', '').removeClass('-active');
+      appState.navOpen = false;
+    }
+
+    function _showOverlay() {
       if (!$('.page-overlay').length) {
         $body.append('<div class="page-overlay"></div>');
       }
@@ -86,18 +122,10 @@ export default {
         duration: 350
       });
 
-      $siteNav.velocity({
-        opacity: 1
-      }, {
-        display: 'block',
-        easing: 'ease-out',
-        duration: 350
-      }).addClass('-active');
+      appState.overlayShown = true;
     }
 
-    function _closeNav() {
-      $body.removeClass('nav-open');
-
+    function _hideOverlay() {
       $('.page-overlay').velocity({
         opacity: 0
       }, {
@@ -106,13 +134,7 @@ export default {
         duration: 350
       });
 
-      $siteNav.velocity({
-        opacity: 0
-      }, {
-        display: 'none',
-        easing: 'ease-out',
-        duration: 350
-      }).removeClass('-active');
+      appState.overlayShown = false;
     }
 
     // Ajaxify newsletter form
@@ -207,6 +229,11 @@ export default {
     function _resize() {
       // Disable transitions when resizing
       _disableTransitions();
+
+      // Reset inline styles for navigation for medium breakpoint
+      if (appState.breakpoints.nav && appState.navOpen) {
+        _resetNav();
+      }
 
       // Functions to run on resize end
       clearTimeout(resizeTimer);

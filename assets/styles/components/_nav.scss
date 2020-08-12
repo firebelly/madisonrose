@@ -143,4 +143,8 @@
     height: 31px;
     fill: color('rose');
   }
+
+  @include media-md {
+    top: 32px;
+  }
 }

@@ -2,6 +2,7 @@
 
 const appState = {
   isAnimating: false,
+  overlayShown: false,
   navOpen: false,
   breakpoints: {},
 
