@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51a0a507f03ae04a07dc637a3b52b891",
+    "content-hash": "1c054af403b0934e6223a7a727a88cbf",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -689,11 +689,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.2",
+            "version": "3.5.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/f19638130a2619c579437fcb6f8db9d232c58b42",
-                "reference": "f19638130a2619c579437fcb6f8db9d232c58b42",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b43974522c8a29f2e6406e8c7dde999c037df39b",
+                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-08-09T14:12:47+00:00"
+            "time": "2020-08-11T23:21:59+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -2993,15 +2993,15 @@
         },
         {
             "name": "mmikkel/cp-field-inspect",
-            "version": "1.1.3",
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/ab5eb5536f01609d5b8ed047a493e81afcef0226",
-                "reference": "ab5eb5536f01609d5b8ed047a493e81afcef0226",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/57930115f47b4d5e67dc4673e32c0096d2612080",
+                "reference": "57930115f47b4d5e67dc4673e32c0096d2612080",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.4.2"
+                "craftcms/cms": "^3.5.3"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3018,7 +3018,6 @@
                     "mmikkel\\cpfieldinspect\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3030,13 +3029,17 @@
             ],
             "description": "Inspect field handles and easily edit field and element source settings",
             "keywords": [
-                "Craft",
                 "cms",
                 "cp field inspect",
+                "craft",
                 "craft-plugin",
                 "craftcms"
             ],
-            "time": "2020-02-29T10:00:32+00:00"
+            "support": {
+                "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
+            },
+            "time": "2020-08-12T01:07:40+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -3308,11 +3311,11 @@
         },
         {
             "name": "opis/closure",
-            "version": "3.5.5",
+            "version": "3.5.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/dec9fc5ecfca93f45cd6121f8e6f14457dff372c",
-                "reference": "dec9fc5ecfca93f45cd6121f8e6f14457dff372c",
+                "url": "https://api.github.com/repos/opis/closure/zipball/e8d34df855b0a0549a300cb8cb4db472556e8aa9",
+                "reference": "e8d34df855b0a0549a300cb8cb4db472556e8aa9",
                 "shasum": ""
             },
             "require": {
@@ -3355,7 +3358,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2020-06-17T14:59:55+00:00"
+            "time": "2020-08-11T08:46:50+00:00"
         },
         {
             "name": "paragonie/random_compat",
