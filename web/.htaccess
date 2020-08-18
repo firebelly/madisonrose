@@ -53,9 +53,11 @@
     RewriteCond %{HTTP_HOST} !^www\.mad-rose\.com [NC]
     RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
     RewriteCond %{HTTP_HOST} !^staging\.mad-rose\.com [NC]
+    RewriteCond %{HTTP_HOST} ^production\.mad-rose\.com [NC]
     RewriteRule ^(.*)$ https://www.mad-rose.com/$1 [R=301,L]
 
     # Force SSL
+    RewriteCond %{REQUEST_URI} !\.well\-known/acme\-challenge
     RewriteCond %{HTTP:X-Forwarded-SSL} !on
     RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
