@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c054af403b0934e6223a7a727a88cbf",
+    "content-hash": "396de860685f8e6ca0081c8ac614acaf",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -689,11 +689,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.3",
+            "version": "3.5.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/b43974522c8a29f2e6406e8c7dde999c037df39b",
-                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/e5fa51e15a5a083e074b0e116a23a1dcb52b80c6",
+                "reference": "e5fa51e15a5a083e074b0e116a23a1dcb52b80c6",
                 "shasum": ""
             },
             "require": {
@@ -773,7 +773,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-08-11T23:21:59+00:00"
+            "time": "2020-08-17T18:33:40+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -862,11 +862,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/068c75549bbf23d148cf0172ee4fbb3355096e7c",
-                "reference": "068c75549bbf23d148cf0172ee4fbb3355096e7c",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/cff8b01a831f852ccbde5db9967f3aef26054fc8",
+                "reference": "cff8b01a831f852ccbde5db9967f3aef26054fc8",
                 "shasum": ""
             },
             "require": {
@@ -907,7 +907,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-08-09T13:55:21+00:00"
+            "time": "2020-08-14T14:09:12+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -2993,15 +2993,15 @@
         },
         {
             "name": "mmikkel/cp-field-inspect",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/57930115f47b4d5e67dc4673e32c0096d2612080",
-                "reference": "57930115f47b4d5e67dc4673e32c0096d2612080",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/85a231e5cf389ec6ca0bbc2d677ea6cfd3fe65ea",
+                "reference": "85a231e5cf389ec6ca0bbc2d677ea6cfd3fe65ea",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.5.3"
+                "craftcms/cms": "^3.5.4"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3039,7 +3039,7 @@
                 "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
                 "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
             },
-            "time": "2020-08-12T01:07:40+00:00"
+            "time": "2020-08-13T21:31:21+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4039,18 +4039,15 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
-                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/3d5eb71705adfa34bd34b993400622932b2f62fd",
+                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "bin": [
                 "bin/jsonlint"
@@ -4061,7 +4058,6 @@
                     "Seld\\JsonLint\\": "src/Seld/JsonLint/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4079,7 +4075,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2020-04-30T19:05:18+00:00"
+            "time": "2020-08-13T09:07:59+00:00"
         },
         {
             "name": "seld/phar-utils",
