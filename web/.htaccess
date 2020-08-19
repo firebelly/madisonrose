@@ -50,6 +50,7 @@
 
     # Ensure consistent www URL
     RewriteCond %{REQUEST_URI} !\.well-known/acme-challenge
+    RewriteCond %{HTTP_HOST} ^mad-rose\.com [NC]
     RewriteCond %{HTTP_HOST} !^www\.mad-rose\.com [NC]
     RewriteCond %{HTTP_HOST} !^madisonrose\.localhost [NC]
     RewriteCond %{HTTP_HOST} !^staging\.mad-rose\.com [NC]
