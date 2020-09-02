@@ -150,6 +150,14 @@ body.page-single-property {
         @include p2;
         margin: 0;
       }
+
+      a {
+        transition: color 0.2s ease-out;
+        &:hover,
+        &:focus {
+          color: color('rose');
+        }
+      }
     }
 
     .property-info {

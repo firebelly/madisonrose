@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 531ba60c-9970-43ae-9fa2-eba1cc5847cf
+            fieldUid: 008f43d3-ff7c-4f53-a828-5a3af0d238d7
             instructions: null
             label: null
             required: false
@@ -34,25 +34,21 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  531ba60c-9970-43ae-9fa2-eba1cc5847cf:
-    contentColumnType: text
+  008f43d3-ff7c-4f53-a828-5a3af0d238d7:
+    contentColumnType: string
     fieldGroup: null
-    handle: caption
-    instructions: 'Optional caption that appears below the image.'
-    name: Caption
-    searchable: true
+    handle: titleCaption
+    instructions: ''
+    name: 'Title + Caption'
+    searchable: false
     settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
+      hideLabel: ''
+      notes: '<p>The title and caption of the image are edited by double clicking on the image asset to the left, and filling in the `Title` and `Caption` fields.</p>'
+      output: richText
+      style: ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: barrelstrength\sproutfields\fields\Notes
   b9bbcf70-9583-4b97-9f99-ff71d0cece77:
     contentColumnType: string
     fieldGroup: null

@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: c6428a46-d124-4651-a441-a577544085ca
+            fieldUid: 578e36a4-30a0-40a5-a1d6-8a1ae0d87c4a
             instructions: null
             label: null
             required: false
@@ -25,6 +25,21 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  578e36a4-30a0-40a5-a1d6-8a1ae0d87c4a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: titleCaption
+    instructions: ''
+    name: 'Title + Caption'
+    searchable: false
+    settings:
+      hideLabel: ''
+      notes: '<p>The title and caption of the video are edited by double clicking on the video asset to the left, and filling in the `Title` and `Caption` fields.</p>'
+      output: richText
+      style: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: barrelstrength\sproutfields\fields\Notes
   9ca59183-041b-4408-95e9-eaf9522e4f6a:
     contentColumnType: string
     fieldGroup: null
@@ -56,25 +71,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  c6428a46-d124-4651-a441-a577544085ca:
-    contentColumnType: text
-    fieldGroup: null
-    handle: videoCaption
-    instructions: 'Optional caption that appears below the video.'
-    name: 'Video Caption'
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
 handle: video
 name: Video
 sortOrder: 2
