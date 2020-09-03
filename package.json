@@ -44,7 +44,7 @@
     "jquery": "^3.4",
     "jquery-bridget": "^2.0.1",
     "js-dom-router": "^1.0",
-    "lazysizes": "^5.2.0-beta1",
+    "lazysizes": "^5.2.1",
     "masonry-layout": "^4.2.2",
     "swup": "^2.0.10",
     "velocity-animate": "^1.5.2"
