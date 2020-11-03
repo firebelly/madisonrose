@@ -1,15 +1,15 @@
 {
   "require": {
     "aelvan/imager": "v2.4.0",
-    "barrelstrength/sprout-fields": "3.8.3",
+    "barrelstrength/sprout-fields": "3.8.4",
     "clubstudioltd/craft-asset-rev": "6.0.2",
-    "craftcms/cms": "3.5.8",
-    "craftcms/redactor": "2.7.3",
-    "dolphiq/sitemap": "1.3.0",
+    "craftcms/cms": "3.5.14",
+    "craftcms/redactor": "2.8.3",
+    "dolphiq/sitemap": "1.3.1",
     "guilty/craft-rss": "^1.0",
-    "mmikkel/cp-field-inspect": "1.2.2",
-    "spicyweb/craft-embedded-assets": "2.3.4",
-    "verbb/cloner": "1.1.2",
+    "mmikkel/cp-field-inspect": "1.2.3",
+    "spicyweb/craft-embedded-assets": "2.4.3",
+    "verbb/cloner": "1.2.1",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {

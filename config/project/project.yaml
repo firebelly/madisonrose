@@ -1,8 +1,18 @@
-dateModified: 1599060047
+dateModified: 1599079829
 email:
-  fromEmail: matt@firebellydesign.com
+  fromEmail: info@mad-rose.com
   fromName: 'Madison Rose'
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    encryptionMethod: ''
+    host: $SMTP_HOST
+    password: $SMTP_PASSWORD
+    port: '587'
+    timeout: '10'
+    useAuthentication: '1'
+    username: $SMTP_USER
+  transportType: craft\mail\transportadapters\Smtp
 plugins:
   assetrev:
     edition: standard
